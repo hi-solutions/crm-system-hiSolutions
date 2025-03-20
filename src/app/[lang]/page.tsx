@@ -1,0 +1,454 @@
+import { getDictionary } from "@/lib/dictionary";
+// import { getLanguageServer } from "@/lib/language";
+import { FaLeaf, FaHeart, FaShieldAlt, FaRegLightbulb, FaRegStar } from "react-icons/fa";
+
+export default async function Home({params : {lang}}:{params: {lang: 'ar' | 'en'}}) {
+
+
+  const dict = await getDictionary(lang as 'ar' | 'en')
+
+
+  return (
+    <div className="min-h-screen bg-white font-sans">
+      {/* Navigation */}
+      <nav className="fixed top-0 left-0 right-0 z-50 bg-white shadow-sm border-b border-gray-100">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex justify-between items-center py-4">
+            {/* Logo */}
+            <div className="flex items-center">
+              <div className="bg-gradient-to-r from-blue-500 to-purple-500 h-10 w-10 rounded-md flex items-center justify-center">
+                <span className="text-white font-bold text-xl">A</span>
+              </div>
+              <span className="ml-3 text-xl font-bold text-gray-800">Acme Inc</span>
+            </div>
+            
+            {/* Navigation Links */}
+            <div className="hidden md:flex items-center space-x-8">
+              <a href="#" className="text-gray-700 hover:text-blue-600 transition-colors text-base font-medium">Home</a>
+              <a href="#" className="text-gray-700 hover:text-blue-600 transition-colors text-base font-medium">Features</a>
+              <a href="#" className="text-gray-700 hover:text-blue-600 transition-colors text-base font-medium">Pricing</a>
+              <a href="#" className="text-gray-700 hover:text-blue-600 transition-colors text-base font-medium">Testimonials</a>
+              <a href="#" className="text-gray-700 hover:text-blue-600 transition-colors text-base font-medium">Contact</a>
+            </div>
+            
+            {/* CTA Button */}
+            <div className="hidden md:flex">
+              <a 
+                href="#" 
+                className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg font-medium transition-all shadow-sm hover:shadow-md"
+              >
+                
+              </a>
+            </div>
+            {/* Mobile Menu Button */}
+            <div className="md:hidden flex items-center">
+              <button className="text-gray-700 hover:text-blue-600 focus:outline-none">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+      {/* Hero Section */}
+      <section className="pt-28 pb-20 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            {/* Hero Content */}
+            <div>
+              <div className="mb-6 inline-block">
+                <span className="bg-blue-100 text-blue-800 text-sm font-medium px-4 py-1 rounded-full">New Release</span>
+              </div>
+              
+              <h1 className="text-4xl lg:text-5xl font-bold mb-6 text-gray-900 leading-tight">
+                Build Beautiful Websites Faster Than Ever
+              </h1>
+              
+              <p className="text-xl text-gray-600 mb-8 leading-relaxed">
+                Our platform helps you create stunning websites without any coding knowledge. Get started in minutes and launch your dream website today.
+              </p>
+              
+              <div className="flex flex-wrap gap-4">
+                <button 
+                  className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg font-medium transition-all shadow-md hover:shadow-lg flex items-center justify-center gap-2 text-lg"
+                >
+                  <FaLeaf className="text-sm" /> Get Started
+                </button>
+                
+                <button 
+                  className="bg-white text-blue-600 px-8 py-3 rounded-lg font-medium transition-all shadow-md hover:shadow-lg border border-blue-100 flex items-center justify-center gap-2 text-lg hover:bg-gray-50"
+                >
+                  <FaHeart className="text-sm" /> Learn More
+                </button>
+                <button 
+                  className="bg-white text-blue-600 px-8 py-3 rounded-lg font-medium transition-all shadow-md hover:shadow-lg border border-blue-100 flex items-center justify-center gap-2 text-lg hover:bg-gray-50"
+                >
+                  {dict.home}
+                </button>
+              </div>
+              
+              {/* Trust Badges */}
+              <div className="mt-12 flex flex-wrap items-center gap-8">
+                <div className="flex items-center gap-2">
+                  <div className="bg-blue-100 w-8 h-8 rounded-full flex items-center justify-center">
+                    <FaShieldAlt className="text-blue-600 text-sm" />
+                  </div>
+                  <span className="text-gray-700 font-medium">Secure & Reliable</span>
+                </div>
+                
+                <div className="flex items-center gap-2">
+                  <div className="bg-blue-100 w-8 h-8 rounded-full flex items-center justify-center">
+                    <FaRegLightbulb className="text-blue-600 text-sm" />
+                  </div>
+                  <span className="text-gray-700 font-medium">Easy to Use</span>
+                </div>
+                
+                <div className="flex items-center gap-2">
+                  <div className="bg-blue-100 w-8 h-8 rounded-full flex items-center justify-center">
+                    <FaRegStar className="text-blue-600 text-sm" />
+                  </div>
+                  <span className="text-gray-700 font-medium">5-Star Support</span>
+                </div>
+              </div>
+            </div>
+            
+            {/* Hero Image */}
+            <div className="relative">
+              <div className="absolute -inset-4 bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-xl blur-xl"></div>
+              <div className="relative bg-white p-4 rounded-xl shadow-lg overflow-hidden border border-gray-100">
+                <div className="aspect-video rounded-lg overflow-hidden bg-gray-100">
+                  <img 
+                    src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop" 
+                    alt="Dashboard Demo" 
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Features Section */}
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">Powerful Features</h2>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">Everything you need to build stunning websites without any coding skills</p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {/* Feature 1 */}
+            <div className="bg-gray-50 p-8 rounded-xl shadow-sm hover:shadow-md transition-all">
+              <div className="bg-blue-100 w-12 h-12 rounded-lg flex items-center justify-center mb-6">
+                <svg className="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" />
+                </svg>
+              </div>
+              <h3 className="text-xl font-bold mb-3 text-gray-900">Drag & Drop Builder</h3>
+              <p className="text-gray-600">Build your website visually with our intuitive drag and drop interface. No coding required.</p>
+            </div>
+            
+            {/* Feature 2 */}
+            <div className="bg-gray-50 p-8 rounded-xl shadow-sm hover:shadow-md transition-all">
+              <div className="bg-blue-100 w-12 h-12 rounded-lg flex items-center justify-center mb-6">
+                <svg className="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" />
+                </svg>
+              </div>
+              <h3 className="text-xl font-bold mb-3 text-gray-900">Payment Integration</h3>
+              <p className="text-gray-600">Easily integrate payment solutions and start selling products or services online.</p>
+            </div>
+            
+            {/* Feature 3 */}
+            <div className="bg-gray-50 p-8 rounded-xl shadow-sm hover:shadow-md transition-all">
+              <div className="bg-blue-100 w-12 h-12 rounded-lg flex items-center justify-center mb-6">
+                <svg className="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                </svg>
+              </div>
+              <h3 className="text-xl font-bold mb-3 text-gray-900">Analytics Dashboard</h3>
+              <p className="text-gray-600">Track website performance with built-in analytics. Monitor visitors, sales, and engagement.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials Section */}
+      <section className="py-20 bg-gray-50">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">Loved by Thousands</h2>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">Here&apos;s what our customers have to say about our platform</p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {/* Testimonial 1 */}
+            <div className="bg-white p-8 rounded-xl shadow-md">
+              <div className="flex items-center mb-4">
+                <div className="w-12 h-12 rounded-full overflow-hidden mr-4 bg-gray-200">
+                  <img 
+                    src="https://randomuser.me/api/portraits/women/17.jpg" 
+                    alt="Customer" 
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <div>
+                  <h4 className="text-lg font-semibold text-gray-900">Sarah Johnson</h4>
+                  <p className="text-gray-500">Small Business Owner</p>
+                </div>
+              </div>
+              <p className="text-gray-600">{"I was able to create my business website in just a few hours. The platform is incredibly easy to use and the templates are beautiful!"}</p>
+            </div>
+            
+            {/* Testimonial 2 */}
+            <div className="bg-white p-8 rounded-xl shadow-md">
+              <div className="flex items-center mb-4">
+                <div className="w-12 h-12 rounded-full overflow-hidden mr-4 bg-gray-200">
+                  <img 
+                    src="https://randomuser.me/api/portraits/men/32.jpg" 
+                    alt="Customer" 
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <div>
+                  <h4 className="text-lg font-semibold text-gray-900">Michael Chen</h4>
+                  <p className="text-gray-500">Freelance Designer</p>
+                </div>
+              </div>
+              <p className="text-gray-600">{"As a designer, I appreciate the flexibility and customization options. I can create unique websites for my clients without writing code."}</p>
+            </div>
+            
+            {/* Testimonial 3 */}
+            <div className="bg-white p-8 rounded-xl shadow-md">
+              <div className="flex items-center mb-4">
+                <div className="w-12 h-12 rounded-full overflow-hidden mr-4 bg-gray-200">
+                  <img 
+                    src="https://randomuser.me/api/portraits/women/54.jpg" 
+                    alt="Customer" 
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <div>
+                  <h4 className="text-lg font-semibold text-gray-900">Emily Rodriguez</h4>
+                  <p className="text-gray-500">E-commerce Store Owner</p>
+                </div>
+              </div>
+              <p className="text-gray-600">{"Setting up my online store was amazingly simple. The payment integration works flawlessly and my sales have increased by 40%!"}</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Pricing Section */}
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">Simple, Transparent Pricing</h2>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">Choose the plan that fits your needs</p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {/* Basic Plan */}
+            <div className="bg-gray-50 rounded-xl shadow-sm hover:shadow-md transition-all overflow-hidden">
+              <div className="p-8">
+                <h3 className="text-xl font-bold mb-2 text-gray-900">Basic</h3>
+                <p className="text-gray-600 mb-6">Perfect for getting started</p>
+                <div className="mb-6">
+                  <span className="text-4xl font-bold text-gray-900">$9</span>
+                  <span className="text-gray-600">/month</span>
+                </div>
+                <ul className="space-y-3 mb-8">
+                  <li className="flex items-center text-gray-600">
+                    <svg className="w-5 h-5 mr-2 text-green-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                    </svg>
+                    1 Website
+                  </li>
+                  <li className="flex items-center text-gray-600">
+                    <svg className="w-5 h-5 mr-2 text-green-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                    </svg>
+                    5GB Storage
+                  </li>
+                  <li className="flex items-center text-gray-600">
+                    <svg className="w-5 h-5 mr-2 text-green-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                    </svg>
+                    Basic Analytics
+                  </li>
+                </ul>
+                <button className="w-full py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-medium transition-colors">
+                  Choose Basic
+                </button>
+              </div>
+            </div>
+            
+            {/* Pro Plan */}
+            <div className="bg-white rounded-xl shadow-lg border-2 border-blue-500 relative transform hover:scale-105 transition-all overflow-hidden">
+              <div className="absolute top-0 right-0 bg-blue-500 text-white text-xs font-bold px-3 py-1">
+                POPULAR
+              </div>
+              <div className="p-8">
+                <h3 className="text-xl font-bold mb-2 text-gray-900">Pro</h3>
+                <p className="text-gray-600 mb-6">For growing businesses</p>
+                <div className="mb-6">
+                  <span className="text-4xl font-bold text-gray-900">$29</span>
+                  <span className="text-gray-600">/month</span>
+                </div>
+                <ul className="space-y-3 mb-8">
+                  <li className="flex items-center text-gray-600">
+                    <svg className="w-5 h-5 mr-2 text-green-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                    </svg>
+                    5 Websites
+                  </li>
+                  <li className="flex items-center text-gray-600">
+                    <svg className="w-5 h-5 mr-2 text-green-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                    </svg>
+                    20GB Storage
+                  </li>
+                  <li className="flex items-center text-gray-600">
+                    <svg className="w-5 h-5 mr-2 text-green-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                    </svg>
+                    Advanced Analytics
+                  </li>
+                  <li className="flex items-center text-gray-600">
+                    <svg className="w-5 h-5 mr-2 text-green-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                    </svg>
+                    Priority Support
+                  </li>
+                </ul>
+                <button className="w-full py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-medium transition-colors">
+                  Choose Pro
+                </button>
+              </div>
+            </div>
+            
+            {/* Enterprise Plan */}
+            <div className="bg-gray-50 rounded-xl shadow-sm hover:shadow-md transition-all overflow-hidden">
+              <div className="p-8">
+                <h3 className="text-xl font-bold mb-2 text-gray-900">Enterprise</h3>
+                <p className="text-gray-600 mb-6">For large organizations</p>
+                <div className="mb-6">
+                  <span className="text-4xl font-bold text-gray-900">$99</span>
+                  <span className="text-gray-600">/month</span>
+                </div>
+                <ul className="space-y-3 mb-8">
+                  <li className="flex items-center text-gray-600">
+                    <svg className="w-5 h-5 mr-2 text-green-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                    </svg>
+                    Unlimited Websites
+                  </li>
+                  <li className="flex items-center text-gray-600">
+                    <svg className="w-5 h-5 mr-2 text-green-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                    </svg>
+                    100GB Storage
+                  </li>
+                  <li className="flex items-center text-gray-600">
+                    <svg className="w-5 h-5 mr-2 text-green-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                    </svg>
+                    Custom Reporting
+                  </li>
+                  <li className="flex items-center text-gray-600">
+                    <svg className="w-5 h-5 mr-2 text-green-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                    </svg>
+                    Dedicated Support
+                  </li>
+                </ul>
+                <button className="w-full py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-medium transition-colors">
+                  Choose Enterprise
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-20 bg-gradient-to-r from-blue-600 to-purple-600 text-white">
+        <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl font-bold mb-6">Start Building Your Website Today</h2>
+          <p className="text-xl mb-10 opacity-90">Join thousands of satisfied customers and create your perfect website</p>
+          
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <button className="bg-white text-blue-600 text-lg font-medium py-4 px-8 rounded-lg shadow-lg hover:shadow-xl transition-all">
+              Get Started Free
+            </button>
+            <button className="bg-transparent text-white text-lg font-medium py-4 px-8 rounded-lg shadow-lg hover:shadow-xl transition-all border border-white">
+              Schedule a Demo
+            </button>
+          </div>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="py-10 px-4 sm:px-6 lg:px-8 bg-gray-900 text-white">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+            <div>
+              <h3 className="text-lg font-bold text-white mb-4">About Us</h3>
+              <p className="text-gray-400">We help businesses create beautiful websites without coding knowledge.</p>
+            </div>
+            
+            <div>
+              <h3 className="text-lg font-bold text-white mb-4">Quick Links</h3>
+              <ul className="space-y-2">
+                <li>
+                  <a href="#" className="text-gray-400 hover:text-white">Home</a>
+                </li>
+                <li>
+                  <a href="#" className="text-gray-400 hover:text-white">Features</a>
+                </li>
+                <li>
+                  <a href="#" className="text-gray-400 hover:text-white">Pricing</a>
+                </li>
+                <li>
+                  <a href="#" className="text-gray-400 hover:text-white">Testimonials</a>
+                </li>
+                <li>
+                  <a href="#" className="text-gray-400 hover:text-white">Contact</a>
+                </li>
+              </ul>
+            </div>
+            
+            <div>
+              <h3 className="text-lg font-bold text-white mb-4">Contact</h3>
+              <p className="text-gray-400">Email: info@acmeinc.com</p>
+              <p className="text-gray-400">Phone: +1 (555) 123-4567</p>
+            </div>
+            
+            <div>
+              <h3 className="text-lg font-bold text-white mb-4">Follow Us</h3>
+              <div className="flex space-x-4">
+                <a href="#" className="text-gray-400 hover:text-white">
+                  <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M24 4.557c-.883.392-1.83.656-2.828.775 1.017-.609 1.798-1.574 2.457-2.72 2.756C18.505 1.56 15.837.75 12.965.75c-3.122 0-5.86.825-8.193 2.075C1.44 4.875.75 7.5.75 10.38c0 2.88.75 5.625 2.076 8.1C1.44 15.937 3.75 18.6 6.57 19.8c.825.45 1.65.675 2.475.675 2.625 0 1.8-1.5 3.375-3.375 3.375-1.8 0-2.25.75-4.2 2.25-5.4C5.04 15.6 2.25 12.75 2.25 9.75c0-2.625.75-5.25 2.1-7.5 2.1 3 6.75 8.25 12 15.75 13.8 1.5.15 2.625-1.5 4.5-3.375 6.375z"/>
+                  </svg>
+                </a>
+                <a href="#" className="text-gray-400 hover:text-white">
+                  <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M19.567 3H4.43C3.545 3 3 3.545 3 4.43v15.136c0 .884.545 1.43 1.43 1.43h15.136c.884 0 1.43-.546 1.43-1.43V4.43C21 3.545 20.455 3 19.567 3zM10.5 16.5c-2.757 0-5.424-1.243-7.23-3.048C1.5 11.325 1.5 8.658 1.5 6 1.5 4.104 1.5 2.25 3.354 2.25 5.25c0 2.667 1.854 4.521 3.708 4.521 2.484 0 4.968-1.854 6.78-3.66 6.78 1.854 0 3.66-1.815 5.475-3.66 5.475 1.854 0 3.66-1.815 5.475-3.66C15.975 12 15.975 9.333 15.975 6 15.975c0-2.667-1.854-4.521-3.66-4.521-2.484 0-4.968 1.854-6.78 3.66-6.78 1.854 0 3.66 1.815 5.475 3.66 5.475 1.854 0 3.66-1.815 5.475-3.66C21 12 21 15.975 21 19.312c0 2.667-1.854 4.521-3.66 4.521z"/>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+          
+          <div className="border-t border-gray-800 pt-8 text-center text-gray-400 text-sm">
+            <p>© 2024 Acme Inc. All rights reserved.</p>
+          </div>
+        </div>
+      </footer>
+    </div>
+  );
+}
