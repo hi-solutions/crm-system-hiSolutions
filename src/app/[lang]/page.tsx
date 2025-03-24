@@ -1,8 +1,9 @@
 import { getDictionary } from "@/lib/dictionary";
 // import { getLanguageServer } from "@/lib/language";
 import { FaLeaf, FaHeart, FaShieldAlt, FaRegLightbulb, FaRegStar } from "react-icons/fa";
+import { Params } from "./layout"; // Import the Params type from layout.tsx
 
-export default async function Home({ params }: { params: { lang: 'ar' | 'en' } }) {
+export default async function Home({ params }: { params: Params }) {
   const { lang } = await params;
   
   const dict = await getDictionary(lang)
