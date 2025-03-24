@@ -4,7 +4,7 @@ import type { NextRequest } from 'next/server'
 import { match as matchLocale } from '@formatjs/intl-localematcher'
 import Negotiator from 'negotiator'
 
-// List of all supported locales
+
 export const locales = ['en', 'ar']
 export const defaultLocale = 'ar'
 
@@ -20,7 +20,7 @@ function getLocale(request: NextRequest): string {
         return localeCookie.value
     }
 
-    // Fall back to header negotiation
+    
     const negotiatorHeaders: Record<string, string> = {}
     request.headers.forEach((value, key) => (negotiatorHeaders[key] = value))
 
@@ -30,9 +30,27 @@ function getLocale(request: NextRequest): string {
     return locale
 }
 
-export function middleware(request: NextRequest) {
-    const pathname = request.nextUrl.pathname
-    const search = request.nextUrl.search // Get query string
+export const middleware = (request: NextRequest) => {
+    
+    const { pathname } = request.nextUrl
+    
+
+    if (
+        pathname.includes('/_next/') ||
+        pathname.includes('/favicon.ico') ||
+        pathname.includes('/images/') ||
+        pathname.endsWith('.svg') ||
+        pathname.endsWith('.jpg') ||
+        pathname.endsWith('.png') ||
+        pathname.endsWith('.woff') ||
+        pathname.endsWith('.woff2') ||
+        pathname.endsWith('.css') ||
+        pathname.endsWith('.js')
+    ) {
+        return NextResponse.next()
+    }
+    
+    const search = request.nextUrl.search 
 
     const pathnameIsMissingLocale = locales.every(
         (locale) => !pathname.startsWith(`/${locale}/`) && pathname !== `/${locale}`
@@ -44,7 +62,7 @@ export function middleware(request: NextRequest) {
             new URL(`/${locale}${pathname}${search}`, request.url)
         )
         
-        // Set cookie if it doesn't exist
+
         if (!request.cookies.has('NEXT_LOCALE')) {
             response.cookies.set('NEXT_LOCALE', locale)
         }
@@ -53,6 +71,6 @@ export function middleware(request: NextRequest) {
     }
 }
 
-export const config = {
-    matcher: ['/((?!api|_next|.*\\..*).*)']
-}
+export const matcher = [
+  '/(.*)'
+];

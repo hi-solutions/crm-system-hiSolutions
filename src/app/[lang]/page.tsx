@@ -2,11 +2,10 @@ import { getDictionary } from "@/lib/dictionary";
 // import { getLanguageServer } from "@/lib/language";
 import { FaLeaf, FaHeart, FaShieldAlt, FaRegLightbulb, FaRegStar } from "react-icons/fa";
 
-export default async function Home({params : {lang}}:{params: {lang: 'ar' | 'en'}}) {
-
-
-  const dict = await getDictionary(lang as 'ar' | 'en')
-
+export default async function Home({ params }: { params: { lang: 'ar' | 'en' } }) {
+  const { lang } = await params;
+  
+  const dict = await getDictionary(lang)
 
   return (
     <div className="min-h-screen bg-white font-sans">
