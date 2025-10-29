@@ -8,6 +8,8 @@ import {
   FaRegStar,
 } from "react-icons/fa";
 import { Params } from "./layout"; // Import the Params type from layout.tsx
+import ManagaSales from "@/components/home sections/ManagaSales";
+import Image from "next/image";
 
 export default async function Home({ params }: { params: Params }) {
   const { lang } = await params;
@@ -195,91 +197,23 @@ export default async function Home({ params }: { params: Params }) {
         </div>
       </section>
 
-      {/* Testimonials Section */}
-      <section className="py-20 bg-gray-50">
-        <div className="mx-auto px-4 md:px-10 lg:px-16">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">
-              Loved by Thousands
-            </h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Here&apos;s what our customers have to say about our platform
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {/* Testimonial 1 */}
-            <div className="bg-white p-8 rounded-xl shadow-md">
-              <div className="flex items-center mb-4">
-                <div className="w-12 h-12 rounded-full overflow-hidden mr-4 bg-gray-200">
-                  <img
-                    src="https://randomuser.me/api/portraits/women/17.jpg"
-                    alt="Customer"
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                <div>
-                  <h4 className="text-lg font-semibold text-gray-900">
-                    Sarah Johnson
-                  </h4>
-                  <p className="text-gray-500">Small Business Owner</p>
-                </div>
-              </div>
-              <p className="text-gray-600">
-                {
-                  "I was able to create my business website in just a few hours. The platform is incredibly easy to use and the templates are beautiful!"
-                }
-              </p>
-            </div>
-
-            {/* Testimonial 2 */}
-            <div className="bg-white p-8 rounded-xl shadow-md">
-              <div className="flex items-center mb-4">
-                <div className="w-12 h-12 rounded-full overflow-hidden mr-4 bg-gray-200">
-                  <img
-                    src="https://randomuser.me/api/portraits/men/32.jpg"
-                    alt="Customer"
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                <div>
-                  <h4 className="text-lg font-semibold text-gray-900">
-                    Michael Chen
-                  </h4>
-                  <p className="text-gray-500">Freelance Designer</p>
-                </div>
-              </div>
-              <p className="text-gray-600">
-                {
-                  "As a designer, I appreciate the flexibility and customization options. I can create unique websites for my clients without writing code."
-                }
-              </p>
-            </div>
-
-            {/* Testimonial 3 */}
-            <div className="bg-white p-8 rounded-xl shadow-md">
-              <div className="flex items-center mb-4">
-                <div className="w-12 h-12 rounded-full overflow-hidden mr-4 bg-gray-200">
-                  <img
-                    src="https://randomuser.me/api/portraits/women/54.jpg"
-                    alt="Customer"
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                <div>
-                  <h4 className="text-lg font-semibold text-gray-900">
-                    Emily Rodriguez
-                  </h4>
-                  <p className="text-gray-500">E-commerce Store Owner</p>
-                </div>
-              </div>
-              <p className="text-gray-600">
-                {
-                  "Setting up my online store was amazingly simple. The payment integration works flawlessly and my sales have increased by 40%!"
-                }
-              </p>
-            </div>
-          </div>
+      {/* manage real state Section */}
+      <section className="py-20 px-4 md:px-10 lg:px-16 bg-gray-50 relative flex flex-col items-center justify-center gap-10">
+        <div className="flex justify-center items-center">
+          <ManagaSales
+            title="Everything you need to manage real estate sales in one place..."
+            description="Powerful and easy tools that help you achieve sales quickly and accurately"
+          />
+        </div>
+        <div className="flex justify-center items-center w-full max-w-4xl mx-auto">
+          <Image
+            src="/images/manageMockup.png"
+            alt="Manage Real State"
+            width={1200}
+            height={600}
+            className="w-full h-auto object-contain transform translate-x-4 md:translate-x-12"
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 90vw, 896px"
+          />
         </div>
       </section>
 
