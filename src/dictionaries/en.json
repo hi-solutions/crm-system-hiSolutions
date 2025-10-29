@@ -1,3 +1,11 @@
 {
-  "home": "Home"
+  "home": "Home",
+  "navHome": "Home",
+  "navFeatures": "Our Features",
+  "navPricing": "Pricing",
+  "navAbout": "About Us",
+  "navContact": "Contact",
+  "start14DaysTrial": "Start 14 Days Trial",
+  "heroMainText": "Everything you need to manage real estate sales in one place...",
+  "heroToolsText": "Powerful and easy tools that help you achieve sales quickly and accurately"
 }
