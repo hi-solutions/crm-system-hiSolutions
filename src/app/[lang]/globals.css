@@ -1,6 +1,5 @@
 @import "tailwindcss";
 
-
 :root {
   --Primary: #e7c498;
   --Strok: #654321;
@@ -72,7 +71,7 @@ a {
   left: 50%;
   transform: translateX(-50%);
   text-align: center;
-  background-color: #E7C498;
+  background-color: #e7c498;
   color: #f0f0f0;
 }
 
@@ -81,12 +80,10 @@ a {
   color: #fff; /* Ensure text remains visible */
 }
 
-
 .dropdown-menu .dropdown-item:hover {
-  background-color: #E7C498; /* Hover background color */
+  background-color: #e7c498; /* Hover background color */
   color: #fff; /* Ensure text remains visible */
 }
-
 
 .header {
   display: flex;

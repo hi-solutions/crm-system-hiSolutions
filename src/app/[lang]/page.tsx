@@ -1,206 +1,36 @@
 import { getDictionary } from "@/lib/dictionary";
-// import { getLanguageServer } from "@/lib/language";
 import {
   FaLeaf,
   FaHeart,
   FaShieldAlt,
   FaRegLightbulb,
   FaRegStar,
+  FaCheck,
 } from "react-icons/fa";
 import { Params } from "./layout"; // Import the Params type from layout.tsx
-import ManagaSales from "@/components/home sections/ManagaSales";
 import Image from "next/image";
+import SectionHeader from "@/components/SectionHeader/SectionHeader";
+import Card from "@/components/Card/Card";
 
 export default async function Home({ params }: { params: Params }) {
   const { lang } = await params;
 
   const dict = await getDictionary(lang);
 
+  const benefitsTexts = [
+    "حلول أسرع للعملاء",
+    "منع إرهاق الفريق",
+    "خفض تكاليفك",
+  ];
+
   return (
     <div className="min-h-screen bg-white font-sans">
       {/* Hero Section */}
-      <section className="pt-28 pb-20 bg-gray-50">
-        <div className="mx-auto px-4 md:px-10 lg:px-16">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            {/* Hero Content */}
-            <div>
-              <div className="mb-6 inline-block">
-                <span className="bg-blue-100 text-blue-800 text-sm font-medium px-4 py-1 rounded-full">
-                  New Release
-                </span>
-              </div>
-
-              <h1 className="text-4xl lg:text-5xl font-bold mb-6 text-gray-900 leading-tight">
-                Build Beautiful Websites Faster Than Ever
-              </h1>
-
-              <p className="text-xl text-gray-600 mb-8 leading-relaxed">
-                Our platform helps you create stunning websites without any
-                coding knowledge. Get started in minutes and launch your dream
-                website today.
-              </p>
-
-              <div className="flex flex-wrap gap-4">
-                <button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg font-medium transition-all shadow-md hover:shadow-lg flex items-center justify-center gap-2 text-lg">
-                  <FaLeaf className="text-sm" /> Get Started
-                </button>
-
-                <button className="bg-white text-blue-600 px-8 py-3 rounded-lg font-medium transition-all shadow-md hover:shadow-lg border border-blue-100 flex items-center justify-center gap-2 text-lg hover:bg-gray-50">
-                  <FaHeart className="text-sm" /> Learn More
-                </button>
-                <button className="bg-white text-blue-600 px-8 py-3 rounded-lg font-medium transition-all shadow-md hover:shadow-lg border border-blue-100 flex items-center justify-center gap-2 text-lg hover:bg-gray-50">
-                  {dict.home}
-                </button>
-              </div>
-
-              {/* Trust Badges */}
-              <div className="mt-12 flex flex-wrap items-center gap-8">
-                <div className="flex items-center gap-2">
-                  <div className="bg-blue-100 w-8 h-8 rounded-full flex items-center justify-center">
-                    <FaShieldAlt className="text-blue-600 text-sm" />
-                  </div>
-                  <span className="text-gray-700 font-medium">
-                    Secure & Reliable
-                  </span>
-                </div>
-
-                <div className="flex items-center gap-2">
-                  <div className="bg-blue-100 w-8 h-8 rounded-full flex items-center justify-center">
-                    <FaRegLightbulb className="text-blue-600 text-sm" />
-                  </div>
-                  <span className="text-gray-700 font-medium">Easy to Use</span>
-                </div>
-
-                <div className="flex items-center gap-2">
-                  <div className="bg-blue-100 w-8 h-8 rounded-full flex items-center justify-center">
-                    <FaRegStar className="text-blue-600 text-sm" />
-                  </div>
-                  <span className="text-gray-700 font-medium">
-                    5-Star Support
-                  </span>
-                </div>
-              </div>
-            </div>
-
-            {/* Hero Image */}
-            <div className="relative">
-              <div className="absolute -inset-4 bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-xl blur-xl"></div>
-              <div className="relative bg-white p-4 rounded-xl shadow-lg overflow-hidden border border-gray-100">
-                <div className="aspect-video rounded-lg overflow-hidden bg-gray-100">
-                  <img
-                    src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop"
-                    alt="Dashboard Demo"
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Features Section */}
-      <section className="py-20 bg-white">
-        <div className="mx-auto px-4 md:px-10 lg:px-16">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">
-              Powerful Features
-            </h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Everything you need to build stunning websites without any coding
-              skills
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {/* Feature 1 */}
-            <div className="bg-gray-50 p-8 rounded-xl shadow-sm hover:shadow-md transition-all">
-              <div className="bg-blue-100 w-12 h-12 rounded-lg flex items-center justify-center mb-6">
-                <svg
-                  className="w-6 h-6 text-blue-600"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"
-                  />
-                </svg>
-              </div>
-              <h3 className="text-xl font-bold mb-3 text-gray-900">
-                Drag & Drop Builder
-              </h3>
-              <p className="text-gray-600">
-                Build your website visually with our intuitive drag and drop
-                interface. No coding required.
-              </p>
-            </div>
-
-            {/* Feature 2 */}
-            <div className="bg-gray-50 p-8 rounded-xl shadow-sm hover:shadow-md transition-all">
-              <div className="bg-blue-100 w-12 h-12 rounded-lg flex items-center justify-center mb-6">
-                <svg
-                  className="w-6 h-6 text-blue-600"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"
-                  />
-                </svg>
-              </div>
-              <h3 className="text-xl font-bold mb-3 text-gray-900">
-                Payment Integration
-              </h3>
-              <p className="text-gray-600">
-                Easily integrate payment solutions and start selling products or
-                services online.
-              </p>
-            </div>
-
-            {/* Feature 3 */}
-            <div className="bg-gray-50 p-8 rounded-xl shadow-sm hover:shadow-md transition-all">
-              <div className="bg-blue-100 w-12 h-12 rounded-lg flex items-center justify-center mb-6">
-                <svg
-                  className="w-6 h-6 text-blue-600"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"
-                  />
-                </svg>
-              </div>
-              <h3 className="text-xl font-bold mb-3 text-gray-900">
-                Analytics Dashboard
-              </h3>
-              <p className="text-gray-600">
-                Track website performance with built-in analytics. Monitor
-                visitors, sales, and engagement.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* manage real state Section */}
       <section className="py-20 px-4 md:px-10 lg:px-16 bg-gray-50 relative flex flex-col items-center justify-center gap-10">
         <div className="flex justify-center items-center">
-          <ManagaSales
+          <SectionHeader
             title="Everything you need to manage real estate sales in one place..."
             description="Powerful and easy tools that help you achieve sales quickly and accurately"
           />
@@ -213,6 +43,124 @@ export default async function Home({ params }: { params: Params }) {
             height={600}
             className="w-full h-auto object-contain transform translate-x-4 md:translate-x-12"
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 90vw, 896px"
+          />
+        </div>
+      </section>
+
+      {/* Integrations Section */}
+      <section className="py-20 bg-white">
+        <div
+          className="bg-center bg-no-repeat flex justify-center min-h-[400px] sm:min-h-[500px] md:min-h-[600px] lg:min-h-[700px]"
+          style={{
+            backgroundImage: "url('/images/social_media_list.png')",
+            backgroundSize: "clamp(300px, 90vw, 1200px) auto",
+            width: "100%",
+          }}
+        >
+          <div className="flex justify-center items-end py-30 px-4 md:px-10 lg:px-16">
+            <SectionHeader
+              tag={{ title: "Integrations" }}
+              title="Will it work with my other tools?"
+              description="Referral programs, push notifications, social sharing, payment gateways, A/B testing, desktop editors, mobile apps, comments, notifications. Yes."
+              linkText="Explore the integrations library →"
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* one system Section */}
+      <section className="py-20 px-4 md:px-10 lg:px-16 bg-gray-50 relative flex flex-col items-center justify-center gap-10">
+        <div className="flex justify-center items-center">
+          <SectionHeader
+            tag={{ title: "One system" }}
+            title="One system that serves all departments of your company"
+            description="Carefully designed to meet the needs of each team in your real estate company"
+            linkText="Learn more about our Inbox"
+          />
+        </div>
+        <div className="flex justify-center items-center w-full max-w-4xl mx-auto">
+          <Image
+            src="/images/dashboard_screen.png"
+            alt="Manage Real State"
+            width={1200}
+            height={600}
+            className="w-full h-auto object-contain "
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 90vw, 896px"
+          />
+        </div>
+        <ul className="flex flex-wrap items-center gap-4 justify-center mt-8 list-none">
+          {benefitsTexts.map((text, index) => (
+            <li key={index} className="flex items-center gap-2">
+              <div
+                className="w-6 h-6 rounded-full flex items-center justify-center"
+                style={{ backgroundColor: "#005FDA" }}
+              >
+                <FaCheck className="text-white text-xs" />
+              </div>
+              <span>{text}</span>
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      {/* multiple divs section that shows the different features of the system */}
+      <section className="py-20 px-4 md:px-10 lg:px-16 bg-gray-50 relative flex flex-col items-center justify-center gap-10">
+        {/* upper part  */}
+        <div className="flex md:flex-row flex-col items-stretch gap-5 w-full">
+          {/* the single card  */}
+          <div className="w-full lg:w-1/2 flex">
+            <Card
+              title="Ticketing"
+              description="Easily collaborate with colleagues to quickly solve complex problems,
+as well as allow customers to track progress in real time."
+              image="/images/details_screen.png"
+              flexDirection="col"
+              className="additional-classes h-full w-full"
+            />
+          </div>
+          {/* the two cards  */}
+          <div className="flex flex-col w-full lg:w-1/2 gap-6">
+            <Card
+              title="Configurable"
+              description="Change language, turn on dark mode, save custom views, and more."
+              image="/images/chat_screen.png"
+              flexDirection="row"
+              className="additional-classes flex-1"
+            />
+            <Card
+              title="Omnichannel"
+              description="See all your support conversations in one place."
+              image="/images/social_screen.png"
+              flexDirection="row"
+              className="additional-classes flex-1"
+            />
+          </div>
+        </div>
+        {/* lower part - 3 horizontal cards */}
+        <div className="flex md:flex-row flex-col items-stretch gap-5 w-full">
+          <Card
+            title="Ticketing"
+            description="Easily collaborate with colleagues to quickly solve complex problems,
+as well as allow customers to track progress in real time."
+            image="/images/details_screen.png"
+            flexDirection="col"
+            className="additional-classes h-full w-full"
+          />
+          <Card
+            title="Ticketing"
+            description="Easily collaborate with colleagues to quickly solve complex problems,
+as well as allow customers to track progress in real time."
+            image="/images/details_screen.png"
+            flexDirection="col"
+            className="additional-classes h-full w-full"
+          />
+          <Card
+            title="Ticketing"
+            description="Easily collaborate with colleagues to quickly solve complex problems,
+as well as allow customers to track progress in real time."
+            image="/images/details_screen.png"
+            flexDirection="col"
+            className="additional-classes h-full w-full"
           />
         </div>
       </section>
