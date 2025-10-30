@@ -7,6 +7,8 @@ import Card from "@/components/Card/Card";
 import PricingSection from "@/components/home sections/Pricing";
 import FAQSection from "@/components/FAQ/FAQSection";
 import Hero from "@/components/home sections/Hero";
+import Testimonials from "@/components/home sections/Testimonials";
+import TrustedBy from "@/components/home sections/TrustedBy";
 
 export default async function Home({ params }: { params: Params }) {
   const { lang } = await params;
@@ -22,9 +24,12 @@ export default async function Home({ params }: { params: Params }) {
   const dict = await getDictionary(lang);
 
   return (
-    <div className="min-h-screen bg-white font-sans">
+    <div className="min-h-screen bg-white font-sans overflow-hidden">
       {/* Hero Section */}
       <Hero dict={dict} params={{ lang }} />
+      {/* Trusted by Section */}
+      <TrustedBy dict={dict} lang={lang} />
+
       {/* manage real state Section */}
       <section className="py-20 px-4 md:px-10 lg:px-16 bg-gray-50 relative flex flex-col items-center justify-center gap-10">
         <div className="flex justify-center items-center">
@@ -162,6 +167,9 @@ as well as allow customers to track progress in real time."
           />
         </div>
       </section>
+
+      {/* Testimonials Section */}
+      <Testimonials dict={dict} />
 
       {/* Pricing Section */}
       <section className="py-20 bg-white">
