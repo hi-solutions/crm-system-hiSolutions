@@ -16,11 +16,10 @@ export default function Footer() {
   return (
     <footer className=" md:px-10 md:py-10 lg:px-16 lg:py-14 bg-white ">
       <div className="mx-auto max-w-7xl text-white bg-gradient-to-r from-[#0199E9] to-[#015683] md:rounded-4xl px-4 py-3 md:px-6 md:py-4 lg:px-20 lg:py-14">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-5 gap-8">
           {/* Brand + tagline + socials + signup */}
-          <div className="space-y-4">
+          <div className="space-y-4 md:col-span-2">
             <div className="flex items-center gap-2">
-              {/* <HiCrmLogo className="h-14 w-auto" /> */}
               <HiSolutionsLogo className="h-14 w-auto" />
             </div>
             <p className="text-white/80 text-sm leading-6">
@@ -62,14 +61,12 @@ export default function Footer() {
                 placeholder={dictionary.footerEmailPlaceholder}
                 className="w-full rounded-xl px-3 py-2 text-gray-900 bg-white border border-[#9AA4B1] hover:cursor-pointer focus:border-[#0199E9] transition-all duration-300"
               />
-              <button
+              <Button
                 type="button"
-                className="bg-white text-blue-700 px-4 rounded-xl font-medium hover:bg-blue-50 hover:cursor-pointer"
+                className="!bg-white !text-blue-700 px-4 py-2 rounded-xl font-medium hover:!bg-blue-50"
               >
                 {dictionary.footerSignup}
-              </button>
-
-              <Button />
+              </Button>
             </form>
           </div>
 
