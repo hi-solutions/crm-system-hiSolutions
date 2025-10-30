@@ -13,6 +13,7 @@
     "country-flag-icons": "^1.5.21",
     "framer-motion": "^12.5.0",
     "gsap": "^3.12.7",
+    "lucide-react": "0.548.0",
     "negotiator": "^1.0.0",
     "next": "15.2.3",
     "react": "^19.0.0",
