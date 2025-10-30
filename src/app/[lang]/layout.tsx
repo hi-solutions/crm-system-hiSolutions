@@ -4,6 +4,7 @@ import "./globals.css";
 import { Noto_Sans_Arabic, Inter } from "next/font/google";
 import { DictionaryProvider } from "@/hooks/Dickitionary";
 import NavbarWrapper from "@/components/LangSwitcher/Navbar/NavbarWrapper";
+import Footer from "@/components/Footer/Footer";
 
 const notoSansArabic = Noto_Sans_Arabic({
   subsets: ["arabic"],
@@ -121,6 +122,7 @@ export default async function RootLayout({
         <DictionaryProvider dictionary={dict} language={lang}>
           <NavbarWrapper lang={lang} />
           {children}
+          <Footer />
         </DictionaryProvider>
       </body>
     </html>

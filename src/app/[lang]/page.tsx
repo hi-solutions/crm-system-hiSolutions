@@ -1,22 +1,16 @@
 import { getDictionary } from "@/lib/dictionary";
-import {
-  FaLeaf,
-  FaHeart,
-  FaShieldAlt,
-  FaRegLightbulb,
-  FaRegStar,
-  FaCheck,
-} from "react-icons/fa";
+import { FaCheck } from "react-icons/fa";
 import { Params } from "./layout"; // Import the Params type from layout.tsx
 import Image from "next/image";
 import SectionHeader from "@/components/SectionHeader/SectionHeader";
 import Card from "@/components/Card/Card";
 import PricingSection from "@/components/home sections/Pricing";
+import FAQSection from "@/components/FAQ/FAQSection";
 
 export default async function Home({ params }: { params: Params }) {
   const { lang } = await params;
 
-  const dict = await getDictionary(lang);
+  await getDictionary(lang);
 
   const benefitsTexts = [
     "حلول أسرع للعملاء",
@@ -173,107 +167,12 @@ as well as allow customers to track progress in real time."
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-blue-600 to-purple-600 text-white">
-        <div className="mx-auto text-center px-4 md:px-10 lg:px-16">
-          <h2 className="text-3xl font-bold mb-6">
-            Start Building Your Website Today
-          </h2>
-          <p className="text-xl mb-10 opacity-90">
-            Join thousands of satisfied customers and create your perfect
-            website
-          </p>
-
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="bg-white text-blue-600 text-lg font-medium py-4 px-8 rounded-lg shadow-lg hover:shadow-xl transition-all">
-              Get Started Free
-            </button>
-            <button className="bg-transparent text-white text-lg font-medium py-4 px-8 rounded-lg shadow-lg hover:shadow-xl transition-all border border-white">
-              Schedule a Demo
-            </button>
-          </div>
+      {/* FAQ Section */}
+      <section className="py-20 px-4 md:px-10 lg:px-16 relative flex flex-col items-center justify-center gap-10 bg-white">
+        <div className="min-h-screen bg-white">
+          <FAQSection /> {/* FAQSection component */}
         </div>
       </section>
-
-      {/* Footer */}
-      <footer className="py-10 px-4 md:px-10 lg:px-16 bg-gray-900 text-white">
-        <div className="mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
-            <div>
-              <h3 className="text-lg font-bold text-white mb-4">About Us</h3>
-              <p className="text-gray-400">
-                We help businesses create beautiful websites without coding
-                knowledge.
-              </p>
-            </div>
-
-            <div>
-              <h3 className="text-lg font-bold text-white mb-4">Quick Links</h3>
-              <ul className="space-y-2">
-                <li>
-                  <a href="#" className="text-gray-400 hover:text-white">
-                    Home
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="text-gray-400 hover:text-white">
-                    Features
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="text-gray-400 hover:text-white">
-                    Pricing
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="text-gray-400 hover:text-white">
-                    Testimonials
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="text-gray-400 hover:text-white">
-                    Contact
-                  </a>
-                </li>
-              </ul>
-            </div>
-
-            <div>
-              <h3 className="text-lg font-bold text-white mb-4">Contact</h3>
-              <p className="text-gray-400">Email: info@acmeinc.com</p>
-              <p className="text-gray-400">Phone: +1 (555) 123-4567</p>
-            </div>
-
-            <div>
-              <h3 className="text-lg font-bold text-white mb-4">Follow Us</h3>
-              <div className="flex space-x-4">
-                <a href="#" className="text-gray-400 hover:text-white">
-                  <svg
-                    className="w-5 h-5"
-                    fill="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path d="M24 4.557c-.883.392-1.83.656-2.828.775 1.017-.609 1.798-1.574 2.457-2.72 2.756C18.505 1.56 15.837.75 12.965.75c-3.122 0-5.86.825-8.193 2.075C1.44 4.875.75 7.5.75 10.38c0 2.88.75 5.625 2.076 8.1C1.44 15.937 3.75 18.6 6.57 19.8c.825.45 1.65.675 2.475.675 2.625 0 1.8-1.5 3.375-3.375 3.375-1.8 0-2.25.75-4.2 2.25-5.4C5.04 15.6 2.25 12.75 2.25 9.75c0-2.625.75-5.25 2.1-7.5 2.1 3 6.75 8.25 12 15.75 13.8 1.5.15 2.625-1.5 4.5-3.375 6.375z" />
-                  </svg>
-                </a>
-                <a href="#" className="text-gray-400 hover:text-white">
-                  <svg
-                    className="w-5 h-5"
-                    fill="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path d="M19.567 3H4.43C3.545 3 3 3.545 3 4.43v15.136c0 .884.545 1.43 1.43 1.43h15.136c.884 0 1.43-.546 1.43-1.43V4.43C21 3.545 20.455 3 19.567 3zM10.5 16.5c-2.757 0-5.424-1.243-7.23-3.048C1.5 11.325 1.5 8.658 1.5 6 1.5 4.104 1.5 2.25 3.354 2.25 5.25c0 2.667 1.854 4.521 3.708 4.521 2.484 0 4.968-1.854 6.78-3.66 6.78 1.854 0 3.66-1.815 5.475-3.66 5.475 1.854 0 3.66-1.815 5.475-3.66C15.975 12 15.975 9.333 15.975 6 15.975c0-2.667-1.854-4.521-3.66-4.521-2.484 0-4.968 1.854-6.78 3.66-6.78 1.854 0 3.66 1.815 5.475 3.66 5.475 1.854 0 3.66-1.815 5.475-3.66C21 12 21 15.975 21 19.312c0 2.667-1.854 4.521-3.66 4.521z" />
-                  </svg>
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <div className="border-t border-gray-800 pt-8 text-center text-gray-400 text-sm">
-            <p>© 2024 Acme Inc. All rights reserved.</p>
-          </div>
-        </div>
-      </footer>
     </div>
   );
 }

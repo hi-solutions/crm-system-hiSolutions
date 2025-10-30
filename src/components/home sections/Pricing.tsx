@@ -1,20 +1,20 @@
 import React from "react";
-import { User, Users, Building2 } from "lucide-react";
+import { User, Users, Building2, Gift } from "lucide-react";
 import PricingCard from "../Card/PricingCard";
+import SectionHeader from "../SectionHeader/SectionHeader";
+import Button from "../Button";
 
 const Pricing: React.FC = () => {
   return (
     <section className="py-20 bg-gradient-to-b from-gray-50 to-white">
-      <div className="max-w-7xl mx-auto px-4 md:px-10 lg:px-16">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">
-            Simple, Transparent Pricing
-          </h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Choose the plan that fits your needs
-          </p>
+      <div className="max-w-7xl mx-auto px-4 md:px-10 lg:px-16 flex flex-col ">
+        <div className="flex justify-center items-center mb-10">
+          <SectionHeader
+            tag={{ title: "Pricing" }}
+            title="Simple, Transparent Pricing"
+            description="Choose the plan that fits your needs"
+          />
         </div>
-
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
           <PricingCard
             tagText="Professional"
@@ -70,6 +70,14 @@ const Pricing: React.FC = () => {
               "Unlimited projects",
             ]}
           />
+        </div>
+        <div className="mt-8 flex flex-col items-center gap-4">
+          <p className="text-base sm:text-md md:text-lg lg:text-xl font-medium text-[#425061] leading-relaxed max-w-3xl text-center">
+            {" "}
+            Not ready to pay yet? Try the free demo with 600 icons. Same styles,
+            same features, same flexibility. It also includes full preview.
+          </p>
+          <Button icon={<Gift className="w-5 h-5" />}>Try the free demo</Button>
         </div>
       </div>
     </section>
