@@ -38,6 +38,11 @@ export interface Dictionary {
   faq6Answer: string;
   faq7Question: string;
   faq7Answer: string;
+  // Hero
+  manage_your: string;
+  real_estate_sales: string;
+  easier_and_smarter: string;
+  hero_descrption: string;
 }
 
 const dictionaries = {
