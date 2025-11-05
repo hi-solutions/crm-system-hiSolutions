@@ -4,8 +4,9 @@ import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { HiCrmLogo } from "../../../../public/icons/icons";
 import { GB, SA } from "country-flag-icons/react/3x2";
-import { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Button from "@/components/Button";
+import { ChevronDown } from "lucide-react";
 
 export interface Language {
   code: string;
@@ -39,174 +40,319 @@ export default function Navbar({
 }: NavbarProps) {
   const pathname = usePathname();
   const router = useRouter();
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isLangDropdownOpen, setIsLangDropdownOpen] = useState(false);
+  const langDropdownRef = useRef<HTMLDivElement>(null);
 
   const handleLanguageChange = (newLocale: string) => {
     const segments = pathname.split("/");
     segments[1] = newLocale;
     const newPath = segments.join("/");
     router.push(newPath);
+    setIsLangDropdownOpen(false);
   };
 
-  // language flag rendering handled inside LanguageDropdown
+  // Close dropdown when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (
+        langDropdownRef.current &&
+        !langDropdownRef.current.contains(event.target as Node)
+      ) {
+        setIsLangDropdownOpen(false);
+      }
+    };
+
+    if (isLangDropdownOpen) {
+      document.addEventListener("mousedown", handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [isLangDropdownOpen]);
+
+  // Check if current path matches a link (handles home page correctly)
+  const isActive = (href: string) => {
+    // Normalize paths for comparison (remove trailing slashes except for root)
+    const normalizedPathname =
+      pathname === "/" ? pathname : pathname.replace(/\/$/, "");
+    const normalizedHref = href === "/" ? href : href.replace(/\/$/, "");
+
+    // Handle home page case
+    const pathSegments = pathname.split("/");
+    const currentLangFromPath = pathSegments[1] || currentLang;
+    const homePath = `/${currentLangFromPath}`;
+
+    if (
+      normalizedHref === homePath ||
+      normalizedHref === `/${currentLangFromPath}/`
+    ) {
+      // Home page: match exactly or when pathname is just /lang
+      return (
+        normalizedPathname === homePath ||
+        pathname === `/${currentLangFromPath}/`
+      );
+    }
+
+    return (
+      normalizedPathname === normalizedHref ||
+      normalizedPathname.startsWith(`${normalizedHref}/`)
+    );
+  };
 
   return (
-    <nav className=" top-0 left-0 right-0 z-50 bg-white ">
-      <div className=" px-4 md:px-10 lg:px-16 ">
-        {/* <div className="max-w-7xl mx-auto lg:px-20 px-4 md:px-16"> */}
-        <div className="flex items-center justify-between py-4">
+    <nav className="bg-white top-0 left-0 right-0 z-50">
+      <div className="w-full mx-auto px-4 md:px-10 lg:px-16">
+        <div className="flex justify-between h-16">
           {/* Logo */}
-          <div className="flex items-center flex-1">
-            <HiCrmLogo className="h-14 w-auto" />
+          <div className="flex-shrink-0 flex items-center ">
+            <Link href={`/${currentLang}`} className="text-xl font-bold">
+              <HiCrmLogo className="h-14 w-auto" />
+            </Link>
           </div>
 
-          {/* Navigation Links - Centered */}
-          <div className="hidden md:flex items-center space-x-8 flex-1 justify-center">
-            {navLinks.map((link, index) => {
-              // Normalize paths for comparison (remove trailing slashes except for root)
-              const normalizedPathname =
-                pathname === "/" ? pathname : pathname.replace(/\/$/, "");
-              const normalizedHref =
-                link.href === "/" ? link.href : link.href.replace(/\/$/, "");
-              const isActive = normalizedPathname === normalizedHref;
-              return (
-                <Link
-                  key={index}
-                  href={link.href}
-                  className={`whitespace-nowrap transition-colors text-base ${
-                    isActive
-                      ? "text-[#005FDA] font-semibold"
-                      : "text-gray-700 hover:text-blue-600 font-medium"
-                  }`}
-                >
-                  {link.label}
-                </Link>
-              );
-            })}
-          </div>
-
-          {/* CTA Button and Language Switcher (dropdown) */}
-          <div className="hidden md:flex items-center space-x-4 flex-1 justify-end">
-            {ctaButton && (
-              <Link href={ctaButton.href}>
-                <Button className="shadow-sm hover:shadow-md text-base">
-                  {ctaButton.text}
-                </Button>
+          {/* Desktop Navigation (hidden below 958px) */}
+          <div className="hidden lg:flex items-center space-x-8 text-nowrap flex-1 justify-center ">
+            {navLinks.map((link, index) => (
+              <Link
+                key={index}
+                href={link.href}
+                className={`relative font-medium transition-colors duration-200 whitespace-nowrap ${
+                  isActive(link.href)
+                    ? "text-[#005FDA]"
+                    : "text-gray-700 hover:text-blue-600"
+                }`}
+              >
+                {link.label}
+                {isActive(link.href) && (
+                  <span className="absolute bottom-0 left-0 w-full h-0.5 bg-[#005FDA]"></span>
+                )}
               </Link>
-            )}
+            ))}
+          </div>
 
+          {/* Desktop Buttons and Language Selector (hidden below 958px) */}
+          <div className="hidden lg:flex items-center space-x-4  justify-end ">
+            {ctaButton && (
+              <div className="flex items-center space-x-4 text-nowrap">
+                <Link href={ctaButton.href}>
+                  <Button className="shadow-sm hover:shadow-md text-base">
+                    {ctaButton.text}
+                  </Button>
+                </Link>
+              </div>
+            )}
+            {/* Language Dropdown */}
             <LanguageDropdown
               languages={languages}
               currentLang={currentLang}
               onChange={handleLanguageChange}
+              isOpen={isLangDropdownOpen}
+              setIsOpen={setIsLangDropdownOpen}
+              ref={langDropdownRef}
             />
           </div>
 
-          {/* Mobile Menu Button */}
-          <div className="md:hidden flex items-center">
-            <button className="text-gray-700 hover:text-blue-600 focus:outline-none">
+          {/* Mobile menu button (visible below 958px) */}
+          <div className="lg:hidden flex items-center">
+            <button
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              className="inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-blue-600 focus:outline-none"
+            >
               <svg
-                xmlns="http://www.w3.org/2000/svg"
                 className="h-6 w-6"
+                stroke="currentColor"
                 fill="none"
                 viewBox="0 0 24 24"
-                stroke="currentColor"
               >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M4 6h16M4 12h16M4 18h16"
-                />
+                {isMenuOpen ? (
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M6 18L18 6M6 6l12 12"
+                  />
+                ) : (
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M4 6h16M4 12h16M4 18h16"
+                  />
+                )}
               </svg>
             </button>
           </div>
         </div>
       </div>
+
+      {/* Mobile Menu (visible below 958px) */}
+      {isMenuOpen && (
+        <div className="lg:hidden">
+          <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+            {navLinks.map((link, index) => (
+              <Link
+                key={index}
+                href={link.href}
+                className={`block px-3 py-2 rounded-md text-base font-medium ${
+                  isActive(link.href)
+                    ? "text-[#005FDA] bg-gray-50"
+                    : "text-gray-700 hover:bg-gray-50 hover:text-blue-600"
+                }`}
+                onClick={() => setIsMenuOpen(false)}
+              >
+                {link.label}
+                {isActive(link.href) && (
+                  <span className="block w-full h-0.5 bg-[#005FDA] mt-1"></span>
+                )}
+              </Link>
+            ))}
+            {/* Mobile Language Selector */}
+            <div className="pt-4 pb-2 px-3">
+              <LanguageDropdown
+                languages={languages}
+                currentLang={currentLang}
+                onChange={handleLanguageChange}
+                isOpen={isLangDropdownOpen}
+                setIsOpen={setIsLangDropdownOpen}
+                isMobile={true}
+                ref={langDropdownRef}
+              />
+            </div>
+            {ctaButton && (
+              <div className="pt-4 pb-2 px-3 space-y-2">
+                <Link
+                  href={ctaButton.href}
+                  className="block w-full text-center px-4 py-2 bg-[#005FDA] text-white rounded-md font-medium hover:bg-blue-700 transition-colors duration-200"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  {ctaButton.text}
+                </Link>
+              </div>
+            )}
+          </div>
+        </div>
+      )}
     </nav>
   );
 }
 
-function LanguageDropdown({
-  languages,
-  currentLang,
-  onChange,
-}: {
-  languages: { code: string; label: string }[];
-  currentLang: string;
-  onChange: (code: string) => void;
-}) {
-  const [open, setOpen] = useState(false);
-  const ref = useRef<HTMLDivElement | null>(null);
-
-  useEffect(() => {
-    const onClick = (e: MouseEvent) => {
-      if (!ref.current) return;
-      if (!ref.current.contains(e.target as Node)) setOpen(false);
+const LanguageDropdown = React.forwardRef<
+  HTMLDivElement,
+  {
+    languages: { code: string; label: string }[];
+    currentLang: string;
+    onChange: (code: string) => void;
+    isOpen: boolean;
+    setIsOpen: (open: boolean) => void;
+    isMobile?: boolean;
+  }
+>(
+  (
+    { languages, currentLang, onChange, isOpen, setIsOpen, isMobile = false },
+    ref
+  ) => {
+    const Flag = ({ code }: { code: string }) => {
+      if (code === "ar") return <SA title="Saudi Arabia" className="w-6 h-4" />;
+      return <GB title="United Kingdom" className="w-6 h-4" />;
     };
-    const onKey = (e: KeyboardEvent) => {
-      if (e.key === "Escape") setOpen(false);
-    };
-    document.addEventListener("click", onClick);
-    document.addEventListener("keydown", onKey);
-    return () => {
-      document.removeEventListener("click", onClick);
-      document.removeEventListener("keydown", onKey);
-    };
-  }, []);
 
-  const Flag = ({ code }: { code: string }) => {
-    if (code === "ar") return <SA title="Saudi Arabia" className="w-6 h-4" />;
-    return <GB title="United Kingdom" className="w-6 h-4" />;
-  };
+    if (isMobile) {
+      return (
+        <div className="relative" ref={ref} aria-label="Language selector">
+          <button
+            onClick={() => setIsOpen(!isOpen)}
+            className="w-full flex items-center justify-between px-4 py-2 border border-gray-200 rounded-md hover:bg-gray-50 transition-colors duration-200"
+          >
+            <div className="flex items-center space-x-2">
+              <span className="inline-flex items-center justify-center w-6 h-4">
+                <Flag code={currentLang} />
+              </span>
+              <span className="text-sm font-medium">
+                {languages.find((l) => l.code === currentLang)?.label ||
+                  currentLang.toUpperCase()}
+              </span>
+            </div>
+            <ChevronDown size={18} />
+          </button>
 
-  return (
-    <div className="relative" ref={ref} aria-label="Language selector">
-      <button
-        onClick={() => setOpen((v) => !v)}
-        className="flex items-center gap-2 px-2.5 py-1.5 border border-gray-200 hover:border-gray-300 rounded-md bg-white shadow-sm"
-        aria-haspopup="listbox"
-        aria-expanded={open}
-      >
-        <Flag code={currentLang} />
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 20 20"
-          fill="currentColor"
-          className="w-4 h-4 text-gray-600"
-          aria-hidden
-        >
-          <path
-            fillRule="evenodd"
-            d="M5.23 7.21a.75.75 0 011.06.02L10 11.17l3.71-3.94a.75.75 0 111.08 1.04l-4.24 4.5a.75.75 0 01-1.08 0L5.21 8.27a.75.75 0 01.02-1.06z"
-            clipRule="evenodd"
-          />
-        </svg>
-      </button>
-
-      {open && (
-        <div
-          className="absolute right-0 mt-2 w-36 bg-white border border-gray-200 rounded-md shadow-lg p-1 z-50"
-          role="listbox"
-        >
-          {languages.map((lang) => (
-            <button
-              key={lang.code}
-              onClick={() => {
-                onChange(lang.code);
-                setOpen(false);
-              }}
-              className={`w-full flex items-center gap-2 px-2 py-1.5 rounded text-left hover:bg-gray-50 ${
-                currentLang === lang.code ? "bg-gray-50" : ""
-              }`}
-              role="option"
-              aria-selected={currentLang === lang.code}
-            >
-              <Flag code={lang.code} />
-              <span className="text-sm text-gray-700">{lang.label}</span>
-            </button>
-          ))}
+          {isOpen && (
+            <div className="mt-2 border border-gray-200 rounded-md">
+              {languages.map((lang, index) => (
+                <button
+                  key={lang.code}
+                  onClick={() => {
+                    onChange(lang.code);
+                    setIsOpen(false);
+                  }}
+                  className={`w-full flex items-center space-x-2 px-4 py-2 text-left hover:bg-gray-50 transition-colors duration-200 ${
+                    index === 0 ? "rounded-t-md" : ""
+                  } ${index === languages.length - 1 ? "rounded-b-md" : ""} ${
+                    index > 0 ? "border-t border-gray-100" : ""
+                  }`}
+                >
+                  <span className="inline-flex items-center justify-center w-6 h-4">
+                    <Flag code={lang.code} />
+                  </span>
+                  <span className="text-sm font-medium">{lang.label}</span>
+                  {currentLang === lang.code && (
+                    <span className="ml-auto text-[#005FDA]">✓</span>
+                  )}
+                </button>
+              ))}
+            </div>
+          )}
         </div>
-      )}
-    </div>
-  );
-}
+      );
+    }
+
+    return (
+      <div className="relative" ref={ref} aria-label="Language selector">
+        <button
+          onClick={() => setIsOpen(!isOpen)}
+          className="flex items-center space-x-2 px-3 py-2 border border-gray-200 rounded-md hover:bg-gray-50 transition-colors duration-200 cursor-pointer"
+          aria-haspopup="listbox"
+          aria-expanded={isOpen}
+        >
+          <span className="inline-flex items-center justify-center w-6 h-4">
+            <Flag code={currentLang} />
+          </span>
+          <span className="text-sm font-medium">
+            {currentLang.toUpperCase()}
+          </span>
+          <ChevronDown size={16} />
+        </button>
+
+        {isOpen && (
+          <div className="absolute right-0 mt-2 w-40 bg-white border border-gray-200 rounded-md shadow-lg z-50">
+            {languages.map((lang, index) => (
+              <button
+                key={lang.code}
+                onClick={() => {
+                  onChange(lang.code);
+                  setIsOpen(false);
+                }}
+                className={`w-full flex items-center space-x-2 px-4 py-2 text-left hover:bg-gray-50 transition-colors duration-200 ${
+                  index > 0 ? "border-t border-gray-100" : ""
+                }`}
+                role="option"
+                aria-selected={currentLang === lang.code}
+              >
+                <span className="inline-flex items-center justify-center w-6 h-4">
+                  <Flag code={lang.code} />
+                </span>
+                <span className="text-sm font-medium">{lang.label}</span>
+                {currentLang === lang.code && (
+                  <span className="ml-auto text-[#005FDA]">✓</span>
+                )}
+              </button>
+            ))}
+          </div>
+        )}
+      </div>
+    );
+  }
+);
+
+LanguageDropdown.displayName = "LanguageDropdown";
