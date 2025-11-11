@@ -5,10 +5,21 @@ import React from "react";
 export type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
   icon?: React.ReactNode;
   className?: string;
+  textClassName?: string;
 };
 
 export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ icon, className = "", children, type = "button", ...props }, ref) => {
+  (
+    {
+      icon,
+      className = "",
+      textClassName = "",
+      children,
+      type = "button",
+      ...props
+    },
+    ref
+  ) => {
     // Tailwind closest matches per requirements:
     // - Background color closest to #005FDA -> use bg-blue-600
     // - px = 40px -> px-10 (2.5rem)
@@ -32,7 +43,7 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
             {icon}
           </span>
         ) : null}
-        <span className="whitespace-nowrap">{children}</span>
+        <span className={`whitespace-nowrap ${textClassName}`}>{children}</span>
       </button>
     );
   }

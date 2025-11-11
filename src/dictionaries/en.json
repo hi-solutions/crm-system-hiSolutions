@@ -35,6 +35,8 @@
   "faq6Answer": "We offer a 30-day money-back guarantee. If you're not satisfied with your purchase, contact us within 30 days for a full refund, no questions asked.",
   "faq7Question": "What's included in the free version?",
   "faq7Answer": "The free version includes a curated selection of essential icons to help you get started. You can explore the full collection with the premium version, which includes all icons, formats, and exclusive updates.",
+  "frequently_asked_questions": "Frequently Asked Questions",
+  "faq_description": "Everything you need to know about our CRM platform. Can’t find the answer you’re looking for? Feel free to contact us.",
   "manage_your": "Manage your",
   "real_estate_sales": "real estate sales",
   "easier_and_smarter": "is easier and smarter than ever",
@@ -71,5 +73,249 @@
   "feature_advanced_security_title": "Advanced security",
   "feature_advanced_security_desc": "Protect your data with enterprise‑grade encryption and security.",
   "feature_full_customization_title": "End‑to‑end customization",
-  "feature_full_customization_desc": "Customize the platform to match your workflows and needs."
+  "feature_full_customization_desc": "Customize the platform to match your workflows and needs.",
+  "effective_management_tag": "Effective management",
+  "effective_management_title": "Comprehensive management for customers and projects",
+  "effective_management_description": "Track every detail about your customers and real estate projects in one place with a full history of interactions, deals, and documents.",
+  "effective_management_list": [
+    "Unified, organized customer database",
+    "Efficient tracking for all interactions and calls",
+    "Document management with quick access",
+    "Full history for every customer and project"
+  ],
+  "smart_insights_tag": "Smart insights",
+  "smart_insights_title": "Advanced reports and analytics to make better decisions",
+  "smart_insights_description": "Get deep insights into your sales performance with interactive dashboards and fully customizable reports.",
+  "smart_insights_list": [
+    "Real-time dashboards",
+    "Custom reports according to your needs",
+    "Analysis of market trends and performance",
+    "Intelligent forecasts of future sales"
+  ],
+  "speed_and_efficiency_tag": "Speed and efficiency",
+  "speed_and_efficiency_title": "Fast performance and smooth user experience",
+  "speed_and_efficiency_description": "A fast, easy-to-use interface that empowers your team to get more done in less time with smart shortcuts and comprehensive automation.",
+  "speed_and_efficiency_list": [
+    "Intuitive interface that is easy to learn",
+    "Keyboard shortcuts for advanced users",
+    "Intelligent automation of repetitive tasks",
+    "Ultra-fast loading times"
+  ],
+  "who_we_are_tag": "Who we are",
+  "who_we_are_title": "A team of passionate professionals dedicated to building the best CRM for real estate sales",
+  "who_we_are_description": "At Hi-Solutions, we blend cutting-edge software development with creative marketing expertise to deliver exceptional CRM implementations and digital growth strategies.",
+  "learn_more": "Learn More",
+  "our_mission_title": "Our Mission",
+  "our_mission_description": "To be the leading force in CRM innovation and digital marketing excellence, where technology and creativity converge to create transformative business experiences worldwide.",
+  "our_vision_title": "Our Vision",
+  "our_vision_description": "To be the leading force in CRM innovation and digital marketing excellence, where technology and creativity converge to create transformative business experiences worldwide.",
+  "what_we_do_tag": "What we do",
+  "what_we_do_description": "We deliver comprehensive solutions that bridge technology and marketing",
+  "crm_implementation": "CRM Implementation",
+  "crm_implementation_desc": "Expert deployment and customization of leading CRM platforms tailored to your business needs.",
+  "software_development": "Software Development",
+  "software_development_desc": "Custom software solutions built with cutting-edge technologies and best practices.",
+  "digital_marketing": "Digital Marketing",
+  "digital_marketing_desc": "Data-driven marketing strategies that amplify your brand and generate qualified leads.",
+  "agency_services": "Agency Services",
+  "agency_services_desc": "Full-service creative and strategic support to elevate your market presence.",
+  "consulting_strategy": "Consulting & Strategy",
+  "consulting_strategy_desc": "Strategic guidance to align technology and marketing with your business goals.",
+  "analytics_insights": "Analytics & Insights",
+  "analytics_insights_desc": "Transform data into actionable insights that drive informed decision-making.",
+  "how_we_work_tag": "How we work",
+  "how_we_work_description": "Our proven process ensures successful delivery and long-term value",
+  "meet_our_team_tag": "Meet our team",
+  "meet_our_team_description": "Our team is dedicated to delivering exceptional CRM solutions and digital marketing strategies.",
+  "david_park": "David Park",
+  "lead_developer": "Lead Developer",
+  "mohammed_al": "Mohammed Al",
+  "marketing_head": "Marketing Head",
+  "ryan_gosling": "Ryan Gosling",
+  "cto": "CTO",
+  "sara_ahmed": "Sara Ahmed",
+  "ceo": "CEO",
+  "faster_solutions_for_clients": "Faster Solutions for Clients",
+  "prevent_team_burnout": "Prevent Team Burnout",
+  "reduce_your_costs": "Reduce Your Costs",
+  "testimonials_about": "Passionate experts dedicated to your success",
+  "pricing": "Pricing",
+  "prices": "Prices",
+  "flexible_pricing_plans": "Flexible pricing plans for every size",
+  "choose_the_right_plan": "Choose the plan that fits your company's needs. All plans include a 14-day free trial.",
+  "one_time_payment_forever_use": "Pay once, use forever, and upgrade for free",
+  "flexible_pricing_for_any_team": "Flexible pricing for any team size. It’s a one-time payment — you buy the license once, and all future updates are free for you forever.",
+  "not_ready_to_pay": "Not ready to pay yet? Try the free demo with 600 icons. Same styles, same features, same flexibility. It also includes full preview.",
+  "try_free_demo": "Try the free demo",
+  "pricing_price_currency_suffix": "$",
+  "pricing_best_value_tag": "Best value",
+  "pricing_professional_tag": "Professional",
+  "pricing_professional_description": "For freelancers, indie developers or solopreneurs.",
+  "pricing_professional_price": "56",
+  "pricing_professional_button": "Buy now",
+  "pricing_professional_advantages": [
+    "Single user license",
+    "Lifetime updates",
+    "5,000+ icons",
+    "6 unique styles",
+    "Live stroke & corners",
+    "Powered by variants",
+    "IconJar & SVG library",
+    "Unlimited projects"
+  ],
+  "pricing_team_tag": "Team",
+  "pricing_team_description": "For fast-growing teams, up to 6 library users.",
+  "pricing_team_price": "112",
+  "pricing_team_button": "Buy now",
+  "pricing_team_advantages": [
+    "Up to 6 users license",
+    "Lifetime updates",
+    "5,000+ icons",
+    "6 unique styles",
+    "Live stroke & corners",
+    "Powered by variants",
+    "IconJar & SVG library",
+    "Unlimited projects"
+  ],
+  "pricing_enterprise_tag": "Enterprise",
+  "pricing_enterprise_description": "For large teams, an unlimited number of library users.",
+  "pricing_enterprise_price": "224",
+  "pricing_enterprise_button": "Buy now",
+  "pricing_enterprise_advantages": [
+    "Unlimited library users",
+    "Lifetime updates",
+    "5,000+ icons",
+    "6 unique styles",
+    "Live stroke & corners",
+    "Powered by variants",
+    "IconJar & SVG library",
+    "Unlimited projects"
+  ],
+  "comprehensive_comparison_of_plans": "Comprehensive comparison of plans",
+  "comprehensive_comparison_of_plans_description": "Discover the differences between each plan and choose the one that best suits your needs",
+  "pricing_comparison": {
+    "plans": [
+      {
+        "id": "basic",
+        "name": "Basic"
+      },
+      {
+        "id": "professional",
+        "name": "Professional",
+        "badge": "Best value",
+        "featured": true
+      },
+      {
+        "id": "enterprise",
+        "name": "Enterprise"
+      }
+    ],
+    "sections": [
+      {
+        "title": "Core features",
+        "rows": [
+          {
+            "label": "Customer management",
+            "basic": true,
+            "professional": true,
+            "enterprise": true
+          },
+          {
+            "label": "Task management",
+            "basic": true,
+            "professional": true,
+            "enterprise": true
+          },
+          {
+            "label": "Essential reports",
+            "basic": true,
+            "professional": true,
+            "enterprise": true
+          },
+          {
+            "label": "Mobile app",
+            "basic": true,
+            "professional": true,
+            "enterprise": true
+          },
+          {
+            "label": "Support",
+            "basic": "Email",
+            "professional": "Email & phone",
+            "enterprise": "24/7 concierge"
+          }
+        ]
+      },
+      {
+        "title": "Advanced capabilities",
+        "rows": [
+          {
+            "label": "Advanced analytics",
+            "basic": false,
+            "professional": true,
+            "enterprise": true
+          },
+          {
+            "label": "Custom reports",
+            "basic": false,
+            "professional": true,
+            "enterprise": true
+          },
+          {
+            "label": "Workflow automation",
+            "basic": false,
+            "professional": true,
+            "enterprise": true
+          },
+          {
+            "label": "API access",
+            "basic": false,
+            "professional": "Limited",
+            "enterprise": true
+          },
+          {
+            "label": "Advanced integrations",
+            "basic": false,
+            "professional": false,
+            "enterprise": true
+          }
+        ]
+      },
+      {
+        "title": "Enterprise-grade",
+        "rows": [
+          {
+            "label": "Single sign-on (SSO)",
+            "basic": false,
+            "professional": false,
+            "enterprise": true
+          },
+          {
+            "label": "Dedicated account manager",
+            "basic": false,
+            "professional": false,
+            "enterprise": true
+          },
+          {
+            "label": "Custom onboarding",
+            "basic": false,
+            "professional": false,
+            "enterprise": true
+          },
+          {
+            "label": "SLA commitments",
+            "basic": false,
+            "professional": false,
+            "enterprise": true
+          },
+          {
+            "label": "Private hosting",
+            "basic": false,
+            "professional": false,
+            "enterprise": true
+          }
+        ]
+      }
+    ]
+  }
 }

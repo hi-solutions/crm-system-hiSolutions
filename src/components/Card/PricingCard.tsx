@@ -11,6 +11,8 @@ interface PricingCardProps {
   buttonText: string;
   planAdvantages: string[];
   bestPlan?: boolean;
+  bestPlanLabel?: string;
+  priceSuffix?: string;
   className?: string;
 }
 
@@ -22,6 +24,8 @@ const PricingCard: React.FC<PricingCardProps> = ({
   buttonText,
   planAdvantages,
   bestPlan = false,
+  bestPlanLabel = "Best value",
+  priceSuffix = "$",
   className = "",
 }) => {
   const baseStyles = bestPlan
@@ -37,7 +41,7 @@ const PricingCard: React.FC<PricingCardProps> = ({
         <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-full">
           <div>
             <span className="bg-blue-600 text-white px-4 py-2 rounded-xl">
-              Best value
+              {bestPlanLabel}
             </span>
           </div>
         </div>
@@ -56,7 +60,9 @@ const PricingCard: React.FC<PricingCardProps> = ({
 
       <div className="mb-8">
         <span className="text-5xl font-bold text-gray-900">{planPrice}</span>
-        <span className="text-gray-600 text-xl ml-2">$</span>
+        {priceSuffix && (
+          <span className="text-gray-600 text-xl ml-2">{priceSuffix}</span>
+        )}
       </div>
 
       <Button className="w-full mb-8 py-4 rounded-2xl text-lg font-medium">

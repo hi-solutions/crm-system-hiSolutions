@@ -3,81 +3,79 @@ import { User, Users, Building2, Gift } from "lucide-react";
 import PricingCard from "../Card/PricingCard";
 import SectionHeader from "../SectionHeader/SectionHeader";
 import Button from "../Button";
+import { Dictionary } from "@/lib/dictionary";
+import Image from "next/image";
 
-const Pricing: React.FC = () => {
+const Pricing: React.FC<{ dict: Dictionary }> = ({ dict }) => {
+  const pricingData = [
+    {
+      tagText: dict?.pricing_professional_tag,
+      icon: <User className="w-6 h-6" />,
+      planDescription: dict?.pricing_professional_description,
+      planPrice: dict?.pricing_professional_price ?? "",
+      buttonText: dict?.pricing_professional_button ?? "",
+      planAdvantages: dict?.pricing_professional_advantages ?? [],
+      priceSuffix: dict?.pricing_price_currency_suffix,
+      className: "w-full max-w-[350px]",
+    },
+    {
+      tagText: dict?.pricing_team_tag,
+      icon: <Users className="w-6 h-6" />,
+      planDescription: dict?.pricing_team_description,
+      planPrice: dict?.pricing_team_price ?? "",
+      buttonText: dict?.pricing_team_button ?? "",
+      planAdvantages: dict?.pricing_team_advantages ?? [],
+      bestPlan: true,
+      bestPlanLabel: dict?.pricing_best_value_tag,
+      priceSuffix: dict?.pricing_price_currency_suffix,
+      className: "w-full max-w-[350px]",
+    },
+    {
+      tagText: dict?.pricing_enterprise_tag,
+      icon: <Building2 className="w-6 h-6" />,
+      planDescription: dict?.pricing_enterprise_description,
+      planPrice: dict?.pricing_enterprise_price ?? "",
+      buttonText: dict?.pricing_enterprise_button ?? "",
+      planAdvantages: dict?.pricing_enterprise_advantages ?? [],
+      priceSuffix: dict?.pricing_price_currency_suffix,
+      className: "w-full max-w-[350px]",
+    },
+  ];
   return (
     <section className="py-20 bg-gradient-to-b from-gray-50 to-white">
       <div className="max-w-7xl mx-auto px-4 md:px-10 lg:px-16 flex flex-col ">
         <div className="flex justify-center items-center mb-10">
           <SectionHeader
-            tag={{ title: "Pricing" }}
-            title="Simple, Transparent Pricing"
-            description="Choose the plan that fits your needs"
+            tag={{ title: dict?.pricing }}
+            title={dict?.one_time_payment_forever_use}
+            description={dict?.flexible_pricing_for_any_team}
           />
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
-          <PricingCard
-            tagText="Professional"
-            icon={<User className="w-6 h-6" />}
-            planDescription="For freelancers, indie developers or solopreneurs."
-            planPrice="56"
-            buttonText="Buy now"
-            planAdvantages={[
-              "Single user license",
-              "Lifetime updates",
-              "5,000+ icons",
-              "6 unique styles",
-              "Live stroke & corners",
-              "Powered by variants",
-              "IconJar & SVG library",
-              "Unlimited projects",
-            ]}
-          />
-
-          <PricingCard
-            tagText="Team"
-            icon={<Users className="w-6 h-6" />}
-            planDescription="For fast-growing teams, up to 6 library users."
-            planPrice="112"
-            buttonText="Buy now"
-            planAdvantages={[
-              "Up to 6 users license",
-              "Lifetime updates",
-              "5,000+ icons",
-              "6 unique styles",
-              "Live stroke & corners",
-              "Powered by variants",
-              "IconJar & SVG library",
-              "Unlimited projects",
-            ]}
-            bestPlan={true}
-          />
-
-          <PricingCard
-            tagText="Enterprise"
-            icon={<Building2 className="w-6 h-6" />}
-            planDescription="For large teams, an unlimited number of library users."
-            planPrice="224"
-            buttonText="Buy now"
-            planAdvantages={[
-              "Unlimited library users",
-              "Lifetime updates",
-              "5,000+ icons",
-              "6 unique styles",
-              "Live stroke & corners",
-              "Powered by variants",
-              "IconJar & SVG library",
-              "Unlimited projects",
-            ]}
-          />
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 place-items-center">
+          {pricingData.map((plan, index) => (
+            <PricingCard
+              key={`${plan.tagText}-${index}`}
+              {...plan}
+              className="min-w-[350px] w-[350px]"
+            />
+          ))}
         </div>
-        <div className="mt-8 flex flex-col items-center gap-4">
+        <div className="mt-8 flex flex-col items-center gap-4 relative ">
           <p className="text-base sm:text-md md:text-lg lg:text-xl font-medium text-[#425061] leading-relaxed max-w-3xl text-center">
             {" "}
-            Not ready to pay yet? Try the free demo with 600 icons. Same styles,
-            same features, same flexibility. It also includes full preview.
+            {dict?.not_ready_to_pay}
           </p>
-          <Button icon={<Gift className="w-5 h-5" />}>Try the free demo</Button>
+          <Button icon={<Gift className="w-5 h-5" />}>
+            {dict?.try_free_demo}
+          </Button>
+          <div className="md:block hidden absolute bottom-0 w-[148px] h-[88px] translate-x-55 translate-y-15">
+            <Image
+              src="/images/pricing-vetor.png"
+              alt=""
+              fill
+              className="object-contain w-full h-full"
+            />
+          </div>
         </div>
       </div>
     </section>

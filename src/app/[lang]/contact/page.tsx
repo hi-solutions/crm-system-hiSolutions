@@ -6,7 +6,7 @@ export default async function ContactPage({ params }: { params: Params }) {
   const dict = await getDictionary(lang);
 
   return (
-    <div className="min-h-screen bg-white font-sans">
+    <div className="min-h-screen bg-white ">
       <section className="pt-28 pb-20 bg-gray-50">
         <div className="mx-auto px-4 md:px-10 lg:px-16">
           <h1 className="text-4xl font-bold mb-4 text-gray-900">

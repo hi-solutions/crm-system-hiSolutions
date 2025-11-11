@@ -6,7 +6,7 @@ interface SectionHeaderProps {
     title: string;
     className?: string;
   };
-  title: string;
+  title?: string;
   description?: string;
   linkText?: string;
   className?: string;

@@ -10,9 +10,12 @@ import FeatureDetailSection from "@/components/our-features/FeatureDetailSection
 export default async function FeaturesPage({ params }: { params: Params }) {
   const { lang } = await params;
   const dict = await getDictionary(lang);
+  const affectiveManagementList = dict.effective_management_list;
+  const smartInsightsList = dict.smart_insights_list;
+  const speedAndEfficiencyList = dict.speed_and_efficiency_list;
 
   return (
-    <div className="min-h-screen bg-white font-sans">
+    <div className="min-h-screen bg-white ">
       {/* header section  */}
       <section className="py-20 px-4 md:px-10 lg:px-16 bg-gray-50 relative flex flex-col items-center justify-center gap-10">
         <SectionHeader
@@ -38,39 +41,6 @@ export default async function FeaturesPage({ params }: { params: Params }) {
         </div>
       </section>
 
-      {/* detailed feature section */}
-      <FeatureDetailSection
-        dict={dict}
-        tagText={lang === "ar" ? "الإدارة الفعّالة" : "Effective management"}
-        image="/images/details_screen.png"
-        title={
-          lang === "ar"
-            ? "إدارة شاملة للعملاء والمشاريع"
-            : "Comprehensive management for customers and projects"
-        }
-        description={
-          lang === "ar"
-            ? "تتبع كافة تفاصيل عملائك ومشاريعك العقارية من مكان واحد، تاريخ كامل لجميع التفاعلات والمعاملات والمستندات."
-            : "Track every detail about your customers and real estate projects in one place with a full history of interactions, deals, and documents."
-        }
-        list={
-          lang === "ar"
-            ? [
-                "قاعدة بيانات موحدة ومنظمة للعملاء",
-                "التتبع الفعّال لجميع التفاعلات والمكالمات",
-                "إدارة المستندات والوصول بسهولة",
-                "سجل كامل لتاريخ كل عميل ومشروع",
-              ]
-            : [
-                "Unified, organized customer database",
-                "Efficient tracking for all interactions and calls",
-                "Document management with quick access",
-                "Full history for every customer and project",
-              ]
-        }
-        imageFirst={false}
-      />
-
       {/* everything in one platform section  */}
       <section className="py-20 px-4 md:px-10 lg:px-16 bg-gray-50 relative flex flex-col items-center justify-center gap-10">
         <div className="flex justify-center items-center">
@@ -90,6 +60,41 @@ export default async function FeaturesPage({ params }: { params: Params }) {
           />
         </div>
       </section>
+
+      {/* detailed feature section */}
+      <FeatureDetailSection
+        dict={dict}
+        tagText={dict.effective_management_tag}
+        image="/images/details_screen.png"
+        title={dict.effective_management_title}
+        description={dict.effective_management_description}
+        list={affectiveManagementList}
+        imageFirst={false}
+      />
+
+      {/*  Smart insights section */}
+
+      <FeatureDetailSection
+        dict={dict}
+        tagText={dict.smart_insights_tag}
+        image="/images/smart_insights_section.png"
+        title={dict.smart_insights_title}
+        description={dict.smart_insights_description}
+        list={smartInsightsList}
+        imageFirst={true}
+      />
+
+      {/* Speed ​​and efficiency section */}
+
+      <FeatureDetailSection
+        dict={dict}
+        tagText={dict.speed_and_efficiency_tag}
+        image="/images/speed_section.png"
+        title={dict.speed_and_efficiency_title}
+        description={dict.speed_and_efficiency_description}
+        list={speedAndEfficiencyList}
+        imageFirst={false}
+      />
 
       {/* FAQ Section */}
       <section className="py-20 px-4 md:px-10 lg:px-16 relative flex flex-col items-center justify-center gap-10 bg-white">

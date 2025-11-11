@@ -15,16 +15,15 @@ export default async function Home({ params }: { params: Params }) {
 
   await getDictionary(lang);
 
-  const benefitsTexts = [
-    "حلول أسرع للعملاء",
-    "منع إرهاق الفريق",
-    "خفض تكاليفك",
-  ];
-
   const dict = await getDictionary(lang);
 
+  const benefitsTexts = [
+    dict.faster_solutions_for_clients,
+    dict.prevent_team_burnout,
+    dict.reduce_your_costs,
+  ];
   return (
-    <div className="min-h-screen bg-white font-sans overflow-hidden">
+    <div className="min-h-screen bg-white  overflow-hidden">
       {/* Hero Section */}
       <Hero dict={dict} params={{ lang }} />
       {/* Trusted by Section */}
@@ -118,7 +117,7 @@ export default async function Home({ params }: { params: Params }) {
 as well as allow customers to track progress in real time."
               image="/images/details_screen.png"
               flexDirection="col"
-              className="additional-classes h-full w-full"
+              className="additional-classes h-full w-full hover:shadow-md hover:scale-105 transition-all duration-300"
             />
           </div>
           {/* the two cards  */}
@@ -128,14 +127,14 @@ as well as allow customers to track progress in real time."
               description="Change language, turn on dark mode, save custom views, and more."
               image="/images/chat_screen.png"
               flexDirection="row"
-              className="additional-classes flex-1"
+              className="additional-classes flex-1 hover:shadow-md hover:scale-105 transition-all duration-300"
             />
             <Card
               title="Omnichannel"
               description="See all your support conversations in one place."
               image="/images/social_screen.png"
               flexDirection="row"
-              className="additional-classes flex-1"
+              className="additional-classes flex-1 hover:shadow-md hover:scale-105 transition-all duration-300"
             />
           </div>
         </div>
@@ -147,7 +146,7 @@ as well as allow customers to track progress in real time."
 as well as allow customers to track progress in real time."
             image="/images/details_screen.png"
             flexDirection="col"
-            className="additional-classes h-full w-full"
+            className="additional-classes h-full w-full hover:shadow-md hover:scale-105 transition-all duration-300"
           />
           <Card
             title="Ticketing"
@@ -155,7 +154,7 @@ as well as allow customers to track progress in real time."
 as well as allow customers to track progress in real time."
             image="/images/details_screen.png"
             flexDirection="col"
-            className="additional-classes h-full w-full"
+            className="additional-classes h-full w-full hover:shadow-md hover:scale-105 transition-all duration-300"
           />
           <Card
             title="Ticketing"
@@ -163,7 +162,7 @@ as well as allow customers to track progress in real time."
 as well as allow customers to track progress in real time."
             image="/images/details_screen.png"
             flexDirection="col"
-            className="additional-classes h-full w-full"
+            className="additional-classes h-full w-full hover:shadow-md hover:scale-105 transition-all duration-300"
           />
         </div>
       </section>
@@ -172,9 +171,9 @@ as well as allow customers to track progress in real time."
       <Testimonials dict={dict} />
 
       {/* Pricing Section */}
-      <section className="py-20 bg-white">
+      <section className="py-20 px-4 md:px-10 lg:px-16 relative flex flex-col items-center justify-center gap-10 bg-white">
         <div className="min-h-screen bg-white">
-          <PricingSection />
+          <PricingSection dict={dict} />
         </div>
       </section>
 

@@ -1,5 +1,26 @@
 import "server-only";
 
+export type PricingPlanId = "basic" | "professional" | "enterprise";
+
+export type PricingComparisonValue = string | boolean | null;
+
+export interface PricingComparisonRow
+  extends Record<PricingPlanId, PricingComparisonValue> {
+  label: string;
+}
+
+export interface PricingComparisonPlan {
+  id: PricingPlanId | string;
+  name: string;
+  badge?: string;
+  featured?: boolean;
+}
+
+export interface PricingComparisonSection {
+  title: string;
+  rows: PricingComparisonRow[];
+}
+
 export interface Dictionary {
   home: string;
   navHome: string;
@@ -38,6 +59,8 @@ export interface Dictionary {
   faq6Answer: string;
   faq7Question: string;
   faq7Answer: string;
+  frequently_asked_questions: string;
+  faq_description: string;
   // Hero
   manage_your: string;
   real_estate_sales: string;
@@ -70,6 +93,17 @@ export interface Dictionary {
   feature_advanced_security_desc: string;
   feature_full_customization_title: string;
   feature_full_customization_desc: string;
+  // Feature detail: effective management section
+  effective_management_tag: string;
+  effective_management_title: string;
+  effective_management_description: string;
+  effective_management_list: string[];
+  // Feature detail: smart insights section
+  smart_insights_tag: string;
+  smart_insights_title: string;
+  smart_insights_description: string;
+  smart_insights_list: string[];
+
   // Trusted By Section
   trusted_title: string;
   trusted_subtitle: string;
@@ -79,6 +113,87 @@ export interface Dictionary {
   stat_growth_label: string;
   stat_reviews_value: string;
   stat_reviews_label: string;
+  // Feature detail: speed and efficiency section
+  speed_and_efficiency_tag: string;
+  speed_and_efficiency_title: string;
+  speed_and_efficiency_description: string;
+  speed_and_efficiency_list: string[];
+
+  // who we are page
+  //hero
+  who_we_are_tag: string;
+  who_we_are_title: string;
+  who_we_are_description: string;
+  learn_more: string;
+  // about page: mission and vision
+  our_mission_title: string;
+  our_mission_description: string;
+  our_vision_title: string;
+  our_vision_description: string;
+  // about page: what we do
+  what_we_do_tag: string;
+  what_we_do_description: string;
+  crm_implementation: string;
+  crm_implementation_desc: string;
+  software_development: string;
+  software_development_desc: string;
+  digital_marketing: string;
+  digital_marketing_desc: string;
+  agency_services: string;
+  agency_services_desc: string;
+  consulting_strategy: string;
+  consulting_strategy_desc: string;
+  analytics_insights: string;
+  analytics_insights_desc: string;
+  //about page: how we work
+  how_we_work_tag: string;
+  how_we_work_description: string;
+  //about page: meet our team
+  meet_our_team_tag: string;
+  meet_our_team_description: string;
+  david_park: string;
+  lead_developer: string;
+  mohammed_al: string;
+  marketing_head: string;
+  ryan_gosling: string;
+  cto: string;
+  sara_ahmed: string;
+  ceo: string;
+  faster_solutions_for_clients: string;
+  prevent_team_burnout: string;
+  reduce_your_costs: string;
+  testimonials_about: string;
+  pricing: string;
+  prices: string;
+  flexible_pricing_plans: string;
+  choose_the_right_plan: string;
+  one_time_payment_forever_use: string;
+  flexible_pricing_for_any_team: string;
+  not_ready_to_pay: string;
+  try_free_demo: string;
+  pricing_price_currency_suffix: string;
+  pricing_best_value_tag: string;
+  pricing_professional_tag: string;
+  pricing_professional_description: string;
+  pricing_professional_price: string;
+  pricing_professional_button: string;
+  pricing_professional_advantages: string[];
+  pricing_team_tag: string;
+  pricing_team_description: string;
+  pricing_team_price: string;
+  pricing_team_button: string;
+  pricing_team_advantages: string[];
+  pricing_enterprise_tag: string;
+  pricing_enterprise_description: string;
+  pricing_enterprise_price: string;
+  pricing_enterprise_button: string;
+  pricing_enterprise_advantages: string[];
+  comprehensive_comparison_of_plans: string;
+  comprehensive_comparison_of_plans_description: string;
+  pricing_comparison: {
+    plans: PricingComparisonPlan[];
+    sections: PricingComparisonSection[];
+  };
 }
 
 const dictionaries = {

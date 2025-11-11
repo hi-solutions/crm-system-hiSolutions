@@ -1,51 +1,59 @@
 "use client";
-import React, { useState } from "react";
-import { Plus, Minus } from "lucide-react";
+import React, { useId, useState } from "react";
+import { ChevronDown } from "lucide-react";
 
-interface ExpandableCardProps {
+export interface ExpandableCardProps {
   question: string;
   answer: string;
+  defaultOpen?: boolean;
 }
 
-export const ExpandableCard = ({ question, answer }: ExpandableCardProps) => {
-  const [isOpen, setIsOpen] = useState(false);
+const ExpandableCard: React.FC<ExpandableCardProps> = ({
+  question,
+  answer,
+  defaultOpen = false,
+}) => {
+  const [isOpen, setIsOpen] = useState(defaultOpen);
+  const contentId = useId();
+
+  if (!question || !answer) {
+    return null;
+  }
+
   return (
-    <div
-      className={`w-full max-w-3xl px-2 sm:px-4 md:px-0 ${
-        isOpen ? "border-l border-r border-b border-[#033E8A] rounded-b-xl" : ""
-      }`}
-    >
-      <div
-        className="flex flex-row justify-between items-center rounded-xl border border-[#033E8A] px-4 py-3 sm:px-5 sm:py-3 md:px-6 md:py-3 bg-white cursor-pointer"
-        onClick={() => setIsOpen(!isOpen)}
+    <div className="w-full rounded-xl border border-[#005FDA1A] bg-white shadow-sm transition-all duration-300 hover:shadow-lg">
+      <button
+        type="button"
+        onClick={() => setIsOpen((prev) => !prev)}
+        className="flex w-full items-center justify-between gap-4 px-4 py-4 text-left sm:px-7 sm:py-6"
+        aria-expanded={isOpen}
+        aria-controls={contentId}
       >
-        <p>{question}</p>
-        <div className="relative w-6 h-6">
-          <div
-            className={`absolute inset-0 flex items-center justify-center transition-all duration-300 ${
-              isOpen ? "opacity-0 rotate-90" : "opacity-100 rotate-0"
-            }`}
-          >
-            <Plus size={24} />
-          </div>
-          <div
-            className={`absolute inset-0 flex items-center justify-center transition-all duration-300 ${
-              isOpen ? "opacity-100 rotate-0" : "opacity-0 -rotate-90"
-            }`}
-          >
-            <Minus size={24} />
-          </div>
-        </div>
-      </div>
+        <span className="text-sm font-semibold text-[#0B1D4A] sm:text-base md:text-lg">
+          {question}
+        </span>
+        <ChevronDown
+          className={`h-5 w-5 shrink-0 text-[#005FDA] transition-transform duration-200 ${
+            isOpen ? "rotate-180" : ""
+          }`}
+        />
+      </button>
       <div
-        className={`overflow-hidden transition-all duration-300 ease-in-out ${
-          isOpen ? "max-h-96 mt-2" : "max-h-0"
+        id={contentId}
+        className={`overflow-hidden px-4 text-sm text-[#425061] transition-all duration-300 ease-in-out sm:px-6 md:text-base ${
+          isOpen
+            ? "max-h-[400px] opacity-100 pb-4 sm:pb-6"
+            : "max-h-0 opacity-0 pb-0"
         }`}
+        aria-hidden={!isOpen}
       >
-        <div className="text-base font-medium text-[#425061] px-4 py-3 sm:px-5 sm:py-3 md:px-6 md:py-3">
+        <div className="mt-3 rounded-lg border border-[#005FDA1A] bg-[rgba(0,95,218,0.08)] px-4 py-4 text-start shadow-[0px_4px_12px_rgba(0,95,218,0.12)] sm:mt-4 sm:px-6 sm:py-5">
           {answer}
         </div>
       </div>
     </div>
   );
 };
+
+export default ExpandableCard;
+export { ExpandableCard };

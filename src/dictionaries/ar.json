@@ -35,6 +35,8 @@
   "faq6Answer": "نقدم ضمان استرداد الأموال لمدة 30 يوماً. إذا لم تكن راضياً عن شرائك، اتصل بنا خلال 30 يوماً للحصول على استرداد كامل، بدون أي أسئلة.",
   "faq7Question": "ما الذي يتضمنه الإصدار المجاني؟",
   "faq7Answer": "يتضمن الإصدار المجاني مجموعة مختارة من الأيقونات الأساسية لمساعدتك على البدء. يمكنك استكشاف المجموعة الكاملة مع الإصدار المميز، والذي يتضمن جميع الأيقونات والتنسيقات والتحديثات الحصرية.",
+  "frequently_asked_questions": "الأسئلة الشائعة",
+  "faq_description": "كل ما تحتاج إلى معرفته عن منصتنا لإدارة علاقات العملاء. لم تجد الإجابة التي تبحث عنها؟ يسعدنا تواصلك معنا.",
   "manage_your": "مبيعات إدارة",
   "real_estate_sales": "شركتك العقارية",
   "easier_and_smarter": "أصبحت أسهل وأذكى من أي وقت مضى",
@@ -71,5 +73,249 @@
   "feature_advanced_security_title": "الأمان المتقدم",
   "feature_advanced_security_desc": "احمِ بياناتك بأعلى مستويات التشفير ومعايير الأمان المؤسسية.",
   "feature_full_customization_title": "التخصيص الشامل",
-  "feature_full_customization_desc": "خصص المنصة بالكامل لتناسب احتياجات شركتك وسير عملك."
+  "feature_full_customization_desc": "خصص المنصة بالكامل لتناسب احتياجات شركتك وسير عملك.",
+  "effective_management_tag": "الإدارة الفعّالة",
+  "effective_management_title": "إدارة شاملة للعملاء والمشاريع",
+  "effective_management_description": "تتبع كافة تفاصيل عملائك ومشاريعك العقارية من مكان واحد، تاريخ كامل لجميع التفاعلات والمعاملات والمستندات.",
+  "effective_management_list": [
+    "قاعدة بيانات موحدة ومنظمة للعملاء",
+    "التتبع الفعّال لجميع التفاعلات والمكالمات",
+    "إدارة المستندات والوصول بسهولة",
+    "سجل كامل لتاريخ كل عميل ومشروع"
+  ],
+  "smart_insights_tag": "رؤى ذكية",
+  "smart_insights_title": "تقارير وتحليلات متقدمة لاتخاذ قرارات أفضل",
+  "smart_insights_description": "احصل على رؤى عميقة حول أداء مبيعاتك باستخدام لوحات المعلومات التفاعلية والتقارير القابلة للتخصيص بالكامل.",
+  "smart_insights_list": [
+    "لوحات المعلومات في الوقت الحقيقي",
+    "تقارير مخصصة حسب احتياجاتك",
+    "تحليل اتجاهات السوق والأداء",
+    "توقعات ذكية للمبيعات المستقبلية"
+  ],
+  "speed_and_efficiency_tag": "السرعة والكفاءة",
+  "speed_and_efficiency_title": "أداء سريع وتجربة مستخدم سلسة",
+  "speed_and_efficiency_description": "واجهة سريعة وسهلة الاستخدام تمكن فريقك من إنجاز المزيد من المهام في وقت أقل باستخدام الاختصارات الذكية والأتمتة الشاملة.",
+  "speed_and_efficiency_list": [
+    "واجهة بديهية سهلة التعلم",
+    "اختصارات لوحة المفاتيح للمستخدمين المتقدمين",
+    "أتمتة ذكية للمهام المتكررة",
+    "أوقات تحميل فائقة السرعة"
+  ],
+  "who_we_are_tag": "من نحن",
+  "who_we_are_title": "فريق من المحترفين المتحمسين لبناء أفضل نظام CRM لمبيعات العقارات",
+  "who_we_are_description": "في Hi-Solutions، نمزج بين تطوير البرامج المتطورة والخبرة التسويقية الإبداعية لتقديم تطبيقات استثنائية لإدارة علاقات العملاء واستراتيجيات النمو الرقمي.",
+  "learn_more": "معرفة المزيد",
+  "our_mission_title": "مهمتنا",
+  "our_mission_description": "أن نكون القوة الرائدة في ابتكار أنظمة إدارة علاقات العملاء والتميز في التسويق الرقمي، حيث تلتقي التكنولوجيا والإبداع لخلق تجارب عمل تحويلية على مستوى العالم.",
+  "our_vision_title": "رؤيتنا",
+  "our_vision_description": "أن نكون القوة الرائدة في ابتكار أنظمة إدارة علاقات العملاء والتميز في التسويق الرقمي، حيث تلتقي التكنولوجيا والإبداع لخلق تجارب عمل تحويلية على مستوى العالم.",
+  "what_we_do_tag": "ماذا نفعل",
+  "what_we_do_description": "نحن نقدم حلولاً شاملة تربط بين التكنولوجيا والتسويق",
+  "crm_implementation": "تنفيذ أنظمة إدارة علاقات العملاء (CRM)",
+  "crm_implementation_desc": "نشر وتخصيص احترافي لأفضل منصات إدارة علاقات العملاء بما يتناسب مع احتياجات عملك.",
+  "software_development": "تطوير البرمجيات",
+  "software_development_desc": "حلول برمجية مخصصة تُبنى باستخدام أحدث التقنيات وأفضل الممارسات.",
+  "digital_marketing": "التسويق الرقمي",
+  "digital_marketing_desc": "استراتيجيات تسويق قائمة على البيانات تعزز علامتك التجارية وتولد عملاء محتملين مؤهلين.",
+  "agency_services": "خدمات الوكالة",
+  "agency_services_desc": "دعم إبداعي واستراتيجي متكامل لرفع حضورك في السوق.",
+  "consulting_strategy": "الاستشارات والاستراتيجية",
+  "consulting_strategy_desc": "توجيه استراتيجي لمواءمة التكنولوجيا والتسويق مع أهداف عملك.",
+  "analytics_insights": "التحليلات والرؤى",
+  "analytics_insights_desc": "حوّل البيانات إلى رؤى قابلة للتنفيذ تدعم اتخاذ قرارات مستنيرة.",
+  "how_we_work_tag": "كيف نعمل",
+  "how_we_work_description": "تضمن عمليتنا التي أثبتت جدواها التسليم الناجح والقيمة طويلة المدى",
+  "meet_our_team_tag": "تعرف على فريقنا",
+  "meet_our_team_description": "فريقنا ملتزم بتقديم حلول CRM واستراتيجيات التسويق الرقمي الفعالة.",
+  "david_park": "ديفيد بارك",
+  "lead_developer": "مطور رئيسي",
+  "mohammed_al": "محمد علي",
+  "marketing_head": "رئيس التسويق",
+  "ryan_gosling": "ريان جوسلينج",
+  "cto": "رئيس التكنولوجيا",
+  "sara_ahmed": "سارة أحمد",
+  "ceo": "الرئيس التنفيذي",
+  "faster_solutions_for_clients": "حلول أسرع للعملاء",
+  "prevent_team_burnout": "منع إرهاق الفريق",
+  "reduce_your_costs": "خفض تكاليفك",
+  "testimonials_about": "خبراء متحمسون ملتزمون بنجاحك",
+  "pricing": "التسعير",
+  "prices": "الأسعار",
+  "flexible_pricing_plans": "خطط تسعير مرنة لكل الأحجام",
+  "choose_the_right_plan": "اختر الخطة المناسبة لاحتياجات شركتك. جميع الخطط تشمل تجربة مجانية لمدة 14 يوماً.",
+  "one_time_payment_forever_use": "ادفع مرة واحدة، واستخدمه إلى الأبد، وقم بالترقية مجانًا",
+  "flexible_pricing_for_any_team": "تسعير مرن لأي حجم فريق. إنها دفعة واحدة — تشتري الترخيص مرة واحدة، وجميع التحديثات المستقبلية مجانية لك إلى الأبد.",
+  "not_ready_to_pay": "لسه مش جاهز للدفع؟ جرّب النسخة التجريبية المجانية التي تحتوي على 600 أيقونة. نفس الأنماط، نفس المزايا، ونفس المرونة. وتشمل أيضًا معاينة كاملة.",
+  "try_free_demo": "جرّب النسخة التجريبية المجانية",
+  "pricing_price_currency_suffix": "$",
+  "pricing_best_value_tag": "أفضل قيمة",
+  "pricing_professional_tag": "احترافي",
+  "pricing_professional_description": "للمستقلين أو المطورين الأفراد أو رواد الأعمال الفرديين.",
+  "pricing_professional_price": "56",
+  "pricing_professional_button": "اشتري الآن",
+  "pricing_professional_advantages": [
+    "ترخيص لمستخدم واحد",
+    "تحديثات مدى الحياة",
+    "أكثر من 5000 أيقونة",
+    "6 أنماط فريدة",
+    "تحكم فوري في الحواف والسماكات",
+    "مدعوم بالمتغيرات",
+    "مكتبة IconJar وملفات SVG",
+    "عدد غير محدود من المشاريع"
+  ],
+  "pricing_team_tag": "فريق",
+  "pricing_team_description": "للفرق سريعة النمو، حتى 6 مستخدمين في المكتبة.",
+  "pricing_team_price": "112",
+  "pricing_team_button": "اشتري الآن",
+  "pricing_team_advantages": [
+    "ترخيص يصل إلى 6 مستخدمين",
+    "تحديثات مدى الحياة",
+    "أكثر من 5000 أيقونة",
+    "6 أنماط فريدة",
+    "تحكم فوري في الحواف والسماكات",
+    "مدعوم بالمتغيرات",
+    "مكتبة IconJar وملفات SVG",
+    "عدد غير محدود من المشاريع"
+  ],
+  "pricing_enterprise_tag": "شركات كبرى",
+  "pricing_enterprise_description": "للشركات الكبيرة، عدد غير محدود من مستخدمي المكتبة.",
+  "pricing_enterprise_price": "224",
+  "pricing_enterprise_button": "اشتري الآن",
+  "pricing_enterprise_advantages": [
+    "عدد غير محدود من مستخدمي المكتبة",
+    "تحديثات مدى الحياة",
+    "أكثر من 5000 أيقونة",
+    "6 أنماط فريدة",
+    "تحكم فوري في الحواف والسماكات",
+    "مدعوم بالمتغيرات",
+    "مكتبة IconJar وملفات SVG",
+    "عدد غير محدود من المشاريع"
+  ],
+  "comprehensive_comparison_of_plans": "مقارنة شاملة للخطط",
+  "comprehensive_comparison_of_plans_description": "اكتشف الفروقات بين كل خطة واختر الأنسب لاحتياجاتك",
+  "pricing_comparison": {
+    "plans": [
+      {
+        "id": "basic",
+        "name": "أساسي"
+      },
+      {
+        "id": "professional",
+        "name": "محترف",
+        "badge": "الأكثر شعبية",
+        "featured": true
+      },
+      {
+        "id": "enterprise",
+        "name": "مؤسسة"
+      }
+    ],
+    "sections": [
+      {
+        "title": "المميزات الأساسية",
+        "rows": [
+          {
+            "label": "إدارة العملاء",
+            "basic": true,
+            "professional": true,
+            "enterprise": true
+          },
+          {
+            "label": "إدارة المهام",
+            "basic": true,
+            "professional": true,
+            "enterprise": true
+          },
+          {
+            "label": "تقارير أساسية",
+            "basic": true,
+            "professional": true,
+            "enterprise": true
+          },
+          {
+            "label": "تطبيق الجوال",
+            "basic": true,
+            "professional": true,
+            "enterprise": true
+          },
+          {
+            "label": "دعم فني",
+            "basic": "بريد",
+            "professional": "بريد وهاتف",
+            "enterprise": "24/7"
+          }
+        ]
+      },
+      {
+        "title": "المميزات المتقدمة",
+        "rows": [
+          {
+            "label": "تحليلات متقدمة",
+            "basic": false,
+            "professional": true,
+            "enterprise": true
+          },
+          {
+            "label": "تقارير مخصصة",
+            "basic": false,
+            "professional": true,
+            "enterprise": true
+          },
+          {
+            "label": "أتمتة سير العمل",
+            "basic": false,
+            "professional": true,
+            "enterprise": true
+          },
+          {
+            "label": "مقدم API",
+            "basic": false,
+            "professional": "محدود",
+            "enterprise": true
+          },
+          {
+            "label": "تكاملات متقدمة",
+            "basic": false,
+            "professional": false,
+            "enterprise": true
+          }
+        ]
+      },
+      {
+        "title": "مميزات المؤسسات",
+        "rows": [
+          {
+            "label": "تسجيل دخول موحد SSO",
+            "basic": false,
+            "professional": false,
+            "enterprise": true
+          },
+          {
+            "label": "مدير حساب مخصص",
+            "basic": false,
+            "professional": false,
+            "enterprise": true
+          },
+          {
+            "label": "تدريب مخصص",
+            "basic": false,
+            "professional": false,
+            "enterprise": true
+          },
+          {
+            "label": "عقود SLA",
+            "basic": false,
+            "professional": false,
+            "enterprise": true
+          },
+          {
+            "label": "استضافة خاصة",
+            "basic": false,
+            "professional": false,
+            "enterprise": true
+          }
+        ]
+      }
+    ]
+  }
 }

@@ -22,7 +22,6 @@ const FeatureDetailSection: React.FC<FeatureDetailSectionProps> = ({
   description,
   list,
   imageFirst = false,
-  dict, // kept for future i18n extensions inside the section
   className = "",
 }) => {
   const contentOrderMd = imageFirst ? "md:order-2" : "md:order-1";
@@ -31,10 +30,15 @@ const FeatureDetailSection: React.FC<FeatureDetailSectionProps> = ({
   return (
     <section className={`py-14 md:py-20 ${className}`}>
       <div className="px-4 md:px-10 lg:px-16 max-w-7xl mx-auto">
+        {tagText && (
+          <div className="mb-4 w-full flex justify-center">
+            <Tag title={tagText} />
+          </div>
+        )}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
           {/* Image (mobile after content) */}
           <div className={`order-2 ${imageOrderMd}`}>
-            <div className="relative w-full h-auto">
+            <div className="relative w-full h-auto p-8 bg-gradient-to-b from-[#EFFBFE] to-[#CAF0F8] rounded-2xl border border-[#D3D5D8] shadow-xl">
               <Image
                 src={image}
                 alt={title}
@@ -49,11 +53,6 @@ const FeatureDetailSection: React.FC<FeatureDetailSectionProps> = ({
 
           {/* Content */}
           <div className={`order-1 ${contentOrderMd} `}>
-            {tagText && (
-              <div className="mb-4">
-                <Tag title={tagText} />
-              </div>
-            )}
             <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-[#0F172A] mb-3">
               {title}
             </h2>
