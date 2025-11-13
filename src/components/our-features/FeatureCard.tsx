@@ -15,7 +15,7 @@ const FeatureCard: React.FC<FeatureCardProps> = ({
 }) => {
   return (
     <div
-      className={`bg-white border border-[#E5E7EB] rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow ${className}`}
+      className={`bg-white border border-[#E5E7EB] rounded-2xl p-6 shadow-sm hover:shadow-md ${className}`}
     >
       <div className="w-14 h-14 rounded-2xl bg-blue-50 text-blue-600 flex items-center justify-center mb-4">
         {icon}

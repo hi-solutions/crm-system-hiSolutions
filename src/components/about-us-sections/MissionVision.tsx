@@ -46,7 +46,7 @@ const MissionVision: React.FC<MissionVisionProps> = ({ dict }) => {
           description={card.description}
           cardStyle={
             card.cardStyle ??
-            "rounded-2xl border shadow-md py-12 px-12 max-w-xl"
+            "rounded-2xl border shadow-md py-12 px-12 max-w-xl rounded-2xl border shadow-md py-12 px-12 max-w-xl hover:shadow-lg hover:-translate-y-2 transition-all duration-300 ease-out"
           }
         />
       ))}

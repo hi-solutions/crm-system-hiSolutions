@@ -6,6 +6,7 @@ import Image from "next/image";
 import FAQSection from "@/components/FAQ/FAQSection";
 import FeaturesGrid from "@/components/our-features/FeaturesGrid";
 import FeatureDetailSection from "@/components/our-features/FeatureDetailSection";
+import FeaturesShowcase from "@/components/home sections/FeaturesShowcase";
 
 export default async function FeaturesPage({ params }: { params: Params }) {
   const { lang } = await params;
@@ -51,7 +52,7 @@ export default async function FeaturesPage({ params }: { params: Params }) {
         </div>
         <div className="flex justify-center items-center w-full max-w-4xl mx-auto">
           <Image
-            src="/images/laptop_mob_screen.png"
+            src="/images/screen_phone_mockup.png"
             alt="Manage Real State"
             width={1200}
             height={600}
@@ -95,6 +96,9 @@ export default async function FeaturesPage({ params }: { params: Params }) {
         list={speedAndEfficiencyList}
         imageFirst={false}
       />
+
+      {/* Features Showcase Section */}
+      <FeaturesShowcase dict={dict} />
 
       {/* FAQ Section */}
       <section className="py-20 px-4 md:px-10 lg:px-16 relative flex flex-col items-center justify-center gap-10 bg-white">

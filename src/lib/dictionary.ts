@@ -33,7 +33,6 @@ export interface Dictionary {
   heroToolsText: string;
   // Footer
   brandName: string;
-  brandLegal: string;
   allRightsReserved: string;
   footerTagline: string;
   footerEmailPlaceholder: string;
@@ -41,7 +40,6 @@ export interface Dictionary {
   footerProduct: string;
   footerLearn: string;
   footerCompany: string;
-  footerBadge: string;
   socialTwitterUrl: string;
   socialLinkedinUrl: string;
   socialFacebookUrl: string;
@@ -194,6 +192,38 @@ export interface Dictionary {
     plans: PricingComparisonPlan[];
     sections: PricingComparisonSection[];
   };
+  everything_you_need: string;
+  powerful_easy_tools: string;
+  integrations: string;
+  integrations_title: string;
+  integrations_description: string;
+  integrations_link_text: string;
+  one_system: string;
+  one_system_title: string;
+  one_system_description: string;
+  one_system_link_text: string;
+  ticketing_title: string;
+  ticketing_description: string;
+  configurable_title: string;
+  configurable_description: string;
+  omnichannel_title: string;
+  omnichannel_description: string;
+  multiplayer_title: string;
+  multiplayer_description: string;
+  lightining_fast_title: string;
+  lightining_fast_description: string;
+  team_management_title: string;
+  team_management_description: string;
+  discovery_title: string;
+  discovery_description: string;
+  design_title: string;
+  design_description: string;
+  implementation_title: string;
+  implementation_description: string;
+  support_title: string;
+  support_description: string;
+  growth_title: string;
+  growth_description: string;
 }
 
 const dictionaries = {

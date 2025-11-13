@@ -119,9 +119,9 @@ export default function Footer() {
 
         <div className="mt-8 pt-6 border-t border-white/20 text-white/80 text-sm flex flex-col md:flex-row items-center justify-between gap-3">
           <span>
-            © 2025 {dictionary.brandLegal}. {dictionary.allRightsReserved}
+            &copy; {new Date().getFullYear()} . {dictionary.allRightsReserved}
           </span>
-          <span className="text-white/70">{dictionary.footerBadge}</span>
+          {/* <span className="text-white/70">{dictionary.footerBadge}</span> */}
         </div>
       </div>
     </footer>

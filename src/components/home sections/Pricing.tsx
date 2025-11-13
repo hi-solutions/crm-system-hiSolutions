@@ -42,8 +42,8 @@ const Pricing: React.FC<{ dict: Dictionary }> = ({ dict }) => {
     },
   ];
   return (
-    <section className="py-20 bg-gradient-to-b from-gray-50 to-white">
-      <div className="max-w-7xl mx-auto px-4 md:px-10 lg:px-16 flex flex-col ">
+    <section className="relative overflow-hidden py-20 bg-gradient-to-b from-gray-50 to-white">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 md:px-10 lg:px-16 flex flex-col">
         <div className="flex justify-center items-center mb-10">
           <SectionHeader
             tag={{ title: dict?.pricing }}

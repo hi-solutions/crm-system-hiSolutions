@@ -74,6 +74,7 @@ const FeaturesGrid: React.FC<FeaturesGridProps> = ({
           icon={item.icon}
           title={item.title}
           description={item.description}
+          className="hover:shadow-lg hover:-translate-y-2 transition-all duration-300 ease-out"
         />
       ))}
     </div>

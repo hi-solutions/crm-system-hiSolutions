@@ -1,5 +1,6 @@
+"use client";
 import { Dictionary } from "@/lib/dictionary";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Button from "../Button";
 import Link from "next/link";
 import { Params } from "@/app/[lang]/layout";
@@ -11,6 +12,75 @@ interface HeroProps {
 }
 
 const Hero = ({ dict, params }: HeroProps) => {
+  const [phoneScreen, setPhoneScreen] = useState<string>(
+    `/images/phone_${params.lang}_screen.png`
+  );
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const [phoneScreenLoading, setPhoneScreenLoading] = useState(true);
+
+  const [currencyScreen, setCurrencyScreen] = useState<string>(
+    `/images/currency_${params.lang}.png`
+  );
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const [currencyScreenLoading, setCurrencyScreenLoading] = useState(true);
+
+  const [statisticsScreen, setStatisticsScreen] = useState<string>(
+    `/images/statistics_${params.lang}.png`
+  );
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const [statisticsScreenLoading, setStatisticsScreenLoading] = useState(true);
+
+  useEffect(() => {
+    // When lang changes, preload new phone screen image
+    const newPhoneScreenSrc = `/images/phone_${params.lang}_screen.png`;
+    setPhoneScreenLoading(true);
+    const phoneImg = new window.Image();
+    phoneImg.onload = () => {
+      setPhoneScreen(newPhoneScreenSrc);
+      setPhoneScreenLoading(false);
+    };
+    phoneImg.src = newPhoneScreenSrc;
+  }, [params.lang]);
+
+  useEffect(() => {
+    // When lang changes, preload new currency screen image
+    const newCurrencyScreenSrc = `/images/currency_${params.lang}.png`;
+    setCurrencyScreenLoading(true);
+    const currencyImg = new window.Image();
+    currencyImg.onload = () => {
+      setCurrencyScreen(newCurrencyScreenSrc);
+      setCurrencyScreenLoading(false);
+    };
+    currencyImg.src = newCurrencyScreenSrc;
+  }, [params.lang]);
+
+  useEffect(() => {
+    // When lang changes, preload new statistics screen image
+    const newStatisticsScreenSrc = `/images/statistics_${params.lang}.png`;
+    setStatisticsScreenLoading(true);
+    const statisticsImg = new window.Image();
+    statisticsImg.onload = () => {
+      setStatisticsScreen(newStatisticsScreenSrc);
+      setStatisticsScreenLoading(false);
+    };
+    statisticsImg.src = newStatisticsScreenSrc;
+  }, [params.lang]);
+
+  // const phoneScreen =
+  //   params.lang === "en"
+  //     ? "/images/phone_en_screen.png"
+  //     : "/images/phone_ar_screen.png";
+
+  // const currencyScreen =
+  //   params.lang === "en"
+  //     ? "/images/currency_en.png"
+  //     : "/images/currency_ar.png";
+
+  // const statisticsScreen =
+  //   params.lang === "en"
+  //     ? "/images/statistics_en.png"
+  //     : "/images/statistics_ar.png";
+
   return (
     <section className="px-4 md:px-10 lg:px-16 bg-white overflow-hidden">
       <div className="mx-auto max-w-7xl grid grid-cols-1 md:grid-cols-2 md:gap-8 items-center">
@@ -45,10 +115,10 @@ const Hero = ({ dict, params }: HeroProps) => {
         </div>
 
         {/* images */}
-        <div className="relative w-full h-[480px] sm:h-[560px] md:h-[640px] lg:h-[700px]">
+        <div className="relative w-full h-[480px] sm:h-[560px] md:h-[640px] lg:h-[650px] ">
           {/* main phones */}
           <Image
-            src="/images/mobile_screens.png"
+            src={phoneScreen}
             alt="App screens"
             fill
             className="object-contain object-center scale-110 md:scale-125"
@@ -58,7 +128,7 @@ const Hero = ({ dict, params }: HeroProps) => {
           {/* currency card overlay */}
           <div className="absolute right-0 top-16 sm:top-12 md:top-14 lg:top-16 translate-x-2 sm:translate-x-6">
             <Image
-              src="/images/currency_viewr.png"
+              src={currencyScreen}
               alt="Currency widget"
               width={260}
               height={160}
@@ -69,7 +139,7 @@ const Hero = ({ dict, params }: HeroProps) => {
           {/* statistics card overlay */}
           <div className="absolute bottom-2 left-6 sm:left-10 md:left-14 lg:left-0 lg:-translate-x-1/5">
             <Image
-              src="/images/statistics.png"
+              src={statisticsScreen}
               alt="Statistics widget"
               width={260}
               height={160}
