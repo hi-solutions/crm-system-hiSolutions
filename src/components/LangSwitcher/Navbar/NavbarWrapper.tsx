@@ -28,7 +28,7 @@ export default async function NavbarWrapper({ lang }: NavbarWrapperProps) {
       languages={languages}
       navLinks={navLinks}
       currentLang={lang}
-      ctaButton={{ text: dict.start14DaysTrial, href: `/${lang}/contact` }}
+      ctaButton={{ text: dict.get_your_copy_now, href: `/${lang}/contact` }}
     />
   );
 }

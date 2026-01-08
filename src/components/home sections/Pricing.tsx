@@ -1,3 +1,4 @@
+"use Client";
 import React from "react";
 import { User, Users, Building2, Gift } from "lucide-react";
 import PricingCard from "../Card/PricingCard";
@@ -6,8 +7,25 @@ import Button from "../Button";
 import { Dictionary } from "@/lib/dictionary";
 import Image from "next/image";
 
-const Pricing: React.FC<{ dict: Dictionary }> = ({ dict }) => {
-  const pricingData = [
+interface PricingData {
+  freeLeads: number;
+  paidLeads: number;
+}
+
+interface PricingProps {
+  dict: Dictionary;
+  pricingData?: PricingData;
+}
+
+const Pricing: React.FC<PricingProps> = ({ dict, pricingData }) => {
+  // Use passed data if available, otherwise fall back to defaults
+  const { freeLeads, paidLeads } = pricingData ?? {
+    freeLeads: 100,
+    paidLeads: 100000,
+  };
+
+  const pricingDummyData = [
+    // free plan
     {
       tagText: dict?.pricing_professional_tag,
       icon: <User className="w-6 h-6" />,
@@ -18,6 +36,7 @@ const Pricing: React.FC<{ dict: Dictionary }> = ({ dict }) => {
       priceSuffix: dict?.pricing_price_currency_suffix,
       className: "w-full max-w-[350px]",
     },
+    // paid plan
     {
       tagText: dict?.pricing_team_tag,
       icon: <Users className="w-6 h-6" />,
@@ -30,16 +49,16 @@ const Pricing: React.FC<{ dict: Dictionary }> = ({ dict }) => {
       priceSuffix: dict?.pricing_price_currency_suffix,
       className: "w-full max-w-[350px]",
     },
-    {
-      tagText: dict?.pricing_enterprise_tag,
-      icon: <Building2 className="w-6 h-6" />,
-      planDescription: dict?.pricing_enterprise_description,
-      planPrice: dict?.pricing_enterprise_price ?? "",
-      buttonText: dict?.pricing_enterprise_button ?? "",
-      planAdvantages: dict?.pricing_enterprise_advantages ?? [],
-      priceSuffix: dict?.pricing_price_currency_suffix,
-      className: "w-full max-w-[350px]",
-    },
+    // {
+    //   tagText: dict?.pricing_enterprise_tag,
+    //   icon: <Building2 className="w-6 h-6" />,
+    //   planDescription: dict?.pricing_enterprise_description,
+    //   planPrice: dict?.pricing_enterprise_price ?? "",
+    //   buttonText: dict?.pricing_enterprise_button ?? "",
+    //   planAdvantages: dict?.pricing_enterprise_advantages ?? [],
+    //   priceSuffix: dict?.pricing_price_currency_suffix,
+    //   className: "w-full max-w-[350px]",
+    // },
   ];
   return (
     <section className="relative overflow-hidden py-20 bg-gradient-to-b from-gray-50 to-white">
@@ -52,7 +71,7 @@ const Pricing: React.FC<{ dict: Dictionary }> = ({ dict }) => {
           />
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 place-items-center">
-          {pricingData.map((plan, index) => (
+          {pricingDummyData.map((plan, index) => (
             <PricingCard
               key={`${plan.tagText}-${index}`}
               {...plan}

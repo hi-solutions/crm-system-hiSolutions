@@ -3,10 +3,11 @@
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { HiCrmLogo } from "../../../../public/icons/icons";
-import { GB, SA } from "country-flag-icons/react/3x2";
+import { EG, GB } from "country-flag-icons/react/3x2";
 import React, { useEffect, useRef, useState } from "react";
 import Button from "@/components/Button";
 import { ChevronDown } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
 
 export interface Language {
   code: string;
@@ -188,52 +189,60 @@ export default function Navbar({
       </div>
 
       {/* Mobile Menu (visible below 958px) */}
-      {isMenuOpen && (
-        <div className="lg:hidden">
-          <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-            {navLinks.map((link, index) => (
-              <Link
-                key={index}
-                href={link.href}
-                className={`block px-3 py-2 rounded-md text-base font-medium ${
-                  isActive(link.href)
-                    ? "text-[#005FDA] bg-gray-50"
-                    : "text-gray-700 hover:bg-gray-50 hover:text-blue-600"
-                }`}
-                onClick={() => setIsMenuOpen(false)}
-              >
-                {link.label}
-                {isActive(link.href) && (
-                  <span className="block w-full h-0.5 bg-[#005FDA] mt-1"></span>
-                )}
-              </Link>
-            ))}
-            {/* Mobile Language Selector */}
-            <div className="pt-4 pb-2 px-3">
-              <LanguageDropdown
-                languages={languages}
-                currentLang={currentLang}
-                onChange={handleLanguageChange}
-                isOpen={isLangDropdownOpen}
-                setIsOpen={setIsLangDropdownOpen}
-                isMobile={true}
-                ref={langDropdownRef}
-              />
-            </div>
-            {ctaButton && (
-              <div className="pt-4 pb-2 px-3 space-y-2">
+      {/* Mobile Menu (visible below 958px) */}
+      <AnimatePresence>
+        {isMenuOpen && (
+          <motion.div
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: "auto" }}
+            exit={{ opacity: 0, height: 0 }}
+            className="lg:hidden overflow-hidden"
+          >
+            <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+              {navLinks.map((link, index) => (
                 <Link
-                  href={ctaButton.href}
-                  className="block w-full text-center px-4 py-2 bg-[#005FDA] text-white rounded-md font-medium hover:bg-blue-700 transition-colors duration-200"
+                  key={index}
+                  href={link.href}
+                  className={`block px-3 py-2 rounded-md text-base font-medium ${
+                    isActive(link.href)
+                      ? "text-[#005FDA] bg-gray-50"
+                      : "text-gray-700 hover:bg-gray-50 hover:text-blue-600"
+                  }`}
                   onClick={() => setIsMenuOpen(false)}
                 >
-                  {ctaButton.text}
+                  {link.label}
+                  {isActive(link.href) && (
+                    <span className="block w-full h-0.5 bg-[#005FDA] mt-1"></span>
+                  )}
                 </Link>
+              ))}
+              {/* Mobile Language Selector */}
+              <div className="pt-4 pb-2 px-3">
+                <LanguageDropdown
+                  languages={languages}
+                  currentLang={currentLang}
+                  onChange={handleLanguageChange}
+                  isOpen={isLangDropdownOpen}
+                  setIsOpen={setIsLangDropdownOpen}
+                  isMobile={true}
+                  ref={langDropdownRef}
+                />
               </div>
-            )}
-          </div>
-        </div>
-      )}
+              {ctaButton && (
+                <div className="pt-4 pb-2 px-3 space-y-2">
+                  <Link
+                    href={ctaButton.href}
+                    className="block w-full text-center px-4 py-2 bg-[#005FDA] text-white rounded-md font-medium hover:bg-blue-700 transition-colors duration-200"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    {ctaButton.text}
+                  </Link>
+                </div>
+              )}
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </nav>
   );
 }
@@ -254,7 +263,7 @@ const LanguageDropdown = React.forwardRef<
     ref
   ) => {
     const Flag = ({ code }: { code: string }) => {
-      if (code === "ar") return <SA title="Saudi Arabia" className="w-6 h-4" />;
+      if (code === "ar") return <EG title="Egypt" className="w-6 h-4" />;
       return <GB title="United Kingdom" className="w-6 h-4" />;
     };
 
@@ -263,7 +272,7 @@ const LanguageDropdown = React.forwardRef<
         <div className="relative" ref={ref} aria-label="Language selector">
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="w-full flex items-center justify-between px-4 py-2 border border-gray-200 rounded-md hover:bg-gray-50 transition-colors duration-200"
+            className="w-full flex items-center justify-between px-4 py-2 border border-gray-200 rounded-md hover:bg-gray-100 transition-colors duration-300"
           >
             <div className="flex items-center space-x-2">
               <span className="inline-flex items-center justify-center w-6 h-4">
@@ -277,8 +286,74 @@ const LanguageDropdown = React.forwardRef<
             <ChevronDown size={18} />
           </button>
 
+          <AnimatePresence>
+            {isOpen && (
+              <motion.div
+                initial={{ opacity: 0, height: 0, marginTop: 0 }}
+                animate={{ opacity: 1, height: "auto", marginTop: 8 }}
+                exit={{ opacity: 0, height: 0, marginTop: 0 }}
+                className="overflow-hidden border-gray-200 rounded-md"
+              >
+                <div className="border border-gray-200 rounded-md">
+                  {languages.map((lang, index) => (
+                    <button
+                      key={lang.code}
+                      onClick={() => {
+                        onChange(lang.code);
+                        setIsOpen(false);
+                      }}
+                      className={`w-full flex items-center space-x-2 px-4 py-2 text-left hover:bg-gray-50 transition-colors duration-200 ${
+                        index === 0 ? "rounded-t-md" : ""
+                      } ${
+                        index === languages.length - 1 ? "rounded-b-md" : ""
+                      } ${index > 0 ? "border-t border-gray-100" : ""}`}
+                    >
+                      <span className="inline-flex items-center justify-center w-6 h-4">
+                        <Flag code={lang.code} />
+                      </span>
+                      <span className="text-sm font-medium">{lang.label}</span>
+                      {currentLang === lang.code && (
+                        <span className="ml-auto text-[#005FDA]">✓</span>
+                      )}
+                    </button>
+                  ))}
+                </div>
+              </motion.div>
+            )}
+          </AnimatePresence>
+        </div>
+      );
+    }
+
+    return (
+      <div className="relative" ref={ref} aria-label="Language selector ">
+        <button
+          onClick={() => setIsOpen(!isOpen)}
+          className="flex items-center space-x-2 px-3 py-2 border border-gray-200 rounded-md hover:bg-gray-100 transition-colors duration-200 cursor-pointer"
+          aria-haspopup="listbox"
+          aria-expanded={isOpen}
+        >
+          <span className="inline-flex items-center justify-center w-6 h-4">
+            <Flag code={currentLang} />
+          </span>
+          {/* language code better UX without it */}
+          {/* <span className="text-sm font-medium">
+            {currentLang.toUpperCase()}
+          </span> */}
+          <ChevronDown size={16} />
+        </button>
+
+        <AnimatePresence>
           {isOpen && (
-            <div className="mt-2 border border-gray-200 rounded-md">
+            <motion.div
+              initial={{ opacity: 0, y: -10 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -10 }}
+              transition={{ duration: 0.2 }}
+              className={`absolute mt-2 w-40 bg-white border border-gray-200 rounded-md shadow-lg z-50 ${
+                currentLang === "ar" ? "left-0" : "right-0"
+              }`}
+            >
               {languages.map((lang, index) => (
                 <button
                   key={lang.code}
@@ -286,11 +361,11 @@ const LanguageDropdown = React.forwardRef<
                     onChange(lang.code);
                     setIsOpen(false);
                   }}
-                  className={`w-full flex items-center space-x-2 px-4 py-2 text-left hover:bg-gray-50 transition-colors duration-200 ${
-                    index === 0 ? "rounded-t-md" : ""
-                  } ${index === languages.length - 1 ? "rounded-b-md" : ""} ${
+                  className={`w-full flex items-center space-x-2 px-4 py-2 text-left hover:bg-gray-100 transition-colors duration-300 hover:cursor-pointer  ${
                     index > 0 ? "border-t border-gray-100" : ""
                   }`}
+                  role="option"
+                  aria-selected={currentLang === lang.code}
                 >
                   <span className="inline-flex items-center justify-center w-6 h-4">
                     <Flag code={lang.code} />
@@ -301,55 +376,9 @@ const LanguageDropdown = React.forwardRef<
                   )}
                 </button>
               ))}
-            </div>
+            </motion.div>
           )}
-        </div>
-      );
-    }
-
-    return (
-      <div className="relative" ref={ref} aria-label="Language selector">
-        <button
-          onClick={() => setIsOpen(!isOpen)}
-          className="flex items-center space-x-2 px-3 py-2 border border-gray-200 rounded-md hover:bg-gray-50 transition-colors duration-200 cursor-pointer"
-          aria-haspopup="listbox"
-          aria-expanded={isOpen}
-        >
-          <span className="inline-flex items-center justify-center w-6 h-4">
-            <Flag code={currentLang} />
-          </span>
-          <span className="text-sm font-medium">
-            {currentLang.toUpperCase()}
-          </span>
-          <ChevronDown size={16} />
-        </button>
-
-        {isOpen && (
-          <div className="absolute right-0 mt-2 w-40 bg-white border border-gray-200 rounded-md shadow-lg z-50">
-            {languages.map((lang, index) => (
-              <button
-                key={lang.code}
-                onClick={() => {
-                  onChange(lang.code);
-                  setIsOpen(false);
-                }}
-                className={`w-full flex items-center space-x-2 px-4 py-2 text-left hover:bg-gray-50 transition-colors duration-200 ${
-                  index > 0 ? "border-t border-gray-100" : ""
-                }`}
-                role="option"
-                aria-selected={currentLang === lang.code}
-              >
-                <span className="inline-flex items-center justify-center w-6 h-4">
-                  <Flag code={lang.code} />
-                </span>
-                <span className="text-sm font-medium">{lang.label}</span>
-                {currentLang === lang.code && (
-                  <span className="ml-auto text-[#005FDA]">✓</span>
-                )}
-              </button>
-            ))}
-          </div>
-        )}
+        </AnimatePresence>
       </div>
     );
   }

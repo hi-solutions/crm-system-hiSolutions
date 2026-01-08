@@ -6,7 +6,7 @@ import SectionHeader from "@/components/SectionHeader/SectionHeader";
 import PricingSection from "@/components/home sections/Pricing";
 import FAQSection from "@/components/FAQ/FAQSection";
 import Hero from "@/components/home sections/Hero";
-import Testimonials from "@/components/home sections/Testimonials";
+// import Testimonials from "@/components/home sections/Testimonials";
 import FeaturesShowcase from "@/components/home sections/FeaturesShowcase";
 // import TrustedBy from "@/components/home sections/TrustedBy";
 
@@ -67,7 +67,7 @@ export default async function Home({ params }: { params: Params }) {
               tag={{ title: dict.integrations }}
               title={dict.integrations_title}
               description={dict.integrations_description}
-              linkText={dict.integrations_link_text}
+              // linkText={dict.integrations_link_text}
             />
           </div>
         </div>
@@ -112,7 +112,7 @@ export default async function Home({ params }: { params: Params }) {
       <FeaturesShowcase dict={dict} />
 
       {/* Testimonials Section */}
-      <Testimonials dict={dict} />
+      {/* <Testimonials dict={dict} /> */}
 
       {/* Pricing Section */}
       <section className="py-20 px-4 md:px-10 lg:px-16 relative flex flex-col items-center justify-center gap-10  bg-gradient-to-b from-gray-50 to-white">

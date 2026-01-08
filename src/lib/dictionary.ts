@@ -224,6 +224,7 @@ export interface Dictionary {
   support_description: string;
   growth_title: string;
   growth_description: string;
+  get_your_copy_now: string;
 }
 
 const dictionaries = {

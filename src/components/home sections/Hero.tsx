@@ -96,7 +96,7 @@ const Hero = ({ dict, params }: HeroProps) => {
           </p>
           <Link href={`/${params.lang}/contact`}>
             <Button className="shadow-sm hover:shadow-md text-base px-6 py-3 rounded-3xl">
-              {dict?.start14DaysTrial}
+              {dict?.get_your_copy_now}
             </Button>
           </Link>
           {/* dots */}
