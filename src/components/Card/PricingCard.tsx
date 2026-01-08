@@ -7,7 +7,7 @@ interface PricingCardProps {
   tagText?: string;
   icon?: React.ReactNode;
   planDescription: string;
-  planPrice: string;
+  planPrice?: number;
   buttonText: string;
   planAdvantages: string[];
   bestPlan?: boolean;
@@ -25,7 +25,7 @@ const PricingCard: React.FC<PricingCardProps> = ({
   planAdvantages,
   bestPlan = false,
   bestPlanLabel = "Best value",
-  priceSuffix = "$",
+  priceSuffix = "E£",
   className = "",
 }) => {
   const baseStyles = bestPlan
@@ -59,7 +59,9 @@ const PricingCard: React.FC<PricingCardProps> = ({
       <p className="text-gray-600 text-base mb-6">{planDescription}</p>
 
       <div className="mb-8">
-        <span className="text-5xl font-bold text-gray-900">{planPrice}</span>
+        <span className="text-5xl font-bold text-gray-900 ">
+          {planPrice?.toLocaleString()}
+        </span>
         {priceSuffix && (
           <span className="text-gray-600 text-xl ml-2">{priceSuffix}</span>
         )}

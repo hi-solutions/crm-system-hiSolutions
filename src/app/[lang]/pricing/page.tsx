@@ -21,8 +21,8 @@ export default async function PricingPage({ params }: { params: Params }) {
       </section>
 
       {/* pricing section  */}
-      <section className="py-20 bg-white">
-        <div className="min-h-screen bg-white">
+      <section className="py-20 px-4 md:px-10 lg:px-16 relative flex flex-col items-center justify-center gap-10  bg-gradient-to-b from-gray-50 to-white">
+        <div className="min-h-screen bg-white ">
           <PricingSection dict={dict} />
         </div>
       </section>

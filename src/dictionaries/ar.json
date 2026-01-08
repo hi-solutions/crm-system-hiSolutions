@@ -145,7 +145,7 @@
   "flexible_pricing_for_any_team": "تسعير مرن لأي حجم فريق. إنها دفعة واحدة — تشتري الترخيص مرة واحدة، وجميع التحديثات المستقبلية مجانية لك إلى الأبد.",
   "not_ready_to_pay": "لسه مش جاهز للدفع؟ جرّب النسخة التجريبية المجانية التي تحتوي على 600 أيقونة. نفس الأنماط، نفس المزايا، ونفس المرونة. وتشمل أيضًا معاينة كاملة.",
   "try_free_demo": "جرّب النسخة التجريبية المجانية",
-  "pricing_price_currency_suffix": "$",
+  "pricing_price_currency_suffix": "E£",
   "pricing_best_value_tag": "أفضل قيمة",
   "pricing_professional_tag": "احترافي",
   "pricing_professional_description": "للمستقلين أو المطورين الأفراد أو رواد الأعمال الفرديين.",
@@ -348,5 +348,7 @@
   "support_description": "الصيانة المستمرة والتحسين لتحقيق أعلى أداء",
   "growth_title": "نمو",
   "growth_description": "قم بتوسيع نطاق أنظمتك وتطويرها مع توسع أعمالك",
-  "get_your_copy_now": "احصل على نسختك الآن"
+  "get_your_copy_now": "احصل على نسختك الآن",
+  "paid_plan": "مدفوعة",
+  "free_plan": "مجانية"
 }

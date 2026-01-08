@@ -10,6 +10,7 @@ import Image from "next/image";
 interface PricingData {
   freeLeads: number;
   paidLeads: number;
+  paidPrice: number;
 }
 
 interface PricingProps {
@@ -19,34 +20,35 @@ interface PricingProps {
 
 const Pricing: React.FC<PricingProps> = ({ dict, pricingData }) => {
   // Use passed data if available, otherwise fall back to defaults
-  const { freeLeads, paidLeads } = pricingData ?? {
+  const { freeLeads, paidLeads, paidPrice } = pricingData ?? {
     freeLeads: 100,
     paidLeads: 100000,
+    paidPrice: 17500,
   };
 
   const pricingDummyData = [
     // free plan
     {
-      tagText: dict?.pricing_professional_tag,
+      tagText: dict?.free_plan,
       icon: <User className="w-6 h-6" />,
       planDescription: dict?.pricing_professional_description,
-      planPrice: dict?.pricing_professional_price ?? "",
+      planPrice: 0,
       buttonText: dict?.pricing_professional_button ?? "",
       planAdvantages: dict?.pricing_professional_advantages ?? [],
-      priceSuffix: dict?.pricing_price_currency_suffix,
+      priceSuffix: "E£",
       className: "w-full max-w-[350px]",
     },
     // paid plan
     {
-      tagText: dict?.pricing_team_tag,
+      tagText: dict?.paid_plan,
       icon: <Users className="w-6 h-6" />,
       planDescription: dict?.pricing_team_description,
-      planPrice: dict?.pricing_team_price ?? "",
+      planPrice: paidPrice,
       buttonText: dict?.pricing_team_button ?? "",
       planAdvantages: dict?.pricing_team_advantages ?? [],
       bestPlan: true,
       bestPlanLabel: dict?.pricing_best_value_tag,
-      priceSuffix: dict?.pricing_price_currency_suffix,
+      priceSuffix: "E£",
       className: "w-full max-w-[350px]",
     },
     // {
@@ -56,7 +58,7 @@ const Pricing: React.FC<PricingProps> = ({ dict, pricingData }) => {
     //   planPrice: dict?.pricing_enterprise_price ?? "",
     //   buttonText: dict?.pricing_enterprise_button ?? "",
     //   planAdvantages: dict?.pricing_enterprise_advantages ?? [],
-    //   priceSuffix: dict?.pricing_price_currency_suffix,
+    //   priceSuffix: "E£",
     //   className: "w-full max-w-[350px]",
     // },
   ];
@@ -70,7 +72,9 @@ const Pricing: React.FC<PricingProps> = ({ dict, pricingData }) => {
             description={dict?.flexible_pricing_for_any_team}
           />
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 place-items-center">
+        {/* <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 place-items-center"> */}
+        {/* //! removed lg:grid-cols-3 because we have only two plans */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 place-items-center">
           {pricingDummyData.map((plan, index) => (
             <PricingCard
               key={`${plan.tagText}-${index}`}

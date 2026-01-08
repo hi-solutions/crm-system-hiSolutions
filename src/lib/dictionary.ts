@@ -192,6 +192,8 @@ export interface Dictionary {
     plans: PricingComparisonPlan[];
     sections: PricingComparisonSection[];
   };
+  paid_plan: string;
+  free_plan: string;
   everything_you_need: string;
   powerful_easy_tools: string;
   integrations: string;
