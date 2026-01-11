@@ -1,21 +1,14 @@
 import { isRTL, locales } from "@/middleware";
 import { getDictionary } from "@/lib/dictionary";
 import "./globals.css";
-import { Noto_Sans_Arabic, Inter } from "next/font/google";
+import { Cairo } from "next/font/google";
 import { DictionaryProvider } from "@/hooks/Dickitionary";
 import NavbarWrapper from "@/components/LangSwitcher/Navbar/NavbarWrapper";
 import Footer from "@/components/Footer/Footer";
 
-const notoSansArabic = Noto_Sans_Arabic({
-  subsets: ["arabic"],
-  weight: ["400", "500", "600", "700"],
-  variable: "--font-noto-sans-arabic",
-});
-
-const inter = Inter({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-  variable: "--font-inter",
+const cairo = Cairo({
+  subsets: ["arabic", "latin"],
+  variable: "--font-cairo",
 });
 
 export type Params = Promise<{ lang: "ar" | "en" }>;
@@ -114,11 +107,9 @@ export default async function RootLayout({
     <html
       lang={lang}
       dir={isRTL(lang) ? "rtl" : "ltr"}
-      className={`${notoSansArabic.variable} ${inter.variable}`}
+      className={`${cairo.variable}`}
     >
-      <body
-        className={lang === "ar" ? notoSansArabic.className : inter.className}
-      >
+      <body className={cairo.className}>
         <DictionaryProvider dictionary={dict} language={lang}>
           <NavbarWrapper lang={lang} />
           {children}

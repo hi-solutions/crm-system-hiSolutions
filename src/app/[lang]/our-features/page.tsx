@@ -75,7 +75,7 @@ export default async function FeaturesPage({ params }: { params: Params }) {
       <FeatureDetailSection
         dict={dict}
         tagText={dict.effective_management_tag}
-        image="/images/details_screen.png"
+        image="/images/new_screens/multi_users_screen.webp"
         title={dict.effective_management_title}
         description={dict.effective_management_description}
         list={affectiveManagementList}
@@ -87,7 +87,7 @@ export default async function FeaturesPage({ params }: { params: Params }) {
       <FeatureDetailSection
         dict={dict}
         tagText={dict.smart_insights_tag}
-        image="/images/smart_insights_section.png"
+        image="/images/new_screens/team_management_screen.webp"
         title={dict.smart_insights_title}
         description={dict.smart_insights_description}
         list={smartInsightsList}
@@ -99,7 +99,7 @@ export default async function FeaturesPage({ params }: { params: Params }) {
       <FeatureDetailSection
         dict={dict}
         tagText={dict.speed_and_efficiency_tag}
-        image="/images/speed_section.png"
+        image="/images/new_screens/eff_management_screen.webp"
         title={dict.speed_and_efficiency_title}
         description={dict.speed_and_efficiency_description}
         list={speedAndEfficiencyList}
