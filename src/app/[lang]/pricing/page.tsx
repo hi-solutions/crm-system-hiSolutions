@@ -4,6 +4,7 @@ import SectionHeader from "@/components/SectionHeader/SectionHeader";
 import PricingSection from "@/components/home sections/Pricing";
 import FAQSection from "@/components/FAQ/FAQSection";
 import PricesComparison from "@/components/pricing-sections/PricesComparison";
+import DecoratedElements from "@/components/DecoratedElements/DecoratedElements";
 
 export default async function PricingPage({ params }: { params: Params }) {
   const { lang } = await params;
@@ -12,7 +13,10 @@ export default async function PricingPage({ params }: { params: Params }) {
   return (
     <div className="min-h-screen bg-white ">
       {/* hero sectin  */}
-      <section className="py-20 px-4 md:px-10 lg:px-16 bg-gray-50 relative flex flex-col items-center justify-center gap-10">
+      <section className="py-20 px-4 md:px-10 lg:px-16 bg-gray-50 relative flex flex-col items-center justify-center gap-10 overflow-hidden">
+        <DecoratedElements />
+
+        {/* Content */}
         <SectionHeader
           tag={{ title: dict?.prices }}
           title={dict?.flexible_pricing_plans}

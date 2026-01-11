@@ -1,6 +1,7 @@
 "use Client";
 import React from "react";
-import { User, Users, Building2, Gift } from "lucide-react";
+import { Gift } from "lucide-react";
+import { MdOutlineMoneyOff, MdOutlineAttachMoney } from "react-icons/md";
 import PricingCard from "../Card/PricingCard";
 import SectionHeader from "../SectionHeader/SectionHeader";
 import Button from "../Button";
@@ -26,26 +27,45 @@ const Pricing: React.FC<PricingProps> = ({ dict, pricingData }) => {
     paidPrice: 17500,
   };
 
+  const freePlanAdvantages = [
+    dict?.manage_leads_per_month.replace("{{count}}", freeLeads.toString()),
+    dict?.limited_users,
+    dict?.social_media_integration_feature,
+    dict?.free_system_trial,
+    dict?.ideal_for_small_teams,
+  ];
+
+  const paidPlanAdvantages = [
+    dict?.quick_actions_daily,
+    dict?.manage_leads_per_month.replace("{{count}}", paidLeads.toString()),
+    dict?.unlimited_users,
+    dict?.full_user_management,
+    dict?.import_export_excel,
+    dict?.manage_sales_rentals,
+    dict?.real_time_notifications,
+    dict?.full_social_integration,
+  ];
+
   const pricingDummyData = [
     // free plan
     {
       tagText: dict?.free_plan,
-      icon: <User className="w-6 h-6" />,
-      planDescription: dict?.pricing_professional_description,
+      icon: <MdOutlineMoneyOff className="w-6 h-6" />,
+      // planDescription: dict?.pricing_professional_description,
       planPrice: 0,
-      buttonText: dict?.pricing_professional_button ?? "",
-      planAdvantages: dict?.pricing_professional_advantages ?? [],
+      buttonText: dict?.pricing_free_button ?? "",
+      planAdvantages: freePlanAdvantages,
       priceSuffix: "E£",
       className: "w-full max-w-[350px]",
     },
     // paid plan
     {
       tagText: dict?.paid_plan,
-      icon: <Users className="w-6 h-6" />,
-      planDescription: dict?.pricing_team_description,
+      icon: <MdOutlineAttachMoney className="w-6 h-6" />,
+      // planDescription: dict?.pricing_team_description,
       planPrice: paidPrice,
-      buttonText: dict?.pricing_team_button ?? "",
-      planAdvantages: dict?.pricing_team_advantages ?? [],
+      buttonText: dict?.pricing_paid_button ?? "",
+      planAdvantages: paidPlanAdvantages,
       bestPlan: true,
       bestPlanLabel: dict?.pricing_best_value_tag,
       priceSuffix: "E£",
@@ -74,7 +94,7 @@ const Pricing: React.FC<PricingProps> = ({ dict, pricingData }) => {
         </div>
         {/* <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 place-items-center"> */}
         {/* //! removed lg:grid-cols-3 because we have only two plans */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 place-items-center">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 place-items-center md:place-items-start">
           {pricingDummyData.map((plan, index) => (
             <PricingCard
               key={`${plan.tagText}-${index}`}

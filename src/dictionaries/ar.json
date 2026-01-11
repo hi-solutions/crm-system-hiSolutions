@@ -147,24 +147,15 @@
   "try_free_demo": "جرّب النسخة التجريبية المجانية",
   "pricing_price_currency_suffix": "E£",
   "pricing_best_value_tag": "أفضل قيمة",
-  "pricing_professional_tag": "احترافي",
-  "pricing_professional_description": "للمستقلين أو المطورين الأفراد أو رواد الأعمال الفرديين.",
-  "pricing_professional_price": "56",
-  "pricing_professional_button": "اشتري الآن",
-  "pricing_professional_advantages": [
-    "ترخيص لمستخدم واحد",
-    "تحديثات مدى الحياة",
-    "أكثر من 5000 أيقونة",
-    "6 أنماط فريدة",
-    "تحكم فوري في الحواف والسماكات",
-    "مدعوم بالمتغيرات",
-    "مكتبة IconJar وملفات SVG",
-    "عدد غير محدود من المشاريع"
-  ],
+  "pricing_paid_tag": "احترافي",
+  "pricing_paid_description": "للمستقلين أو المطورين الأفراد أو رواد الأعمال الفرديين.",
+  "pricing_paid_price": "56",
+  "pricing_paid_button": "اشتر الآن",
+
   "pricing_team_tag": "فريق",
   "pricing_team_description": "للفرق سريعة النمو، حتى 6 مستخدمين في المكتبة.",
   "pricing_team_price": "112",
-  "pricing_team_button": "اشتري الآن",
+  "pricing_free_button": "جرب الآن",
   "pricing_team_advantages": [
     "ترخيص يصل إلى 6 مستخدمين",
     "تحديثات مدى الحياة",
@@ -175,6 +166,13 @@
     "مكتبة IconJar وملفات SVG",
     "عدد غير محدود من المشاريع"
   ],
+  "quick_actions_daily": "الإجراءات السريعة لتسريع العمل اليومي",
+  "unlimited_users": "عدد مستخدمين غير محدود",
+  "full_user_management": "حرية كاملة في إضافة وإدارة المستخدمين",
+  "import_export_excel": "استيراد وتصدير بيانات العملاء عبر اكسيل",
+  "manage_sales_rentals": "إدارة وحدات البيع والإيجار",
+  "real_time_notifications": "إشعارات لمتابعة كل خطوة",
+  "full_social_integration": "تكامل كامل مع منصات التواصل الاجتماعي",
   "pricing_enterprise_tag": "شركات كبرى",
   "pricing_enterprise_description": "للشركات الكبيرة، عدد غير محدود من مستخدمي المكتبة.",
   "pricing_enterprise_price": "224",
@@ -189,23 +187,24 @@
     "مكتبة IconJar وملفات SVG",
     "عدد غير محدود من المشاريع"
   ],
+  "manage_leads_per_month": "إدارة حتى {{count}} Lead شهريًا",
+  "limited_users": "عدد مستخدمين محدود",
+  "social_media_integration_feature": "تكامل مع منصات التواصل الاجتماعي",
+  "free_system_trial": "تجربة النظام بدون أي تكلفة",
+  "ideal_for_small_teams": "مناسبة للفرق الصغيرة والانطلاق السريع",
   "comprehensive_comparison_of_plans": "مقارنة شاملة للخطط",
   "comprehensive_comparison_of_plans_description": "اكتشف الفروقات بين كل خطة واختر الأنسب لاحتياجاتك",
   "pricing_comparison": {
     "plans": [
       {
-        "id": "basic",
-        "name": "أساسي"
+        "id": "free",
+        "name": "مجاني"
       },
       {
-        "id": "professional",
-        "name": "محترف",
-        "badge": "الأكثر شعبية",
+        "id": "paid",
+        "name": "مدفوع",
+        "badge": "أفضل قيمة",
         "featured": true
-      },
-      {
-        "id": "enterprise",
-        "name": "مؤسسة"
       }
     ],
     "sections": [
@@ -214,33 +213,28 @@
         "rows": [
           {
             "label": "إدارة العملاء",
-            "basic": true,
-            "professional": true,
-            "enterprise": true
+            "free": true,
+            "paid": true
           },
           {
             "label": "إدارة المهام",
-            "basic": true,
-            "professional": true,
-            "enterprise": true
+            "free": true,
+            "paid": true
           },
           {
             "label": "تقارير أساسية",
-            "basic": true,
-            "professional": true,
-            "enterprise": true
+            "free": true,
+            "paid": true
           },
           {
             "label": "تطبيق الجوال",
-            "basic": true,
-            "professional": true,
-            "enterprise": true
+            "free": true,
+            "paid": true
           },
           {
             "label": "دعم فني",
-            "basic": "بريد",
-            "professional": "بريد وهاتف",
-            "enterprise": "24/7"
+            "free": "بريد",
+            "paid": "بريد وهاتف"
           }
         ]
       },
@@ -249,33 +243,28 @@
         "rows": [
           {
             "label": "تحليلات متقدمة",
-            "basic": false,
-            "professional": true,
-            "enterprise": true
+            "free": false,
+            "paid": true
           },
           {
             "label": "تقارير مخصصة",
-            "basic": false,
-            "professional": true,
-            "enterprise": true
+            "free": false,
+            "paid": true
           },
           {
             "label": "أتمتة سير العمل",
-            "basic": false,
-            "professional": true,
-            "enterprise": true
+            "free": false,
+            "paid": true
           },
           {
             "label": "مقدم API",
-            "basic": false,
-            "professional": "محدود",
-            "enterprise": true
+            "free": false,
+            "paid": "محدود"
           },
           {
             "label": "تكاملات متقدمة",
-            "basic": false,
-            "professional": false,
-            "enterprise": true
+            "free": false,
+            "paid": false
           }
         ]
       },
@@ -284,33 +273,28 @@
         "rows": [
           {
             "label": "تسجيل دخول موحد SSO",
-            "basic": false,
-            "professional": false,
-            "enterprise": true
+            "free": false,
+            "paid": false
           },
           {
             "label": "مدير حساب مخصص",
-            "basic": false,
-            "professional": false,
-            "enterprise": true
+            "free": false,
+            "paid": false
           },
           {
             "label": "تدريب مخصص",
-            "basic": false,
-            "professional": false,
-            "enterprise": true
+            "free": false,
+            "paid": false
           },
           {
             "label": "عقود SLA",
-            "basic": false,
-            "professional": false,
-            "enterprise": true
+            "free": false,
+            "paid": false
           },
           {
             "label": "استضافة خاصة",
-            "basic": false,
-            "professional": false,
-            "enterprise": true
+            "free": false,
+            "paid": false
           }
         ]
       }

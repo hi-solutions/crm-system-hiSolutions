@@ -1,6 +1,7 @@
 import "server-only";
 
-export type PricingPlanId = "basic" | "professional" | "enterprise";
+// export type PricingPlanId = "basic" | "professional" | "enterprise";
+export type PricingPlanId = "free" | "paid";
 
 export type PricingComparisonValue = string | boolean | null;
 
@@ -171,15 +172,15 @@ export interface Dictionary {
   try_free_demo: string;
   pricing_price_currency_suffix: string;
   pricing_best_value_tag: string;
-  pricing_professional_tag: string;
-  pricing_professional_description: string;
-  pricing_professional_price: string;
-  pricing_professional_button: string;
-  pricing_professional_advantages: string[];
+  // pricing_professional_tag: string;
+  // pricing_professional_description: string;
+  // pricing_professional_price: string;
+  pricing_paid_button: string;
+  // pricing_professional_advantages: string[];
   pricing_team_tag: string;
   pricing_team_description: string;
   pricing_team_price: string;
-  pricing_team_button: string;
+  pricing_free_button: string;
   pricing_team_advantages: string[];
   pricing_enterprise_tag: string;
   pricing_enterprise_description: string;
@@ -238,6 +239,19 @@ export interface Dictionary {
 
   smart_filtering: string;
   smart_filtering_description: string;
+
+  manage_leads_per_month: string;
+  limited_users: string;
+  social_media_integration_feature: string;
+  free_system_trial: string;
+  ideal_for_small_teams: string;
+  quick_actions_daily: string;
+  unlimited_users: string;
+  full_user_management: string;
+  import_export_excel: string;
+  manage_sales_rentals: string;
+  real_time_notifications: string;
+  full_social_integration: string;
 }
 
 const dictionaries = {

@@ -21,7 +21,7 @@
   "socialLinkedinUrl": "https://www.linkedin.com/",
   "socialFacebookUrl": "https://www.facebook.com/",
   "faq1Question": "Why should I buy icons?",
-  "faq1Answer": "Icons enhance your designs by providing a consistent visual language that improves user experience, saves design time, and ensures professional polish across your projects.",
+  "faq1Answer": "Icons enhance your designs by providing a consistent visual language that improves user experience, saves design time, and ensures paid polish across your projects.",
   "faq2Question": "How are these icons different from other packs?",
   "faq2Answer": "Our icons are carefully crafted with modern design principles, offering a cohesive style that works seamlessly together. We provide multiple formats and sizes, ensuring compatibility with various design tools and platforms.",
   "faq3Question": "What are the benefits of using native Figma icons?",
@@ -41,7 +41,7 @@
   "easier_and_smarter": "is easier and smarter than ever",
   "hero_descrption": "A system designed specifically for the Egyptian market, combining sales, units and projects in one place.",
   "testimonials": "Testimonials",
-  "testimonials_title": "Trusted by hundreds of professionals",
+  "testimonials_title": "Trusted by hundreds of paids",
   "testimonials_description": "Some of the most memorable reviews we heard from our design colleagues.",
   "trusted_title": "Trusted by many leading companies",
   "trusted_subtitle": "Over 20 companies and organizations use Converge CRM to manage their customer relationships.",
@@ -101,7 +101,7 @@
     "Ultra-fast loading times"
   ],
   "who_we_are_tag": "Who we are",
-  "who_we_are_title": "A team of passionate professionals dedicated to building the best CRM for real estate sales",
+  "who_we_are_title": "A team of passionate paids dedicated to building the best CRM for real estate sales",
   "who_we_are_description": "At Hi-Solutions, we blend cutting-edge software development with creative marketing expertise to deliver exceptional CRM implementations and digital growth strategies.",
   "learn_more": "Learn More",
   "our_mission_title": "Our Mission",
@@ -148,11 +148,11 @@
   "try_free_demo": "Try the free demo",
   "pricing_price_currency_suffix": "E£",
   "pricing_best_value_tag": "Best value",
-  "pricing_professional_tag": "Professional",
-  "pricing_professional_description": "For freelancers, indie developers or solopreneurs.",
-  "pricing_professional_price": "56",
-  "pricing_professional_button": "Buy now",
-  "pricing_professional_advantages": [
+  "pricing_paid_tag": "paid",
+  "pricing_paid_description": "For freelancers, indie developers or solopreneurs.",
+  "pricing_paid_price": "56",
+  "pricing_paid_button": "Buy now",
+  "pricing_paid_advantages": [
     "Single user license",
     "Lifetime updates",
     "5,000+ icons",
@@ -162,10 +162,15 @@
     "IconJar & SVG library",
     "Unlimited projects"
   ],
+  "manage_leads_per_month": "Manage up to {{count}} leads per month",
+  "limited_users": "Limited number of users",
+  "social_media_integration_feature": "Integrated with major social media platforms",
+  "free_system_trial": "Try the system with no cost",
+  "ideal_for_small_teams": "Ideal for small teams getting started",
   "pricing_team_tag": "Team",
   "pricing_team_description": "For fast-growing teams, up to 6 library users.",
   "pricing_team_price": "112",
-  "pricing_team_button": "Buy now",
+  "pricing_free_button": "Try now",
   "pricing_team_advantages": [
     "Up to 6 users license",
     "Lifetime updates",
@@ -176,6 +181,13 @@
     "IconJar & SVG library",
     "Unlimited projects"
   ],
+  "quick_actions_daily": "Quick Actions to speed up daily operations",
+  "unlimited_users": "Unlimited users",
+  "full_user_management": "Full control over user management",
+  "import_export_excel": "Import & export leads data via Excel",
+  "manage_sales_rentals": "Manage sales and rental units",
+  "real_time_notifications": "Real-time notifications",
+  "full_social_integration": "Full social media integration",
   "pricing_enterprise_tag": "Enterprise",
   "pricing_enterprise_description": "For large teams, an unlimited number of library users.",
   "pricing_enterprise_price": "224",
@@ -195,18 +207,14 @@
   "pricing_comparison": {
     "plans": [
       {
-        "id": "basic",
-        "name": "Basic"
+        "id": "free",
+        "name": "Free"
       },
       {
-        "id": "professional",
-        "name": "Professional",
+        "id": "paid",
+        "name": "Paid",
         "badge": "Best value",
         "featured": true
-      },
-      {
-        "id": "enterprise",
-        "name": "Enterprise"
       }
     ],
     "sections": [
@@ -215,33 +223,28 @@
         "rows": [
           {
             "label": "Customer management",
-            "basic": true,
-            "professional": true,
-            "enterprise": true
+            "free": true,
+            "paid": true
           },
           {
             "label": "Task management",
-            "basic": true,
-            "professional": true,
-            "enterprise": true
+            "free": true,
+            "paid": true
           },
           {
             "label": "Essential reports",
-            "basic": true,
-            "professional": true,
-            "enterprise": true
+            "free": true,
+            "paid": true
           },
           {
             "label": "Mobile app",
-            "basic": true,
-            "professional": true,
-            "enterprise": true
+            "free": true,
+            "paid": true
           },
           {
             "label": "Support",
-            "basic": "Email",
-            "professional": "Email & phone",
-            "enterprise": "24/7 concierge"
+            "free": "Email",
+            "paid": "Email & phone"
           }
         ]
       },
@@ -250,33 +253,28 @@
         "rows": [
           {
             "label": "Advanced analytics",
-            "basic": false,
-            "professional": true,
-            "enterprise": true
+            "free": false,
+            "paid": true
           },
           {
             "label": "Custom reports",
-            "basic": false,
-            "professional": true,
-            "enterprise": true
+            "free": false,
+            "paid": true
           },
           {
             "label": "Workflow automation",
-            "basic": false,
-            "professional": true,
-            "enterprise": true
+            "free": false,
+            "paid": true
           },
           {
             "label": "API access",
-            "basic": false,
-            "professional": "Limited",
-            "enterprise": true
+            "free": false,
+            "paid": "Limited"
           },
           {
             "label": "Advanced integrations",
-            "basic": false,
-            "professional": false,
-            "enterprise": true
+            "free": false,
+            "paid": false
           }
         ]
       },
@@ -285,33 +283,28 @@
         "rows": [
           {
             "label": "Single sign-on (SSO)",
-            "basic": false,
-            "professional": false,
-            "enterprise": true
+            "free": false,
+            "paid": false
           },
           {
             "label": "Dedicated account manager",
-            "basic": false,
-            "professional": false,
-            "enterprise": true
+            "free": false,
+            "paid": false
           },
           {
             "label": "Custom onboarding",
-            "basic": false,
-            "professional": false,
-            "enterprise": true
+            "free": false,
+            "paid": false
           },
           {
             "label": "SLA commitments",
-            "basic": false,
-            "professional": false,
-            "enterprise": true
+            "free": false,
+            "paid": false
           },
           {
             "label": "Private hosting",
-            "basic": false,
-            "professional": false,
-            "enterprise": true
+            "free": false,
+            "paid": false
           }
         ]
       }

@@ -6,7 +6,7 @@ import Tag from "../Tag/Tag";
 interface PricingCardProps {
   tagText?: string;
   icon?: React.ReactNode;
-  planDescription: string;
+  planDescription?: string;
   planPrice?: number;
   buttonText: string;
   planAdvantages: string[];
@@ -73,7 +73,7 @@ const PricingCard: React.FC<PricingCardProps> = ({
 
       <ul className="space-y-4">
         {planAdvantages.map((advantage, index) => (
-          <li key={index} className="flex items-center text-gray-700">
+          <li key={index} className="flex items-center text-gray-700 gap-2">
             <div className="w-6 h-6 rounded-full bg-blue-100 flex items-center justify-center mr-3 shrink-0">
               <Check className="w-4 h-4 text-blue-600" strokeWidth={3} />{" "}
               {/* check icon */}

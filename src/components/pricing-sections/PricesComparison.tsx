@@ -16,8 +16,14 @@ const PricesComparison: React.FC<PricesComparisonProps> = ({ dict }) => {
   const plans = comparison?.plans ?? [];
   const sections = comparison?.sections ?? [];
 
+  // const resolvePlanId = (id: string): PricingPlanId | null => {
+  //   if (id === "basic" || id === "professional" || id === "enterprise") {
+  //     return id;
+  //   }
+  //   return null;
+  // };
   const resolvePlanId = (id: string): PricingPlanId | null => {
-    if (id === "basic" || id === "professional" || id === "enterprise") {
+    if (id === "free" || id === "paid") {
       return id;
     }
     return null;
