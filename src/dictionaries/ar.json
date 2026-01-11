@@ -345,5 +345,39 @@
   "team_commission_tracking_description": "استعد لمتابعة العمولات الدقيقة الخاصة بالفريق بكل شفافية.",
 
   "smart_filtering": "الفلترة الذكية",
-  "smart_filtering_description": "تمكنك الفلترة الذكية من الوصول السريع للمعلومات المتخصصة التي تحتاجها بسرعة فائقة."
+  "smart_filtering_description": "تمكنك الفلترة الذكية من الوصول السريع للمعلومات المتخصصة التي تحتاجها بسرعة فائقة.",
+
+  "contact_header_description": "تواصل معنا لأي أسئلة أو استفسارات. نحن هنا لمساعدتك على تنمية عملك.",
+  "contact_get_in_touch": "تواصل معنا",
+  "contact_subtitle": "نود أن نسمع منك. يرجى ملء التفاصيل أدناه.",
+  "contact_email_label": "البريد الإلكتروني",
+  "contact_email_placeholder": "you@company.com",
+  "contact_phone_label": "رقم الهاتف",
+  "contact_phone_placeholder": "123 456 789",
+  "contact_message_label": "الرسالة",
+  "contact_message_placeholder": "كيف يمكننا مساعدتك؟",
+  "contact_send_button": "إرسال الرسالة",
+  "contact_visit_us_title": "قم بزيارتنا",
+  "contact_address_line1": "عدنان المالكي قسم المنيا،",
+  "contact_address_line2": "المنيا الجديدة، محافظة المنيا 2451104",
+
+  "modal_title_default": "احصل على نسختك",
+  "modal_title_plan": "احصل على خطة {{plan}}",
+  "modal_subtitle": "أدخل تفاصيلك للمتابعة",
+  "modal_email_placeholder": "البريد الإلكتروني",
+  "modal_password_placeholder": "كلمة المرور",
+  "modal_phone_placeholder": "رقم الهاتف",
+  "modal_email_error": "يرجى إدخال عنوان بريد إلكتروني صالح يحتوي على '@'",
+  "modal_phone_error": "يرجى إدخال رقم هاتف صالح",
+  "modal_password_error": "يجب أن تكون كلمة المرور 6 أحرف على الأقل",
+  "modal_confirm_button": "تأكيد ومتابعة",
+
+  "country_egypt": "مصر",
+  "country_saudi_arabia": "المملكة العربية السعودية",
+  "country_uae": "الإمارات العربية المتحدة",
+  "country_united_states": "الولايات المتحدة",
+  "country_kuwait": "الكويت",
+  "country_qatar": "قطر",
+  "country_bahrain": "البحرين",
+  "country_oman": "عمان"
 }

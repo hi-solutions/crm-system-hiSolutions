@@ -5,6 +5,8 @@ import { Cairo } from "next/font/google";
 import { DictionaryProvider } from "@/hooks/Dickitionary";
 import NavbarWrapper from "@/components/LangSwitcher/Navbar/NavbarWrapper";
 import Footer from "@/components/Footer/Footer";
+import { SubscriptionModalProvider } from "@/context/SubscriptionModalContext";
+import SubscriptionModal from "@/components/Modals/SubscriptionModal";
 
 const cairo = Cairo({
   subsets: ["arabic", "latin"],
@@ -111,9 +113,12 @@ export default async function RootLayout({
     >
       <body className={cairo.className}>
         <DictionaryProvider dictionary={dict} language={lang}>
-          <NavbarWrapper lang={lang} />
-          {children}
-          <Footer />
+          <SubscriptionModalProvider>
+            <NavbarWrapper lang={lang} />
+            {children}
+            <Footer />
+            <SubscriptionModal />
+          </SubscriptionModalProvider>
         </DictionaryProvider>
       </body>
     </html>

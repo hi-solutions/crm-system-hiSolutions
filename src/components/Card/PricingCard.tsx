@@ -14,6 +14,7 @@ interface PricingCardProps {
   bestPlanLabel?: string;
   priceSuffix?: string;
   className?: string;
+  onButtonClick?: () => void;
 }
 
 const PricingCard: React.FC<PricingCardProps> = ({
@@ -27,6 +28,7 @@ const PricingCard: React.FC<PricingCardProps> = ({
   bestPlanLabel = "Best value",
   priceSuffix = "E£",
   className = "",
+  onButtonClick,
 }) => {
   const baseStyles = bestPlan
     ? "relative bg-white rounded-3xl p-8 shadow-xl border-4 border-blue-600 transform hover:scale-105 transition-all"
@@ -67,7 +69,10 @@ const PricingCard: React.FC<PricingCardProps> = ({
         )}
       </div>
 
-      <Button className="w-full mb-8 py-4 rounded-2xl text-lg font-medium">
+      <Button
+        onClick={onButtonClick}
+        className="w-full mb-8 py-4 rounded-2xl text-lg font-medium"
+      >
         {buttonText}
       </Button>
 

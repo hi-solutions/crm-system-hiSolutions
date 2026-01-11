@@ -2,9 +2,9 @@
 import { Dictionary } from "@/lib/dictionary";
 import React, { useEffect, useState } from "react";
 import Button from "../Button";
-import Link from "next/link";
 import { Params } from "@/app/[lang]/layout";
 import Image from "next/image";
+import { useSubscriptionModal } from "@/context/SubscriptionModalContext";
 
 interface HeroProps {
   dict?: Dictionary;
@@ -12,6 +12,7 @@ interface HeroProps {
 }
 
 const Hero = ({ dict, params }: HeroProps) => {
+  const { openModal } = useSubscriptionModal();
   const [phoneScreen, setPhoneScreen] = useState<string>(
     `/images/phone_${params.lang}_screen.png`
   );
@@ -94,11 +95,12 @@ const Hero = ({ dict, params }: HeroProps) => {
           <p className="text-gray-600 text-base sm:text-lg max-w-xl">
             {dict?.hero_descrption}
           </p>
-          <Link href={`/${params.lang}/contact`}>
-            <Button className="shadow-sm hover:shadow-md text-base px-6 py-3 rounded-3xl">
-              {dict?.get_your_copy_now}
-            </Button>
-          </Link>
+          <Button
+            onClick={() => openModal()}
+            className="shadow-sm hover:shadow-md text-base px-6 py-3 rounded-3xl"
+          >
+            {dict?.get_your_copy_now}
+          </Button>
           {/* dots */}
           <div className="absolute bottom-0 left-1/4 translate-y-1/2">
             <Image src="/images/dots.png" alt="Dots" width={150} height={150} />

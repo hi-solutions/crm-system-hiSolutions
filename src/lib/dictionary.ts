@@ -252,6 +252,43 @@ export interface Dictionary {
   manage_sales_rentals: string;
   real_time_notifications: string;
   full_social_integration: string;
+
+  // Contact Page
+  contact_header_description: string;
+  contact_get_in_touch: string;
+  contact_subtitle: string;
+  contact_email_label: string;
+  contact_email_placeholder: string;
+  contact_phone_label: string;
+  contact_phone_placeholder: string;
+  contact_message_label: string;
+  contact_message_placeholder: string;
+  contact_send_button: string;
+  contact_visit_us_title: string;
+  contact_address_line1: string;
+  contact_address_line2: string;
+
+  // Subscription Modal
+  modal_title_default: string;
+  modal_title_plan: string;
+  modal_subtitle: string;
+  modal_email_placeholder: string;
+  modal_password_placeholder: string;
+  modal_phone_placeholder: string;
+  modal_email_error: string;
+  modal_phone_error: string;
+  modal_password_error: string;
+  modal_confirm_button: string;
+
+  // Countries
+  country_egypt: string;
+  country_saudi_arabia: string;
+  country_uae: string;
+  country_united_states: string;
+  country_kuwait: string;
+  country_qatar: string;
+  country_bahrain: string;
+  country_oman: string;
 }
 
 const dictionaries = {

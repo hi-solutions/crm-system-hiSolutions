@@ -355,5 +355,39 @@
   "team_commission_tracking_description": "Track your team’s commissions accurately with full transparency.",
 
   "smart_filtering": "Smart Filtering",
-  "smart_filtering_description": "Smart filtering allows you to quickly access the specific information you need with maximum speed."
+  "smart_filtering_description": "Smart filtering allows you to quickly access the specific information you need with maximum speed.",
+
+  "contact_header_description": "Reach out to us with any questions or inquiries. We are here to help you grow your business.",
+  "contact_get_in_touch": "Get in touch",
+  "contact_subtitle": "We'd love to hear from you. Please fill out the details below.",
+  "contact_email_label": "Email",
+  "contact_email_placeholder": "you@company.com",
+  "contact_phone_label": "Phone Number",
+  "contact_phone_placeholder": "123 456 789",
+  "contact_message_label": "Message",
+  "contact_message_placeholder": "How can we help you?",
+  "contact_send_button": "Send Message",
+  "contact_visit_us_title": "Visit Us",
+  "contact_address_line1": "Adnan Al Maleki Qism Minya,",
+  "contact_address_line2": "First Al Minya, Minya Governorate 2451104",
+
+  "modal_title_default": "Get Your Copy",
+  "modal_title_plan": "Get {{plan}} Plan",
+  "modal_subtitle": "Enter your details to proceed",
+  "modal_email_placeholder": "Email Address",
+  "modal_password_placeholder": "Password",
+  "modal_phone_placeholder": "Phone Number",
+  "modal_email_error": "Please enter a valid email address containing '@'",
+  "modal_phone_error": "Please enter a valid phone number",
+  "modal_password_error": "Password must be at least 6 characters",
+  "modal_confirm_button": "Confirm & Continue",
+
+  "country_egypt": "Egypt",
+  "country_saudi_arabia": "Saudi Arabia",
+  "country_uae": "UAE",
+  "country_united_states": "United States",
+  "country_kuwait": "Kuwait",
+  "country_qatar": "Qatar",
+  "country_bahrain": "Bahrain",
+  "country_oman": "Oman"
 }

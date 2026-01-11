@@ -9,6 +9,7 @@ import React, { useEffect, useRef, useState } from "react";
 import Button from "@/components/Button";
 import { ChevronDown } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import { useSubscriptionModal } from "@/context/SubscriptionModalContext";
 
 export interface Language {
   code: string;
@@ -45,6 +46,8 @@ export default function Navbar({
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isLangDropdownOpen, setIsLangDropdownOpen] = useState(false);
   const langDropdownRef = useRef<HTMLDivElement>(null);
+
+  const { openModal } = useSubscriptionModal();
 
   const handleLanguageChange = (newLocale: string) => {
     const segments = pathname.split("/");
@@ -138,11 +141,17 @@ export default function Navbar({
           <div className="hidden lg:flex items-center space-x-4  justify-end ">
             {ctaButton && (
               <div className="flex items-center space-x-4 text-nowrap">
-                <Link href={ctaButton.href}>
+                {/* <Link href={ctaButton.href}>
                   <Button className="shadow-sm hover:shadow-md text-base">
                     {ctaButton.text}
                   </Button>
-                </Link>
+                </Link> */}
+                <Button
+                  onClick={() => openModal()}
+                  className="shadow-sm hover:shadow-md text-base px-6 py-3 rounded-3xl"
+                >
+                  {ctaButton.text}
+                </Button>
               </div>
             )}
             {/* Language Dropdown */}

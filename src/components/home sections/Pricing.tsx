@@ -1,4 +1,4 @@
-"use Client";
+"use client";
 import React from "react";
 import { Gift } from "lucide-react";
 import { MdOutlineMoneyOff, MdOutlineAttachMoney } from "react-icons/md";
@@ -7,6 +7,7 @@ import SectionHeader from "../SectionHeader/SectionHeader";
 import Button from "../Button";
 import { Dictionary } from "@/lib/dictionary";
 import Image from "next/image";
+import { useSubscriptionModal } from "@/context/SubscriptionModalContext";
 
 interface PricingData {
   freeLeads: number;
@@ -20,6 +21,7 @@ interface PricingProps {
 }
 
 const Pricing: React.FC<PricingProps> = ({ dict, pricingData }) => {
+  const { openModal } = useSubscriptionModal();
   // Use passed data if available, otherwise fall back to defaults
   const { freeLeads, paidLeads, paidPrice } = pricingData ?? {
     freeLeads: 100,
@@ -57,6 +59,7 @@ const Pricing: React.FC<PricingProps> = ({ dict, pricingData }) => {
       planAdvantages: freePlanAdvantages,
       priceSuffix: "E£",
       className: "w-full max-w-[350px]",
+      onButtonClick: () => openModal(dict?.free_plan),
     },
     // paid plan
     {
@@ -70,6 +73,7 @@ const Pricing: React.FC<PricingProps> = ({ dict, pricingData }) => {
       bestPlanLabel: dict?.pricing_best_value_tag,
       priceSuffix: "E£",
       className: "w-full max-w-[350px]",
+      onButtonClick: () => openModal(dict?.paid_plan),
     },
     // {
     //   tagText: dict?.pricing_enterprise_tag,
