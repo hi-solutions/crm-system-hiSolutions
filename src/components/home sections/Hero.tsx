@@ -108,7 +108,7 @@ const Hero = ({ dict, params }: HeroProps) => {
           {/* vector_line.png */}
           <div className="absolute top-0 right-0 translate-x-2/3 ">
             <Image
-              src="/images/vector_line.png"
+              src="/images/vector_line.webp"
               alt="Dots"
               width={150}
               height={150}

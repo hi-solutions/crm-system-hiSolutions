@@ -59,7 +59,7 @@ export default async function Home({ params }: { params: Params }) {
         <div className="bg-center bg-no-repeat flex justify-center min-h-[400px] sm:min-h-[500px] md:min-h-[600px] lg:min-h-[700px] relative ">
           <div className="absolute md:top-[30%] top-[10%]">
             <Image
-              src="/images/social_media_list.png"
+              src="/images/social_media_list.webp"
               alt="Social Media List"
               width={1500}
               height={600}
@@ -72,7 +72,7 @@ export default async function Home({ params }: { params: Params }) {
               tag={{ title: dict.integrations }}
               title={dict.integrations_title}
               description={dict.integrations_description}
-              // linkText={dict.integrations_link_text}
+            // linkText={dict.integrations_link_text}
             />
           </div>
         </div>
@@ -85,7 +85,7 @@ export default async function Home({ params }: { params: Params }) {
             tag={{ title: dict.one_system }}
             title={dict.one_system_title}
             description={dict.one_system_description}
-            // linkText={dict.one_system_link_text}
+          // linkText={dict.one_system_link_text}
           />
         </div>
         <div className="flex justify-center items-center w-full max-w-4xl mx-auto">

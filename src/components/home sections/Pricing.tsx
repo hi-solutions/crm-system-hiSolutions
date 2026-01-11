@@ -117,7 +117,7 @@ const Pricing: React.FC<PricingProps> = ({ dict, pricingData }) => {
           </Button>
           <div className="md:block hidden absolute bottom-0 w-[148px] h-[88px] translate-x-55 translate-y-15">
             <Image
-              src="/images/pricing-vetor.png"
+              src="/images/pricing-vetor.webp"
               alt=""
               fill
               className="object-contain w-full h-full"

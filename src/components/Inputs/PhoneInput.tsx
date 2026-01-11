@@ -50,8 +50,8 @@ const PhoneInput = React.forwardRef<HTMLInputElement, PhoneInputProps>(
     }
 
     // Flag component
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const FlagComponent =
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       (ReactCountryFlag as any)[selectedCountry.code] || ReactCountryFlag.US;
 
     return (
@@ -73,9 +73,8 @@ const PhoneInput = React.forwardRef<HTMLInputElement, PhoneInputProps>(
                 {selectedCountry.dialCode}
               </span>
               <ChevronDown
-                className={`w-3 h-3 text-gray-500 transition-transform ${
-                  isDropdownOpen ? "rotate-180" : ""
-                }`}
+                className={`w-3 h-3 text-gray-500 transition-transform ${isDropdownOpen ? "rotate-180" : ""
+                  }`}
               />
             </button>
 
@@ -83,8 +82,8 @@ const PhoneInput = React.forwardRef<HTMLInputElement, PhoneInputProps>(
             {isDropdownOpen && (
               <div className="absolute top-full left-0 mt-2 w-64 max-h-60 overflow-y-auto bg-white rounded-lg shadow-xl border border-gray-100 z-50 py-1">
                 {countries.map((c) => {
-                  // eslint-disable-next-line @typescript-eslint/no-explicit-any
                   const CountryFlag =
+                    // eslint-disable-next-line @typescript-eslint/no-explicit-any
                     (ReactCountryFlag as any)[c.code] || ReactCountryFlag.US;
                   return (
                     <button

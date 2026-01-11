@@ -18,7 +18,7 @@ interface TeamMember {
 const MeetOurTeam: React.FC<MeetOurTeamProps> = ({ dict }) => {
   const teamMembersData: TeamMember[] = [
     {
-      img: "/images/team/portrait-white-man-isolated.jpg",
+      img: "/images/team/portrait-white-man-isolated.webp",
       name: dict?.david_park ?? "",
       role: dict?.lead_developer ?? "",
     },
@@ -28,12 +28,12 @@ const MeetOurTeam: React.FC<MeetOurTeamProps> = ({ dict }) => {
       role: dict?.marketing_head ?? "",
     },
     {
-      img: "/images/team/RyanProfile.jpg",
+      img: "/images/team/RyanProfile.webp",
       name: dict?.ryan_gosling ?? "",
       role: dict?.cto ?? "",
     },
     {
-      img: "/images/team/sara.png",
+      img: "/images/team/sara.webp",
       name: dict?.sara_ahmed ?? "",
       role: dict?.ceo ?? "",
     },

@@ -1,4 +1,4 @@
-import axios, { AxiosError } from "axios";
+import axios from "axios";
 
 const baseUrl = "https://hi.hi-solutions.co/api/api/";
 import { SubmitContactFormRequest } from "./models/ContactUs";
