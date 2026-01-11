@@ -9,6 +9,8 @@ import Hero from "@/components/home sections/Hero";
 // import Testimonials from "@/components/home sections/Testimonials";
 import FeaturesShowcase from "@/components/home sections/FeaturesShowcase";
 // import TrustedBy from "@/components/home sections/TrustedBy";
+import oneSystemScreen from "../../../public/images/new_screens/one_system_screen.webp";
+import screenPhoneMockup from "../../../public/images/new_screens/new_screen_phone_mockup.webp";
 
 export default async function Home({ params }: { params: Params }) {
   const { lang } = await params;
@@ -39,12 +41,15 @@ export default async function Home({ params }: { params: Params }) {
         </div>
         <div className="flex justify-center items-center w-full max-w-4xl mx-auto">
           <Image
-            src="/images/screen_phone_mockup.png"
+            // src="/images/screen_phone_mockup.png"
+            src={screenPhoneMockup}
             alt="Manage Real State"
             width={1200}
             height={600}
             className="w-full h-auto object-contain transform translate-x-4 md:translate-x-12"
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 90vw, 896px"
+            quality={85}
+            placeholder="blur"
           />
         </div>
       </section>
@@ -85,12 +90,15 @@ export default async function Home({ params }: { params: Params }) {
         </div>
         <div className="flex justify-center items-center w-full max-w-4xl mx-auto">
           <Image
-            src="/images/one_system_screen.png"
+            // src="/images/one_system_screen.png"
+            src={oneSystemScreen}
             alt="Manage Real State"
             width={1200}
             height={600}
             className="w-full h-auto object-contain "
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 90vw, 896px"
+            quality={85}
+            placeholder="blur" // Smooth loading experience
           />
         </div>
         <ul className="flex flex-wrap items-center gap-4 justify-center mt-8 list-none">

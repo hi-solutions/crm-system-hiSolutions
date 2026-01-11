@@ -351,5 +351,16 @@
   "growth_description": "Scale and evolve your systems as your business expands",
   "get_your_copy_now": "Get your copy now",
   "paid_plan": "Paid",
-  "free_plan": "Free"
+  "free_plan": "Free",
+  "quick_actions": "Quick Actions",
+  "quick_actions_description": "Use quick actions to access and make important decisions faster.",
+
+  "social_media_integration": "Multi-Channel Integration",
+  "social_media_integration_description": "View all your support conversations in one centralized place.",
+
+  "team_commission_tracking": "Team Commission Tracking",
+  "team_commission_tracking_description": "Track your team’s commissions accurately with full transparency.",
+
+  "smart_filtering": "Smart Filtering",
+  "smart_filtering_description": "Smart filtering allows you to quickly access the specific information you need with maximum speed."
 }

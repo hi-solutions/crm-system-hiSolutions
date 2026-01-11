@@ -7,10 +7,60 @@ interface FeaturesShowcaseProps {
 }
 
 const FeaturesShowcase: React.FC<FeaturesShowcaseProps> = ({ dict }) => {
+  // const primaryCard = {
+  //   title: dict.ticketing_title,
+  //   description: dict.ticketing_description,
+  //   image: "/images/details_screen.png",
+  //   flexDirection: "col" as const,
+  //   className:
+  //     "additional-classes h-full w-full hover:shadow-md hover:scale-105 transition-all duration-300",
+  // };
+
+  // const supportingCards = [
+  //   {
+  //     key: "configurable",
+  //     title: dict.configurable_title,
+  //     description: dict.configurable_description,
+  //     image: "/images/chat_screen.png",
+  //     flexDirection: "row" as const,
+  //     className:
+  //       "additional-classes flex-1 hover:shadow-md hover:scale-105 transition-all duration-300",
+  //   },
+  //   {
+  //     key: "omnichannel",
+  //     title: dict.omnichannel_title,
+  //     description: dict.omnichannel_description,
+  //     image: "/images/social_screen.png",
+  //     flexDirection: "row" as const,
+  //     className:
+  //       "additional-classes flex-1 hover:shadow-md hover:scale-105 transition-all duration-300",
+  //   },
+  // ];
+
+  // const lowerCards = [
+  //   {
+  //     key: "multiplayer",
+  //     title: dict.multiplayer_title,
+  //     description: dict.multiplayer_description,
+  //     image: "/images/multi_screen.png",
+  //   },
+  //   {
+  //     key: "lightning-fast",
+  //     title: dict.lightining_fast_title,
+  //     description: dict.lightining_fast_description,
+  //     image: "/images/fast_screen.png",
+  //   },
+  //   {
+  //     key: "team-management",
+  //     title: dict.team_management_title,
+  //     description: dict.team_management_description,
+  //     image: "/images/team_management_screen.png",
+  //   },
+  // ];
   const primaryCard = {
-    title: dict.ticketing_title,
-    description: dict.ticketing_description,
-    image: "/images/details_screen.png",
+    title: dict.team_management_title,
+    description: dict.team_management_description,
+    image: "/images/new_screens/team_management_screen.webp",
     flexDirection: "col" as const,
     className:
       "additional-classes h-full w-full hover:shadow-md hover:scale-105 transition-all duration-300",
@@ -18,19 +68,19 @@ const FeaturesShowcase: React.FC<FeaturesShowcaseProps> = ({ dict }) => {
 
   const supportingCards = [
     {
-      key: "configurable",
-      title: dict.configurable_title,
-      description: dict.configurable_description,
-      image: "/images/chat_screen.png",
+      key: "quick-actions",
+      title: dict.quick_actions,
+      description: dict.quick_actions_description,
+      image: "/images/new_screens/quick_action_screen.webp",
       flexDirection: "row" as const,
       className:
         "additional-classes flex-1 hover:shadow-md hover:scale-105 transition-all duration-300",
     },
     {
-      key: "omnichannel",
-      title: dict.omnichannel_title,
-      description: dict.omnichannel_description,
-      image: "/images/social_screen.png",
+      key: "social-media-integration",
+      title: dict.social_media_integration,
+      description: dict.social_media_integration_description,
+      image: "/images/new_screens/social_media_screen.webp",
       flexDirection: "row" as const,
       className:
         "additional-classes flex-1 hover:shadow-md hover:scale-105 transition-all duration-300",
@@ -42,19 +92,19 @@ const FeaturesShowcase: React.FC<FeaturesShowcaseProps> = ({ dict }) => {
       key: "multiplayer",
       title: dict.multiplayer_title,
       description: dict.multiplayer_description,
-      image: "/images/multi_screen.png",
+      image: "/images/new_screens/multi_users_screen.webp",
     },
     {
-      key: "lightning-fast",
-      title: dict.lightining_fast_title,
-      description: dict.lightining_fast_description,
-      image: "/images/fast_screen.png",
+      key: "social_media_integration",
+      title: dict.social_media_integration,
+      description: dict.social_media_integration_description,
+      image: "/images/new_screens/commisions_screen.webp",
     },
     {
-      key: "team-management",
-      title: dict.team_management_title,
-      description: dict.team_management_description,
-      image: "/images/team_management_screen.png",
+      key: "smart_filtering",
+      title: dict.smart_filtering,
+      description: dict.smart_filtering_description,
+      image: "/images/new_screens/smart_filtration_screen.webp",
     },
   ];
 
@@ -78,7 +128,7 @@ const FeaturesShowcase: React.FC<FeaturesShowcaseProps> = ({ dict }) => {
         </div>
       </div>
 
-      <div className="flex w-full flex-col items-stretch gap-5 md:flex-row">
+      <div className="flex w-full flex-col items-stretch gap-5 md:flex-row md:justify-center">
         {lowerCards.map((card) => (
           <Card
             key={card.key}
@@ -86,7 +136,7 @@ const FeaturesShowcase: React.FC<FeaturesShowcaseProps> = ({ dict }) => {
             description={card.description}
             image={card.image}
             flexDirection="col"
-            className="additional-classes h-full w-full hover:shadow-md hover:scale-105 transition-all duration-300"
+            className="additional-classes md:w-[413px] md:h-[469px] md:aspect-8/9 hover:shadow-md hover:scale-105 transition-all duration-300 flex-1"
           />
         ))}
       </div>

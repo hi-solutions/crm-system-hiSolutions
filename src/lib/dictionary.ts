@@ -227,6 +227,17 @@ export interface Dictionary {
   growth_title: string;
   growth_description: string;
   get_your_copy_now: string;
+  quick_actions: string;
+  quick_actions_description: string;
+
+  social_media_integration: string;
+  social_media_integration_description: string;
+
+  team_commission_tracking: string;
+  team_commission_tracking_description: string;
+
+  smart_filtering: string;
+  smart_filtering_description: string;
 }
 
 const dictionaries = {
