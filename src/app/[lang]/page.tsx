@@ -55,7 +55,7 @@ export default async function Home({ params }: { params: Params }) {
       </section>
 
       {/* Integrations Section */}
-      <section className="py-20 bg-white">
+      <section className=" bg-white">
         <div className="bg-center bg-no-repeat flex justify-center min-h-[400px] sm:min-h-[500px] md:min-h-[600px] lg:min-h-[700px] relative ">
           <div className="absolute md:top-[30%] top-[10%]">
             <Image
@@ -67,7 +67,7 @@ export default async function Home({ params }: { params: Params }) {
               sizes="(max-width: 1000px) 100vw, (max-width: 1200px) 90vw, 896px"
             />
           </div>
-          <div className="flex justify-center items-end py-30 px-4 md:px-10 lg:px-16">
+          <div className="flex justify-center items-end py-40 px-4 md:px-10 lg:px-16">
             <SectionHeader
               tag={{ title: dict.integrations }}
               title={dict.integrations_title}
@@ -85,7 +85,7 @@ export default async function Home({ params }: { params: Params }) {
             tag={{ title: dict.one_system }}
             title={dict.one_system_title}
             description={dict.one_system_description}
-            linkText={dict.one_system_link_text}
+            // linkText={dict.one_system_link_text}
           />
         </div>
         <div className="flex justify-center items-center w-full max-w-4xl mx-auto">
