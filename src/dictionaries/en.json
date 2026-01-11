@@ -360,6 +360,8 @@
   "contact_header_description": "Reach out to us with any questions or inquiries. We are here to help you grow your business.",
   "contact_get_in_touch": "Get in touch",
   "contact_subtitle": "We'd love to hear from you. Please fill out the details below.",
+  "contact_name_label": "Name",
+  "contact_name_placeholder": "Full Name",
   "contact_email_label": "Email",
   "contact_email_placeholder": "you@company.com",
   "contact_phone_label": "Phone Number",

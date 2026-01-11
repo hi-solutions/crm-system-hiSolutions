@@ -15,6 +15,7 @@ interface ContactSectionProps {
 
 export default function ContactSection({ dict }: ContactSectionProps) {
   const [formData, setFormData] = useState({
+    name: "",
     email: "",
     phone: "",
     message: "",
@@ -43,6 +44,22 @@ export default function ContactSection({ dict }: ContactSectionProps) {
           </div>
 
           <form onSubmit={handleSubmit} className="flex flex-col gap-6">
+            <div className="flex flex-col gap-2">
+              <label
+                htmlFor="name"
+                className="text-sm font-medium text-gray-700"
+              >
+                {dict.contact_name_label}
+              </label>
+              <CustomInput
+                id="name"
+                type="text"
+                placeholder={dict.contact_name_placeholder}
+                value={formData.name}
+                onChange={(e) => handleChange("name", e.target.value)}
+                required
+              />
+            </div>
             <div className="flex flex-col gap-2">
               <label
                 htmlFor="email"

@@ -350,6 +350,8 @@
   "contact_header_description": "تواصل معنا لأي أسئلة أو استفسارات. نحن هنا لمساعدتك على تنمية عملك.",
   "contact_get_in_touch": "تواصل معنا",
   "contact_subtitle": "نود أن نسمع منك. يرجى ملء التفاصيل أدناه.",
+  "contact_name_label": "الاسم",
+  "contact_name_placeholder": "الاسم الكامل",
   "contact_email_label": "البريد الإلكتروني",
   "contact_email_placeholder": "you@company.com",
   "contact_phone_label": "رقم الهاتف",

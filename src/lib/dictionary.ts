@@ -257,6 +257,8 @@ export interface Dictionary {
   contact_header_description: string;
   contact_get_in_touch: string;
   contact_subtitle: string;
+  contact_name_label: string;
+  contact_name_placeholder: string;
   contact_email_label: string;
   contact_email_placeholder: string;
   contact_phone_label: string;
