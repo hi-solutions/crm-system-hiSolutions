@@ -3,7 +3,8 @@
 import Link from "next/link";
 import { useDictionary } from "@/hooks/Dickitionary";
 import { FaTwitter, FaLinkedinIn, FaFacebookF } from "react-icons/fa";
-import { HiSolutionsLogo } from "../../../public/icons/icons";
+// import { HiSolutionsLogo } from "../../../public/icons/icons";
+import { AqariaLogo } from "../../../public/icons/icons";
 import Button from "../Button";
 
 export default function Footer() {
@@ -14,13 +15,14 @@ export default function Footer() {
   const base = `/${lang}`;
 
   return (
-    <footer className=" md:px-10 md:py-10 lg:px-16 lg:py-14 bg-white ">
-      <div className="mx-auto max-w-7xl text-white bg-gradient-to-r from-[#0199E9] to-[#015683] md:rounded-4xl px-4 py-3 md:px-6 md:py-4 lg:px-20 lg:py-14">
+    // <footer className=" md:px-10 md:py-10 lg:px-16 lg:py-14 bg-white ">
+    <footer className=" mx-auto  text-white bg-gradient-to-r from-[#0199E9] to-[#015683] px-4 py-3 md:px-6 md:py-4 lg:px-20 lg:py-14">
+      <div>
         <div className="grid grid-cols-1 md:grid-cols-5 gap-8">
           {/* Brand + tagline + socials + signup */}
           <div className="space-y-4 md:col-span-2">
             <div className="flex items-center gap-2">
-              <HiSolutionsLogo className="h-14 w-auto" />
+              <AqariaLogo className="h-14 w-auto" />
             </div>
             <p className="text-white/80 text-sm leading-6">
               {dictionary.footerTagline}

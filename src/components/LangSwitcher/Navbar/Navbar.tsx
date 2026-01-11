@@ -2,7 +2,8 @@
 
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
-import { HiCrmLogo } from "../../../../public/icons/icons";
+// import { HiCrmLogo } from "../../../../public/icons/icons";
+import { AqariaLogoNav } from "../../../../public/icons/icons";
 import { EG, GB } from "country-flag-icons/react/3x2";
 import React, { useEffect, useRef, useState } from "react";
 import Button from "@/components/Button";
@@ -109,7 +110,7 @@ export default function Navbar({
           {/* Logo */}
           <div className="flex-shrink-0 flex items-center ">
             <Link href={`/${currentLang}`} className="text-xl font-bold">
-              <HiCrmLogo className="h-14 w-auto" />
+              <AqariaLogoNav className="h-14 w-auto" />
             </Link>
           </div>
 

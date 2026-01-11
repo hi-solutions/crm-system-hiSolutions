@@ -34,8 +34,8 @@ export async function generateMetadata({ params }: { params: Params }) {
           : "%s | Benaa The Team: Real Estate in Egypt, UAE, Saudi & Greece",
       default:
         lang === "ar"
-          ? "بناء ذا تيم: عقارات في مصر، الإمارات، السعودية واليونان"
-          : "Benaa The Team: Real Estate in Egypt, UAE, Saudi & Greece",
+          ? "AQARIA:نظام إدارة علاقات العملاء العقاري"
+          : "AQARIA: Real Estate CRM System",
     },
     description:
       lang === "ar"

@@ -8,6 +8,7 @@ import FeaturesGrid from "@/components/our-features/FeaturesGrid";
 import FeatureDetailSection from "@/components/our-features/FeatureDetailSection";
 import FeaturesShowcase from "@/components/home sections/FeaturesShowcase";
 import DecoratedElements from "@/components/DecoratedElements/DecoratedElements";
+import screenPhoneMockup from "../../../../public/images/new_screens/new_screen_phone_mockup.webp";
 
 export default async function FeaturesPage({ params }: { params: Params }) {
   const { lang } = await params;
@@ -57,12 +58,15 @@ export default async function FeaturesPage({ params }: { params: Params }) {
         </div>
         <div className="flex justify-center items-center w-full max-w-4xl mx-auto">
           <Image
-            src="/images/screen_phone_mockup.png"
+            // src="/images/one_system_screen.png"
+            src={screenPhoneMockup}
             alt="Manage Real State"
             width={1200}
             height={600}
-            className="w-full h-auto object-contain transform translate-x-4 md:translate-x-12"
+            className="w-full h-auto object-contain "
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 90vw, 896px"
+            quality={85}
+            placeholder="blur" // Smooth loading experience
           />
         </div>
       </section>
