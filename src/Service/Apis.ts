@@ -1,4 +1,4 @@
-import axios, { AxiosError } from "axios";
+import axios from "axios";
 
 const baseUrl = "/api/api/v1/";
 import { SubmitContactFormRequest } from "./models/ContactUs";

@@ -6,10 +6,10 @@ import Image, { StaticImageData } from "next/image";
 import { Dictionary } from "@/lib/dictionary";
 
 // Import team images
-import davidImg from "../../../public/images/team/portrait-white-man-isolated.jpg";
+import davidImg from "../../../public/images/team/portrait-white-man-isolated.webp";
 import mohammedImg from "../../../public/images/team/portrate.jpg";
-import ryanImg from "../../../public/images/team/RyanProfile.jpg";
-import saraImg from "../../../public/images/team/sara.png";
+import ryanImg from "../../../public/images/team/RyanProfile.webp";
+import saraImg from "../../../public/images/team/sara.webp";
 
 interface MeetOurTeamProps {
   dict: Dictionary;

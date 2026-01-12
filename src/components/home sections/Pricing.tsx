@@ -8,7 +8,7 @@ import Button from "../Button";
 import { Dictionary } from "@/lib/dictionary";
 import Image from "next/image";
 import { useSubscriptionModal } from "@/context/SubscriptionModalContext";
-import pricingVector from "../../../public/images/pricing-vetor.png";
+import pricingVector from "../../../public/images/pricing-vetor.webp";
 
 interface PricingData {
   freeLeads: number;

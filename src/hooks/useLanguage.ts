@@ -25,7 +25,7 @@ export function useLanguage() {
       segments[1] = initialLocale
       router.push(segments.join('/'))
     }
-  }, [])
+  }, [pathname, router])
 
   const changeLanguage = (newLocale: Locale) => {
     if (!locales.includes(newLocale)) return
