@@ -1,17 +1,18 @@
 import { getDictionary } from "@/lib/dictionary";
 import { Params } from "../layout";
 import SectionHeader from "@/components/SectionHeader/SectionHeader";
-import Button from "@/components/Button";
+// import Button from "@/components/Button";
 import Image from "next/image";
 import FAQSection from "@/components/FAQ/FAQSection";
 import FeaturesGrid from "@/components/our-features/FeaturesGrid";
 import FeatureDetailSection from "@/components/our-features/FeatureDetailSection";
 import FeaturesShowcase from "@/components/home sections/FeaturesShowcase";
-import DecoratedElements from "@/components/DecoratedElements/DecoratedElements";
+// import DecoratedElements from "@/components/DecoratedElements/DecoratedElements";
 import screenPhoneMockup from "../../../../public/images/new_screens/new_screen_phone_mockup.webp";
 import multiUsersScreen from "../../../../public/images/new_screens/multi_users_screen.webp";
 import teamManagementScreen from "../../../../public/images/new_screens/team_management_screen.webp";
 import effManagementScreen from "../../../../public/images/new_screens/eff_management_screen.webp";
+import OurFeaturesHeading from "@/components/our-features/OurFeaturesHeading";
 
 export default async function FeaturesPage({ params }: { params: Params }) {
   const { lang } = await params;
@@ -23,20 +24,7 @@ export default async function FeaturesPage({ params }: { params: Params }) {
   return (
     <div className="min-h-screen bg-white ">
       {/* header section  */}
-      <section className="py-20 px-4 md:px-10 lg:px-16 bg-gray-50 relative flex flex-col items-center justify-center gap-10 overflow-hidden">
-        <DecoratedElements />
-
-        {/* Content */}
-
-        <SectionHeader
-          tag={{ title: dict?.features }}
-          title={dict?.powerful_tools_manage}
-          description={dict?.integrated_platform_desc}
-        />
-        <Button className="shadow-sm hover:shadow-md text-base">
-          {dict?.start_now_free}
-        </Button>
-      </section>
+      <OurFeaturesHeading dict={dict} />
 
       {/* features grid */}
       <section className="py-10 px-4 md:px-10 lg:px-16 bg-white">

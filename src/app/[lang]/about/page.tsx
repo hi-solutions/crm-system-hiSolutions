@@ -1,7 +1,7 @@
 import { getDictionary } from "@/lib/dictionary";
 import { Params } from "../layout";
-import { Button } from "@/components/Button";
-import SectionHeader from "@/components/SectionHeader/SectionHeader";
+// import { Button } from "@/components/Button";
+// import SectionHeader from "@/components/SectionHeader/SectionHeader";
 // import Image from "next/image";
 import FAQSection from "@/components/FAQ/FAQSection";
 import MeetOurTeam from "@/components/about-us-sections/MeetOurTeam";
@@ -9,7 +9,8 @@ import HowWeWork from "@/components/about-us-sections/HowWeWork";
 import WhatWeDo from "@/components/about-us-sections/WhatWeDo";
 import MissionVision from "@/components/about-us-sections/MissionVision";
 // import Testimonials from "@/components/about-us-sections/Testimonials";
-import DecoratedElements from "@/components/DecoratedElements/DecoratedElements";
+// import DecoratedElements from "@/components/DecoratedElements/DecoratedElements";
+import AboutUsHeading from "@/components/about-us-sections/AboutUsHeading";
 
 export default async function AboutPage({ params }: { params: Params }) {
   const { lang } = await params;
@@ -25,27 +26,7 @@ export default async function AboutPage({ params }: { params: Params }) {
         <div className="absolute top-1/4 left-1/4 w-[300px] h-[300px] bg-blue-500 rounded-full blur-xl"></div>
       </div>
       <div className="relative z-10">
-        <section className="py-20 px-4 md:px-10 lg:px-16 bg-gray-50 relative flex flex-col items-center justify-center gap-10 overflow-hidden">
-          <DecoratedElements />
-
-          {/* Content */}
-          <SectionHeader
-            tag={{ title: dict?.who_we_are_tag }}
-            title={dict?.who_we_are_title}
-            description={dict?.who_we_are_description}
-          />
-          <div className="flex flex-row gap-4 justify-center items-center">
-            <Button className="shadow-sm hover:shadow-md text-base">
-              {dict?.start_now_free}
-            </Button>
-            <Button
-              className="shadow-sm hover:shadow-md text-base border-2 border-[#005FDA] group hover:text-white bg-white"
-              textClassName="text-[#005FDA] group-hover:text-white"
-            >
-              {dict?.learn_more}
-            </Button>
-          </div>
-        </section>
+        <AboutUsHeading dict={dict} />
 
         {/* our misson / our vision section  */}
         <section className="py-20 px-4 md:px-10 lg:px-16 bg-gray-50 relative flex flex-col md:flex-row items-center justify-center gap-10 w-full">
