@@ -2,6 +2,14 @@ import React from "react";
 import { Dictionary } from "@/lib/dictionary";
 import Card from "@/components/Card/Card";
 
+// Import all showcase images
+import teamManagementScreen from "../../../public/images/new_screens/team_management_screen.webp";
+import quickActionScreen from "../../../public/images/new_screens/quick_action_screen.webp";
+import socialMediaScreen from "../../../public/images/new_screens/social_media_screen.webp";
+import multiUsersScreen from "../../../public/images/new_screens/multi_users_screen.webp";
+import commissionsScreen from "../../../public/images/new_screens/commisions_screen.webp";
+import smartFiltrationScreen from "../../../public/images/new_screens/smart_filtration_screen.webp";
+
 interface FeaturesShowcaseProps {
   dict: Dictionary;
 }
@@ -60,7 +68,7 @@ const FeaturesShowcase: React.FC<FeaturesShowcaseProps> = ({ dict }) => {
   const primaryCard = {
     title: dict.team_management_title,
     description: dict.team_management_description,
-    image: "/images/new_screens/team_management_screen.webp",
+    image: teamManagementScreen,
     flexDirection: "col" as const,
     className:
       "additional-classes h-full w-full hover:shadow-md hover:scale-105 transition-all duration-300",
@@ -71,7 +79,7 @@ const FeaturesShowcase: React.FC<FeaturesShowcaseProps> = ({ dict }) => {
       key: "quick-actions",
       title: dict.quick_actions,
       description: dict.quick_actions_description,
-      image: "/images/new_screens/quick_action_screen.webp",
+      image: quickActionScreen,
       flexDirection: "row" as const,
       className:
         "additional-classes flex-1 hover:shadow-md hover:scale-105 transition-all duration-300",
@@ -80,7 +88,7 @@ const FeaturesShowcase: React.FC<FeaturesShowcaseProps> = ({ dict }) => {
       key: "social-media-integration",
       title: dict.social_media_integration,
       description: dict.social_media_integration_description,
-      image: "/images/new_screens/social_media_screen.webp",
+      image: socialMediaScreen,
       flexDirection: "row" as const,
       className:
         "additional-classes flex-1 hover:shadow-md hover:scale-105 transition-all duration-300",
@@ -92,19 +100,19 @@ const FeaturesShowcase: React.FC<FeaturesShowcaseProps> = ({ dict }) => {
       key: "multiplayer",
       title: dict.multiplayer_title,
       description: dict.multiplayer_description,
-      image: "/images/new_screens/multi_users_screen.webp",
+      image: multiUsersScreen,
     },
     {
       key: "social_media_integration",
       title: dict.social_media_integration,
       description: dict.social_media_integration_description,
-      image: "/images/new_screens/commisions_screen.webp",
+      image: commissionsScreen,
     },
     {
       key: "smart_filtering",
       title: dict.smart_filtering,
       description: dict.smart_filtering_description,
-      image: "/images/new_screens/smart_filtration_screen.webp",
+      image: smartFiltrationScreen,
     },
   ];
 

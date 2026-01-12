@@ -191,7 +191,7 @@ export interface Dictionary {
   comprehensive_comparison_of_plans_description: string;
   pricing_comparison: {
     plans: PricingComparisonPlan[];
-    sections: PricingComparisonSection[];
+    rows: PricingComparisonRow[];
   };
   paid_plan: string;
   free_plan: string;
@@ -250,6 +250,7 @@ export interface Dictionary {
   full_user_management: string;
   import_export_excel: string;
   manage_sales_rentals: string;
+  manage_sales: string;
   real_time_notifications: string;
   full_social_integration: string;
 

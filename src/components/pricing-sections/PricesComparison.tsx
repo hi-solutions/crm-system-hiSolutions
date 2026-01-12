@@ -14,7 +14,7 @@ interface PricesComparisonProps {
 const PricesComparison: React.FC<PricesComparisonProps> = ({ dict }) => {
   const comparison = dict?.pricing_comparison;
   const plans = comparison?.plans ?? [];
-  const sections = comparison?.sections ?? [];
+  const rows = comparison?.rows ?? [];
 
   // const resolvePlanId = (id: string): PricingPlanId | null => {
   //   if (id === "basic" || id === "professional" || id === "enterprise") {
@@ -23,7 +23,7 @@ const PricesComparison: React.FC<PricesComparisonProps> = ({ dict }) => {
   //   return null;
   // };
   const resolvePlanId = (id: string): PricingPlanId | null => {
-    if (id === "free" || id === "paid") {
+    if (id === "free" || id === "paid" || id === "enterprise") {
       return id;
     }
     return null;
@@ -83,7 +83,7 @@ const PricesComparison: React.FC<PricesComparisonProps> = ({ dict }) => {
                 <thead className="bg-gradient-to-r from-sky-50 via-white to-sky-50">
                   <tr>
                     <th className="w-1/3 px-6 py-6 text-left text-sm font-semibold text-slate-600 md:text-base">
-                      {dict?.features}
+                      {/* {dict?.features} */}
                     </th>
                     {plans.map((plan) => {
                       const headerClasses = [
@@ -115,42 +115,30 @@ const PricesComparison: React.FC<PricesComparisonProps> = ({ dict }) => {
                   </tr>
                 </thead>
                 <tbody>
-                  {sections.map((section) => (
-                    <React.Fragment key={section.title}>
-                      <tr>
-                        <td
-                          colSpan={plans.length + 1}
-                          className="bg-slate-50 px-6 py-4 text-sm font-semibold uppercase tracking-wide text-slate-500"
-                        >
-                          {section.title}
-                        </td>
-                      </tr>
-                      {section.rows.map((row) => (
-                        <tr
-                          key={row.label}
-                          className="border-b border-slate-100 last:border-b-0"
-                        >
-                          <td className="px-6 py-4 text-sm font-semibold text-slate-700 md:text-base">
-                            {row.label}
+                  {rows.map((row) => (
+                    <tr
+                      key={row.label}
+                      className="border-b border-slate-100 last:border-b-0"
+                    >
+                      <td className="px-6 py-4 text-sm font-semibold text-slate-700 md:text-base">
+                        {row.label}
+                      </td>
+                      {plans.map((plan) => {
+                        const planKey = resolvePlanId(plan.id);
+                        const value = planKey ? row[planKey] : null;
+                        const featured = featuredPlanId === plan.id;
+                        return (
+                          <td
+                            key={plan.id}
+                            className={getCellClasses(featured)}
+                          >
+                            <span className="inline-flex items-center justify-center">
+                              {renderValue(value)}
+                            </span>
                           </td>
-                          {plans.map((plan) => {
-                            const planKey = resolvePlanId(plan.id);
-                            const value = planKey ? row[planKey] : null;
-                            const featured = featuredPlanId === plan.id;
-                            return (
-                              <td
-                                key={plan.id}
-                                className={getCellClasses(featured)}
-                              >
-                                <span className="inline-flex items-center justify-center">
-                                  {renderValue(value)}
-                                </span>
-                              </td>
-                            );
-                          })}
-                        </tr>
-                      ))}
-                    </React.Fragment>
+                        );
+                      })}
+                    </tr>
                   ))}
                 </tbody>
               </table>
@@ -178,27 +166,18 @@ const PricesComparison: React.FC<PricesComparisonProps> = ({ dict }) => {
                     </div>
                   </div>
 
-                  <div className="flex flex-col gap-6">
-                    {sections.map((section) => (
-                      <div key={section.title}>
-                        <h4 className="text-sm font-semibold uppercase tracking-wide text-slate-500">
-                          {section.title}
-                        </h4>
-                        <div className="mt-3 space-y-3">
-                          {section.rows.map((row) => (
-                            <div
-                              key={row.label}
-                              className="flex items-center justify-between rounded-2xl border border-slate-100 bg-slate-50 px-4 py-3"
-                            >
-                              <span className="text-sm font-medium text-slate-700">
-                                {row.label}
-                              </span>
-                              <span className="flex items-center">
-                                {renderValue(planKey ? row[planKey] : null)}
-                              </span>
-                            </div>
-                          ))}
-                        </div>
+                  <div className="flex flex-col gap-3">
+                    {rows.map((row) => (
+                      <div
+                        key={row.label}
+                        className="flex items-center justify-between rounded-2xl border border-slate-100 bg-slate-50 px-4 py-3"
+                      >
+                        <span className="text-sm font-medium text-slate-700">
+                          {row.label}
+                        </span>
+                        <span className="flex items-center">
+                          {renderValue(planKey ? row[planKey] : null)}
+                        </span>
                       </div>
                     ))}
                   </div>

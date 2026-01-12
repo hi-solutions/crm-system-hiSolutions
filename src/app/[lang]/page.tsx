@@ -11,6 +11,7 @@ import FeaturesShowcase from "@/components/home sections/FeaturesShowcase";
 // import TrustedBy from "@/components/home sections/TrustedBy";
 import oneSystemScreen from "../../../public/images/new_screens/one_system_screen.webp";
 import screenPhoneMockup from "../../../public/images/new_screens/new_screen_phone_mockup.webp";
+import socialMediaList from "../../../public/images/social_media_list.png";
 
 export default async function Home({ params }: { params: Params }) {
   const { lang } = await params;
@@ -59,7 +60,7 @@ export default async function Home({ params }: { params: Params }) {
         <div className="bg-center bg-no-repeat flex justify-center min-h-[400px] sm:min-h-[500px] md:min-h-[600px] lg:min-h-[700px] relative ">
           <div className="absolute md:top-[30%] top-[10%]">
             <Image
-              src="/images/social_media_list.png"
+              src={socialMediaList}
               alt="Social Media List"
               width={1500}
               height={600}

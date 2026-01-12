@@ -141,9 +141,9 @@
   "prices": "الأسعار",
   "flexible_pricing_plans": "خطط تسعير مرنة لكل الأحجام",
   "choose_the_right_plan": "اختر الخطة المناسبة لاحتياجات شركتك. جميع الخطط تشمل تجربة مجانية لمدة 14 يوماً.",
-  "one_time_payment_forever_use": "ادفع مرة واحدة، واستخدمه إلى الأبد، وقم بالترقية مجانًا",
-  "flexible_pricing_for_any_team": "تسعير مرن لأي حجم فريق. إنها دفعة واحدة — تشتري الترخيص مرة واحدة، وجميع التحديثات المستقبلية مجانية لك إلى الأبد.",
-  "not_ready_to_pay": "لسه مش جاهز للدفع؟ جرّب النسخة التجريبية المجانية التي تحتوي على 600 أيقونة. نفس الأنماط، نفس المزايا، ونفس المرونة. وتشمل أيضًا معاينة كاملة.",
+  "one_time_payment_forever_use": "ابدأ مجانًا، وفعّل الميزات المتقدمة عند الحاجة",
+  "flexible_pricing_for_any_team": "تسعير مرن يناسب أي حجم فريق. يمكنك اختيار الاشتراك المدفوع للاستفادة من مزايا إضافية، أو استخدام النظام مجانًا بدون اشتراك — الخيار لك دائمًا.",
+  "not_ready_to_pay": "لسه مش جاهز للاشتراك؟ ابدأ بالنسخة المجانية لإدارة عقاراتك وعملائك بسهولة. نفس النظام، نفس المرونة، مع إمكانية المعاينة الكاملة قبل الترقية إلى الخطة المدفوعة.",
   "try_free_demo": "جرّب النسخة التجريبية المجانية",
   "pricing_price_currency_suffix": "E£",
   "pricing_best_value_tag": "أفضل قيمة",
@@ -171,6 +171,7 @@
   "full_user_management": "حرية كاملة في إضافة وإدارة المستخدمين",
   "import_export_excel": "استيراد وتصدير بيانات العملاء عبر اكسيل",
   "manage_sales_rentals": "إدارة وحدات البيع والإيجار",
+  "manage_sales": "إدارة وحدات البيع",
   "real_time_notifications": "إشعارات لمتابعة كل خطوة",
   "full_social_integration": "تكامل كامل مع منصات التواصل الاجتماعي",
   "pricing_enterprise_tag": "شركات كبرى",
@@ -187,7 +188,7 @@
     "مكتبة IconJar وملفات SVG",
     "عدد غير محدود من المشاريع"
   ],
-  "manage_leads_per_month": "إدارة حتى {{count}} Lead شهريًا",
+  "manage_leads_per_month": "إدارة حتى {{count}} عميل محتمل شهريًا",
   "limited_users": "عدد مستخدمين محدود",
   "social_media_integration_feature": "تكامل مع منصات التواصل الاجتماعي",
   "free_system_trial": "تجربة النظام بدون أي تكلفة",
@@ -207,96 +208,56 @@
         "featured": true
       }
     ],
-    "sections": [
+    "rows": [
       {
-        "title": "المميزات الأساسية",
-        "rows": [
-          {
-            "label": "إدارة العملاء",
-            "free": true,
-            "paid": true
-          },
-          {
-            "label": "إدارة المهام",
-            "free": true,
-            "paid": true
-          },
-          {
-            "label": "تقارير أساسية",
-            "free": true,
-            "paid": true
-          },
-          {
-            "label": "تطبيق الجوال",
-            "free": true,
-            "paid": true
-          },
-          {
-            "label": "دعم فني",
-            "free": "بريد",
-            "paid": "بريد وهاتف"
-          }
-        ]
+        "label": "إجراءات سريعة",
+        "free": false,
+        "paid": true
       },
       {
-        "title": "المميزات المتقدمة",
-        "rows": [
-          {
-            "label": "تحليلات متقدمة",
-            "free": false,
-            "paid": true
-          },
-          {
-            "label": "تقارير مخصصة",
-            "free": false,
-            "paid": true
-          },
-          {
-            "label": "أتمتة سير العمل",
-            "free": false,
-            "paid": true
-          },
-          {
-            "label": "مقدم API",
-            "free": false,
-            "paid": "محدود"
-          },
-          {
-            "label": "تكاملات متقدمة",
-            "free": false,
-            "paid": false
-          }
-        ]
+        "label": "عدد المستخدمين",
+        "free": "محدود",
+        "paid": "غير محدود"
       },
       {
-        "title": "مميزات المؤسسات",
-        "rows": [
-          {
-            "label": "تسجيل دخول موحد SSO",
-            "free": false,
-            "paid": false
-          },
-          {
-            "label": "مدير حساب مخصص",
-            "free": false,
-            "paid": false
-          },
-          {
-            "label": "تدريب مخصص",
-            "free": false,
-            "paid": false
-          },
-          {
-            "label": "عقود SLA",
-            "free": false,
-            "paid": false
-          },
-          {
-            "label": "استضافة خاصة",
-            "free": false,
-            "paid": false
-          }
-        ]
+        "label": "عدد العملاء المحتملين",
+        "free": "100",
+        "paid": "100,000"
+      },
+      {
+        "label": "التكاملات مع مواقع التواصل الإجتماعي",
+        "free": true,
+        "paid": true
+      },
+      {
+        "label": "الإشعارات",
+        "free": false,
+        "paid": true
+      },
+      {
+        "label": "تقارير عامة",
+        "free": true,
+        "paid": true
+      },
+      {
+        "label": "تقارير مخصصة",
+        "free": false,
+        "paid": true
+      },
+      {
+        "label": "استيراد وتصدير البيانات لملف Excel",
+        "free": false,
+        "paid": true
+      },
+      {
+        "label": "ادارة بيع الوحدات",
+        "free": true,
+        "paid": true
+      },
+      {
+        "label": "ادارة ايجار الوحدات",
+        "free": false,
+        "paid": true
       }
     ]
   },

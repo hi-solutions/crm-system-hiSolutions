@@ -5,6 +5,7 @@ import SectionHeader from "../SectionHeader/SectionHeader";
 import { Dictionary } from "@/lib/dictionary";
 import { FaStar } from "react-icons/fa";
 import Image from "next/image";
+import avatarImg from "../../../public/images/image.png";
 
 interface TestimonialsProps {
   dict?: Dictionary;
@@ -18,21 +19,21 @@ const Testimonials: React.FC<TestimonialsProps> = ({ dict }) => {
         author: "دينيسلاف جيلكوف",
         title: "Founder",
         company: "UILearn, Figura",
-        avatar: "/images/image.png",
+        avatar: avatarImg,
       },
       {
         text: "أفضل تجربة أيقونات استخدمتها، جودة رائعة وتناسق مذهل بين العناصر.",
         author: "أحمد علي",
         title: "Designer",
         company: "Freelance",
-        avatar: "/images/image.png",
+        avatar: avatarImg,
       },
       {
         text: "تسّرع عملية التصميم وتمنحني نتائج احترافية بسهولة.",
         author: "Sara M.",
         title: "Product Manager",
         company: "Startup",
-        avatar: "/images/image.png",
+        avatar: avatarImg,
       },
     ],
     []

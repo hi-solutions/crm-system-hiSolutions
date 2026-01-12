@@ -8,6 +8,7 @@ import Button from "../Button";
 import { Dictionary } from "@/lib/dictionary";
 import Image from "next/image";
 import { useSubscriptionModal } from "@/context/SubscriptionModalContext";
+import pricingVector from "../../../public/images/pricing-vetor.png";
 
 interface PricingData {
   freeLeads: number;
@@ -35,6 +36,7 @@ const Pricing: React.FC<PricingProps> = ({ dict, pricingData }) => {
     dict?.social_media_integration_feature,
     dict?.free_system_trial,
     dict?.ideal_for_small_teams,
+    dict?.manage_sales,
   ];
 
   const paidPlanAdvantages = [
@@ -112,12 +114,15 @@ const Pricing: React.FC<PricingProps> = ({ dict, pricingData }) => {
             {" "}
             {dict?.not_ready_to_pay}
           </p>
-          <Button icon={<Gift className="w-5 h-5" />}>
+          <Button
+            icon={<Gift className="w-5 h-5" />}
+            onClick={() => openModal()}
+          >
             {dict?.try_free_demo}
           </Button>
           <div className="md:block hidden absolute bottom-0 w-[148px] h-[88px] translate-x-55 translate-y-15">
             <Image
-              src="/images/pricing-vetor.png"
+              src={pricingVector}
               alt=""
               fill
               className="object-contain w-full h-full"

@@ -142,9 +142,9 @@
   "prices": "Prices",
   "flexible_pricing_plans": "Flexible pricing plans for every size",
   "choose_the_right_plan": "Choose the plan that fits your company's needs. All plans include a 14-day free trial.",
-  "one_time_payment_forever_use": "Pay once, use forever, and upgrade for free",
-  "flexible_pricing_for_any_team": "Flexible pricing for any team size. It’s a one-time payment — you buy the license once, and all future updates are free for you forever.",
-  "not_ready_to_pay": "Not ready to pay yet? Try the free demo with 600 icons. Same styles, same features, same flexibility. It also includes full preview.",
+  "one_time_payment_forever_use": "Start free, unlock more when you need it",
+  "flexible_pricing_for_any_team": "Flexible pricing for teams of any size. Choose an optional paid subscription for advanced features, or use the system for free — the choice is yours.",
+  "not_ready_to_pay": "Not ready to subscribe yet? Start with the free version to manage your properties and clients effortlessly. Same system, same flexibility, with full access to previews before upgrading.",
   "try_free_demo": "Try the free demo",
   "pricing_price_currency_suffix": "E£",
   "pricing_best_value_tag": "Best value",
@@ -186,6 +186,7 @@
   "full_user_management": "Full control over user management",
   "import_export_excel": "Import & export leads data via Excel",
   "manage_sales_rentals": "Manage sales and rental units",
+  "manage_sales": "Manage sales units",
   "real_time_notifications": "Real-time notifications",
   "full_social_integration": "Full social media integration",
   "pricing_enterprise_tag": "Enterprise",
@@ -217,96 +218,56 @@
         "featured": true
       }
     ],
-    "sections": [
+    "rows": [
       {
-        "title": "Core features",
-        "rows": [
-          {
-            "label": "Customer management",
-            "free": true,
-            "paid": true
-          },
-          {
-            "label": "Task management",
-            "free": true,
-            "paid": true
-          },
-          {
-            "label": "Essential reports",
-            "free": true,
-            "paid": true
-          },
-          {
-            "label": "Mobile app",
-            "free": true,
-            "paid": true
-          },
-          {
-            "label": "Support",
-            "free": "Email",
-            "paid": "Email & phone"
-          }
-        ]
+        "label": "Quick actions",
+        "free": false,
+        "paid": true
       },
       {
-        "title": "Advanced capabilities",
-        "rows": [
-          {
-            "label": "Advanced analytics",
-            "free": false,
-            "paid": true
-          },
-          {
-            "label": "Custom reports",
-            "free": false,
-            "paid": true
-          },
-          {
-            "label": "Workflow automation",
-            "free": false,
-            "paid": true
-          },
-          {
-            "label": "API access",
-            "free": false,
-            "paid": "Limited"
-          },
-          {
-            "label": "Advanced integrations",
-            "free": false,
-            "paid": false
-          }
-        ]
+        "label": "Number of users",
+        "free": "Limited",
+        "paid": "Unlimited"
       },
       {
-        "title": "Enterprise-grade",
-        "rows": [
-          {
-            "label": "Single sign-on (SSO)",
-            "free": false,
-            "paid": false
-          },
-          {
-            "label": "Dedicated account manager",
-            "free": false,
-            "paid": false
-          },
-          {
-            "label": "Custom onboarding",
-            "free": false,
-            "paid": false
-          },
-          {
-            "label": "SLA commitments",
-            "free": false,
-            "paid": false
-          },
-          {
-            "label": "Private hosting",
-            "free": false,
-            "paid": false
-          }
-        ]
+        "label": "Number of leads",
+        "free": "100",
+        "paid": "100,000"
+      },
+      {
+        "label": "Social media integration",
+        "free": true,
+        "paid": true
+      },
+      {
+        "label": "Notifications",
+        "free": false,
+        "paid": true
+      },
+      {
+        "label": "Essential reports",
+        "free": true,
+        "paid": true
+      },
+      {
+        "label": "Comprehensive reports",
+        "free": false,
+        "paid": true
+      },
+      {
+        "label": "Import & export leads data via Excel",
+        "free": false,
+        "paid": true
+      },
+      {
+        "label": "Manage sales units",
+        "free": true,
+        "paid": true
+      },
+      {
+        "label": "Manage rental units",
+        "free": false,
+        "paid": true
       }
     ]
   },

@@ -29,8 +29,8 @@ export async function generateMetadata({ params }: { params: Params }) {
           : "%s | Benaa The Team: Real Estate in Egypt, UAE, Saudi & Greece",
       default:
         lang === "ar"
-          ? "AQARIA:نظام إدارة علاقات العملاء العقاري"
-          : "AQARIA: Real Estate CRM System",
+          ? "Hi Estate:نظام إدارة علاقات العملاء العقاري"
+          : "Hi Estate: Real Estate CRM System",
     },
     description:
       lang === "ar"
@@ -57,8 +57,8 @@ export async function generateMetadata({ params }: { params: Params }) {
     openGraph: {
       title:
         lang === "ar"
-          ? "بناء ذا تيم: عقارات في مصر، الإمارات، السعودية واليونان"
-          : "Benaa The Team: Real Estate in Egypt, UAE, Saudi & Greece",
+          ? "Hi Estate:نظام إدارة علاقات العملاء العقاري"
+          : "Hi Estate: Real Estate CRM System",
       description:
         lang === "ar"
           ? "اكتشف عقارك المثالي مع بناء ذا تيم"
@@ -95,6 +95,9 @@ export async function generateMetadata({ params }: { params: Params }) {
   };
 }
 
+import { RefineProvider } from "@/providers/RefineProvider";
+import Notification from "@/components/Notification/Notification";
+
 export default async function RootLayout({
   children,
   params,
@@ -114,10 +117,13 @@ export default async function RootLayout({
       <body className={cairo.className}>
         <DictionaryProvider dictionary={dict} language={lang}>
           <SubscriptionModalProvider>
-            <NavbarWrapper lang={lang} />
-            {children}
-            <Footer />
-            <SubscriptionModal />
+            <RefineProvider>
+              <NavbarWrapper lang={lang} />
+              {children}
+              <Footer />
+              <SubscriptionModal />
+              <Notification />
+            </RefineProvider>
           </SubscriptionModalProvider>
         </DictionaryProvider>
       </body>

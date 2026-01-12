@@ -9,6 +9,9 @@ import FeatureDetailSection from "@/components/our-features/FeatureDetailSection
 import FeaturesShowcase from "@/components/home sections/FeaturesShowcase";
 import DecoratedElements from "@/components/DecoratedElements/DecoratedElements";
 import screenPhoneMockup from "../../../../public/images/new_screens/new_screen_phone_mockup.webp";
+import multiUsersScreen from "../../../../public/images/new_screens/multi_users_screen.webp";
+import teamManagementScreen from "../../../../public/images/new_screens/team_management_screen.webp";
+import effManagementScreen from "../../../../public/images/new_screens/eff_management_screen.webp";
 
 export default async function FeaturesPage({ params }: { params: Params }) {
   const { lang } = await params;
@@ -75,7 +78,7 @@ export default async function FeaturesPage({ params }: { params: Params }) {
       <FeatureDetailSection
         dict={dict}
         tagText={dict.effective_management_tag}
-        image="/images/new_screens/multi_users_screen.webp"
+        image={multiUsersScreen}
         title={dict.effective_management_title}
         description={dict.effective_management_description}
         list={affectiveManagementList}
@@ -87,7 +90,7 @@ export default async function FeaturesPage({ params }: { params: Params }) {
       <FeatureDetailSection
         dict={dict}
         tagText={dict.smart_insights_tag}
-        image="/images/new_screens/team_management_screen.webp"
+        image={teamManagementScreen}
         title={dict.smart_insights_title}
         description={dict.smart_insights_description}
         list={smartInsightsList}
@@ -99,7 +102,7 @@ export default async function FeaturesPage({ params }: { params: Params }) {
       <FeatureDetailSection
         dict={dict}
         tagText={dict.speed_and_efficiency_tag}
-        image="/images/new_screens/eff_management_screen.webp"
+        image={effManagementScreen}
         title={dict.speed_and_efficiency_title}
         description={dict.speed_and_efficiency_description}
         list={speedAndEfficiencyList}

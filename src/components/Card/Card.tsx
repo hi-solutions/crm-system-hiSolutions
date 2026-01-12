@@ -1,10 +1,10 @@
 import React from "react";
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 
 interface CardProps {
   title: string;
   description: string;
-  image: string;
+  image: string | StaticImageData;
   imageDirection?: "start" | "end" | "center";
   className?: string;
   flexDirection?: "row" | "col";

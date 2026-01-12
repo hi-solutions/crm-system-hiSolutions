@@ -1,6 +1,6 @@
 import axios, { AxiosError } from "axios";
 
-const baseUrl = "https://hi.hi-solutions.co/api/api/";
+const baseUrl = "/api/api/v1/";
 import { SubmitContactFormRequest } from "./models/ContactUs";
 
 const axiosConfig = {
@@ -12,7 +12,7 @@ const axiosConfig = {
 
 export const SubmitContactForm = (
   req: SubmitContactFormRequest
-): Promise<void> => {
+): Promise<any> => {
   const reqBodySerialized = JSON.stringify(req);
 
   return new Promise<void>((resolve, reject) => {

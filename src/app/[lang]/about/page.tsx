@@ -14,7 +14,6 @@ import DecoratedElements from "@/components/DecoratedElements/DecoratedElements"
 export default async function AboutPage({ params }: { params: Params }) {
   const { lang } = await params;
   const dict = await getDictionary(lang);
-
   return (
     <div className="min-h-screen bg-white relative overflow-hidden ">
       <div

@@ -1,12 +1,12 @@
 import React from "react";
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import Tag from "@/components/Tag/Tag";
 import { Dictionary } from "@/lib/dictionary";
 import { CheckCircle2 } from "lucide-react";
 
 interface FeatureDetailSectionProps {
   tagText?: string;
-  image: string;
+  image: string | StaticImageData;
   title: string;
   description: string;
   list: string[];

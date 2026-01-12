@@ -5,7 +5,9 @@ import CustomInput from "@/components/Inputs/CustomInput";
 import PhoneInput from "@/components/Inputs/PhoneInput";
 import TextArea from "@/components/Inputs/TextArea";
 import Button from "@/components/Button";
-import { Send, MapPin } from "lucide-react";
+import { Send, MapPin, Loader2 } from "lucide-react";
+import { useNotification } from "@refinedev/core";
+import { SubmitContactForm } from "@/Service/Apis";
 
 import { Dictionary } from "@/lib/dictionary";
 
@@ -14,6 +16,8 @@ interface ContactSectionProps {
 }
 
 export default function ContactSection({ dict }: ContactSectionProps) {
+  const { open } = useNotification();
+  const [loading, setLoading] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -27,8 +31,36 @@ export default function ContactSection({ dict }: ContactSectionProps) {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Form submitted:", formData);
-    // Add submission logic here
+    setLoading(true);
+
+    SubmitContactForm({
+      name: formData.name,
+      email: formData.email,
+      phone_number: formData.phone,
+      message: formData.message,
+    })
+      .then((res) => {
+        open?.({
+          type: "success",
+          message: "Success",
+          description:
+            res?.message || "Your message has been sent successfully.",
+        });
+        setFormData({ name: "", email: "", phone: "", message: "" });
+      })
+      .catch((err) => {
+        open?.({
+          type: "error",
+          message: "Error",
+          description:
+            err?.response?.data?.message ||
+            err?.message ||
+            "Failed to send message. Please try again.",
+        });
+      })
+      .finally(() => {
+        setLoading(false);
+      });
   };
 
   return (
@@ -112,7 +144,14 @@ export default function ContactSection({ dict }: ContactSectionProps) {
             <Button
               type="submit"
               className="w-full md:w-auto self-start mt-2"
-              icon={<Send className="w-4 h-4" />}
+              icon={
+                loading ? (
+                  <Loader2 className="w-4 h-4 animate-spin" />
+                ) : (
+                  <Send className="w-4 h-4" />
+                )
+              }
+              disabled={loading}
             >
               {dict.contact_send_button}
             </Button>

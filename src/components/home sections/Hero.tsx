@@ -1,10 +1,20 @@
 "use client";
 import { Dictionary } from "@/lib/dictionary";
-import React, { useEffect, useState } from "react";
+import React from "react";
 import Button from "../Button";
 import { Params } from "@/app/[lang]/layout";
 import Image from "next/image";
 import { useSubscriptionModal } from "@/context/SubscriptionModalContext";
+
+// Import all images
+import dots from "../../../public/images/dots.png";
+import vectorLine from "../../../public/images/vector_line.png";
+import phoneAr from "../../../public/images/phone_ar_screen.png";
+import phoneEn from "../../../public/images/phone_en_screen.png";
+import currencyAr from "../../../public/images/currency_ar.png";
+import currencyEn from "../../../public/images/currency_en.png";
+import statisticsAr from "../../../public/images/statistics_ar.png";
+import statisticsEn from "../../../public/images/statistics_en.png";
 
 interface HeroProps {
   dict?: Dictionary;
@@ -13,59 +23,19 @@ interface HeroProps {
 
 const Hero = ({ dict, params }: HeroProps) => {
   const { openModal } = useSubscriptionModal();
-  const [phoneScreen, setPhoneScreen] = useState<string>(
-    `/images/phone_${params.lang}_screen.png`
-  );
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const [phoneScreenLoading, setPhoneScreenLoading] = useState(true);
+  const phoneScreens = { ar: phoneAr, en: phoneEn };
+  const currencyScreens = { ar: currencyAr, en: currencyEn };
+  const statisticsScreens = { ar: statisticsAr, en: statisticsEn };
 
-  const [currencyScreen, setCurrencyScreen] = useState<string>(
-    `/images/currency_${params.lang}.png`
-  );
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const [currencyScreenLoading, setCurrencyScreenLoading] = useState(true);
+  const currentPhoneScreen =
+    phoneScreens[params.lang as keyof typeof phoneScreens] || phoneEn;
+  const currentCurrencyScreen =
+    currencyScreens[params.lang as keyof typeof currencyScreens] || currencyEn;
+  const currentStatisticsScreen =
+    statisticsScreens[params.lang as keyof typeof statisticsScreens] ||
+    statisticsEn;
 
-  const [statisticsScreen, setStatisticsScreen] = useState<string>(
-    `/images/statistics_${params.lang}.png`
-  );
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const [statisticsScreenLoading, setStatisticsScreenLoading] = useState(true);
-
-  useEffect(() => {
-    // When lang changes, preload new phone screen image
-    const newPhoneScreenSrc = `/images/phone_${params.lang}_screen.png`;
-    setPhoneScreenLoading(true);
-    const phoneImg = new window.Image();
-    phoneImg.onload = () => {
-      setPhoneScreen(newPhoneScreenSrc);
-      setPhoneScreenLoading(false);
-    };
-    phoneImg.src = newPhoneScreenSrc;
-  }, [params.lang]);
-
-  useEffect(() => {
-    // When lang changes, preload new currency screen image
-    const newCurrencyScreenSrc = `/images/currency_${params.lang}.png`;
-    setCurrencyScreenLoading(true);
-    const currencyImg = new window.Image();
-    currencyImg.onload = () => {
-      setCurrencyScreen(newCurrencyScreenSrc);
-      setCurrencyScreenLoading(false);
-    };
-    currencyImg.src = newCurrencyScreenSrc;
-  }, [params.lang]);
-
-  useEffect(() => {
-    // When lang changes, preload new statistics screen image
-    const newStatisticsScreenSrc = `/images/statistics_${params.lang}.png`;
-    setStatisticsScreenLoading(true);
-    const statisticsImg = new window.Image();
-    statisticsImg.onload = () => {
-      setStatisticsScreen(newStatisticsScreenSrc);
-      setStatisticsScreenLoading(false);
-    };
-    statisticsImg.src = newStatisticsScreenSrc;
-  }, [params.lang]);
+  // Preloading is now handled by Next.js static imports and the priority prop.
 
   // const phoneScreen =
   //   params.lang === "en"
@@ -103,24 +73,18 @@ const Hero = ({ dict, params }: HeroProps) => {
           </Button>
           {/* dots */}
           <div className="absolute bottom-0 left-1/4 translate-y-1/2">
-            <Image src="/images/dots.png" alt="Dots" width={150} height={150} />
+            <Image src={dots} alt="Dots" width={150} height={150} />
           </div>
           {/* vector_line.png */}
           <div className="absolute top-0 right-0 translate-x-2/3 ">
-            <Image
-              src="/images/vector_line.png"
-              alt="Dots"
-              width={150}
-              height={150}
-            />
+            <Image src={vectorLine} alt="Dots" width={150} height={150} />
           </div>
         </div>
 
         {/* images */}
         <div className="relative w-full h-[480px] sm:h-[560px] md:h-[640px] lg:h-[650px] ">
-          {/* main phones */}
           <Image
-            src={phoneScreen}
+            src={currentPhoneScreen}
             alt="App screens"
             fill
             className="object-contain object-center scale-110 md:scale-125"
@@ -130,7 +94,7 @@ const Hero = ({ dict, params }: HeroProps) => {
           {/* currency card overlay */}
           <div className="absolute right-0 top-16 sm:top-12 md:top-14 lg:top-16 translate-x-2 sm:translate-x-6">
             <Image
-              src={currencyScreen}
+              src={currentCurrencyScreen}
               alt="Currency widget"
               width={260}
               height={160}
@@ -141,7 +105,7 @@ const Hero = ({ dict, params }: HeroProps) => {
           {/* statistics card overlay */}
           <div className="absolute bottom-2 left-6 sm:left-10 md:left-14 lg:left-0 lg:-translate-x-1/5">
             <Image
-              src={statisticsScreen}
+              src={currentStatisticsScreen}
               alt="Statistics widget"
               width={260}
               height={160}

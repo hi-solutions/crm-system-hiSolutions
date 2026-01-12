@@ -2,15 +2,21 @@
 
 import React, { useState } from "react";
 import SectionHeader from "../SectionHeader/SectionHeader";
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import { Dictionary } from "@/lib/dictionary";
+
+// Import team images
+import davidImg from "../../../public/images/team/portrait-white-man-isolated.jpg";
+import mohammedImg from "../../../public/images/team/portrate.jpg";
+import ryanImg from "../../../public/images/team/RyanProfile.jpg";
+import saraImg from "../../../public/images/team/sara.png";
 
 interface MeetOurTeamProps {
   dict: Dictionary;
 }
 
 interface TeamMember {
-  img: string;
+  img: string | StaticImageData;
   name: string;
   role: string;
 }
@@ -18,22 +24,22 @@ interface TeamMember {
 const MeetOurTeam: React.FC<MeetOurTeamProps> = ({ dict }) => {
   const teamMembersData: TeamMember[] = [
     {
-      img: "/images/team/portrait-white-man-isolated.jpg",
+      img: davidImg,
       name: dict?.david_park ?? "",
       role: dict?.lead_developer ?? "",
     },
     {
-      img: "/images/team/portrate.jpg",
+      img: mohammedImg,
       name: dict?.mohammed_al ?? "",
       role: dict?.marketing_head ?? "",
     },
     {
-      img: "/images/team/RyanProfile.jpg",
+      img: ryanImg,
       name: dict?.ryan_gosling ?? "",
       role: dict?.cto ?? "",
     },
     {
-      img: "/images/team/sara.png",
+      img: saraImg,
       name: dict?.sara_ahmed ?? "",
       role: dict?.ceo ?? "",
     },
