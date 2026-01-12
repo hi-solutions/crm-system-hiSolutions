@@ -17,11 +17,6 @@ export interface PricingComparisonPlan {
   featured?: boolean;
 }
 
-export interface PricingComparisonSection {
-  title: string;
-  rows: PricingComparisonRow[];
-}
-
 export interface Dictionary {
   home: string;
   navHome: string;

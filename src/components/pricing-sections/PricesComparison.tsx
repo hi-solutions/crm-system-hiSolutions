@@ -23,7 +23,7 @@ const PricesComparison: React.FC<PricesComparisonProps> = ({ dict }) => {
   //   return null;
   // };
   const resolvePlanId = (id: string): PricingPlanId | null => {
-    if (id === "free" || id === "paid" || id === "enterprise") {
+    if (id === "free" || id === "paid") {
       return id;
     }
     return null;
