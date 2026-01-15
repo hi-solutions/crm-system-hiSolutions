@@ -56,9 +56,9 @@ export default async function Home({ params }: { params: Params }) {
       </section>
 
       {/* Integrations Section */}
-      <section className=" bg-white border border-red-500">
-        <div className="bg-center bg-no-repeat flex justify-center min-h-[400px] sm:min-h-[500px] md:min-h-[600px] lg:min-h-[700px] relative ">
-          <div className="absolute md:top-[30%] top-[10%]">
+      <section className=" bg-white ">
+        <div className="bg-center bg-no-repeat flex justify-center min-h-[300px] sm:min-h-[300px]   relative ">
+          <div className="absolute md:top-[10%] top-[10%]">
             <Image
               src={socialMediaList}
               alt="Social Media List"
@@ -68,7 +68,7 @@ export default async function Home({ params }: { params: Params }) {
               sizes="(max-width: 1000px) 100vw, (max-width: 1200px) 90vw, 896px"
             />
           </div>
-          <div className="flex justify-center items-end py-40 px-4 md:px-10 lg:px-16 border">
+          <div className="flex justify-center items-end py-40 px-4 md:px-10 lg:px-16 ">
             <SectionHeader
               tag={{ title: dict.integrations }}
               title={dict.integrations_title}
@@ -124,14 +124,14 @@ export default async function Home({ params }: { params: Params }) {
       {/* <Testimonials dict={dict} /> */}
 
       {/* Pricing Section */}
-      <section className="py-20 px-4 md:px-10 lg:px-16 relative flex flex-col items-center justify-center gap-10  bg-gradient-to-b from-gray-50 to-white">
+      <section className=" px-4 md:px-10 lg:px-16 relative flex flex-col items-center justify-center gap-10  bg-gradient-to-b from-gray-50 to-white ">
         <div className="min-h-screen bg-white">
           <PricingSection dict={dict} />
         </div>
       </section>
 
       {/* FAQ Section */}
-      <section className="py-20 px-4 md:px-10 lg:px-16 relative flex flex-col items-center justify-center gap-10 bg-white">
+      <section className="px-4 md:px-10 lg:px-16 relative flex flex-col items-center justify-center gap-10 bg-white">
         <div className="min-h-screen bg-white">
           <FAQSection /> {/* FAQSection component */}
         </div>

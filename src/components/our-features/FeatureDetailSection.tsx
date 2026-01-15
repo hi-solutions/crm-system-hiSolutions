@@ -62,7 +62,7 @@ const FeatureDetailSection: React.FC<FeatureDetailSectionProps> = ({
             <ul className="space-y-3">
               {list.map((item, idx) => (
                 <li key={idx} className="flex items-start gap-3 text-[#0F172A]">
-                  <span className="mt-1 text-blue-600">
+                  <span className="mt-1 text-(--Primary)">
                     <CheckCircle2 className="w-5 h-5" />
                   </span>
                   <span className="text-sm md:text-base text-[#334155]">

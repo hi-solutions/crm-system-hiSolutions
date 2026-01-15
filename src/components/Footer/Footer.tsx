@@ -11,7 +11,7 @@ import abstract_shape from "../../../public/images/abstract_shape.webp";
 import abstract_shape_foo from "../../../public/images/abstract_shape_foo.webp";
 import { useSubscriptionModal } from "@/context/SubscriptionModalContext";
 
-export default function Footer() {
+export default function FooterPlus() {
   const ctx = useDictionary();
   const dictionary = ctx.dictionary;
   const lang = ctx.language as "ar" | "en";
@@ -39,9 +39,9 @@ export default function Footer() {
           dir="rtl"
         />
         <div className="relative">
-          <div className="grid grid-cols-1 md:grid-cols-5 gap-8 border">
-            {/* Brand + tagline + socials + signup */}
-            <div className="space-y-4 md:col-span-2 border border-yellow-500 w-auto">
+          <div className="grid grid-cols-1  md:grid-cols-5 gap-8 place-items-start    ">
+            {/* Brand  */}
+            <div className="space-y-4 md:col-span-1  w-auto ">
               <div className="flex items-center gap-2">
                 <Link href={`/${lang}`} className="text-xl font-bold">
                   <AqariaLogo className="h-14 w-auto" />
@@ -54,69 +54,76 @@ export default function Footer() {
               <p>{dictionary.contact_address_line2}</p>
             </div>
 
-            {/* Product */}
-            <div className="border border-yellow-500">
-              <h3 className="font-semibold mb-3">{dictionary.footerProduct}</h3>
-              <ul className="space-y-2 text-white/85">
-                <li>
-                  <Link
-                    href={`${base}/our-features`}
-                    className="hover:underline  text-white/80 hover:text-white transition-colors"
-                  >
-                    {dictionary.navFeatures}
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href={`${base}/pricing`}
-                    className="hover:underline text-white/80 hover:text-white transition-colors"
-                  >
-                    {dictionary.navPricing}
-                  </Link>
-                </li>
-              </ul>
-            </div>
+            {/* Product + Learn + Company  container */}
+            <div className="flex sm:flex-row  gap-10 w-full  md:col-span-3 h-full">
+              {/* Product */}
+              <div className="flex-1  ">
+                <h3 className="font-semibold mb-3">
+                  {dictionary.footerProduct}
+                </h3>
+                <ul className="space-y-2 text-white/85">
+                  <li>
+                    <Link
+                      href={`${base}/our-features`}
+                      className="hover:underline  text-white/80 hover:text-white transition-colors"
+                    >
+                      {dictionary.navFeatures}
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      href={`${base}/pricing`}
+                      className="hover:underline text-white/80 hover:text-white transition-colors"
+                    >
+                      {dictionary.navPricing}
+                    </Link>
+                  </li>
+                </ul>
+              </div>
 
-            {/* Learn */}
-            <div className="border border-yellow-500">
-              <h3 className="font-semibold mb-3">{dictionary.footerLearn}</h3>
-              <ul className="space-y-2 text-white/85">
-                <li>
-                  <Link
-                    href={`${base}/about`}
-                    className="hover:underline text-white/80 hover:text-white transition-colors"
-                  >
-                    {dictionary.navAbout}
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href={`${base}/contact`}
-                    className="hover:underline text-white/80 hover:text-white transition-colors"
-                  >
-                    {dictionary.navContact}
-                  </Link>
-                </li>
-              </ul>
-            </div>
+              {/* Learn */}
+              <div className="flex-1 ">
+                <h3 className="font-semibold mb-3">{dictionary.footerLearn}</h3>
+                <ul className="space-y-2 text-white/85">
+                  <li>
+                    <Link
+                      href={`${base}/about`}
+                      className="hover:underline text-white/80 hover:text-white transition-colors"
+                    >
+                      {dictionary.navAbout}
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      href={`${base}/contact`}
+                      className="hover:underline text-white/80 hover:text-white transition-colors"
+                    >
+                      {dictionary.navContact}
+                    </Link>
+                  </li>
+                </ul>
+              </div>
 
-            {/* Company */}
-            <div className="border border-yellow-500">
-              <h3 className="font-semibold mb-3">{dictionary.footerCompany}</h3>
-              <ul className="space-y-2 text-white/85">
-                <li>
-                  <Link
-                    href={`${base}`}
-                    className="hover:underline text-white/80 hover:text-white transition-colors"
-                  >
-                    {dictionary.navHome}
-                  </Link>
-                </li>
-              </ul>
+              {/* Company */}
+              <div className="flex-1 ">
+                <h3 className="font-semibold mb-3">
+                  {dictionary.footerCompany}
+                </h3>
+                <ul className="space-y-2 text-white/85">
+                  <li>
+                    <Link
+                      href={`${base}`}
+                      className="hover:underline text-white/80 hover:text-white transition-colors"
+                    >
+                      {dictionary.navHome}
+                    </Link>
+                  </li>
+                </ul>
+              </div>
             </div>
 
             {/* social and try button  */}
-            <div className="space-y-4 md:col-span-2 border border-yellow-500">
+            <div className="space-y-4 md:col-span-1  w-full">
               <div className="flex items-center gap-3">
                 <a
                   aria-label="LinkedIn"
@@ -156,11 +163,11 @@ export default function Footer() {
                 {/* <input
                   type="email"
                   placeholder={dictionary.footerEmailPlaceholder}
-                  className="w-full rounded-xl px-3 py-2 text-gray-900 bg-white border border-[#9AA4B1] hover:cursor-pointer focus:border-[#0199E9] transition-all duration-300"
+                  className="w-full rounded-xl px-3 py-2 text-gray-900 bg-white  -[#9AA4B1] hover:cursor-pointer focus:-[#0199E9] transition-all duration-300"
                 /> */}
                 <Button
                   type="button"
-                  className="!bg-white !text-blue-700 px-4 py-2 rounded-xl font-medium hover:!bg-blue-50 w-full sm:w-1/2"
+                  className="!bg-white !text-(--Primary) px-4 py-2 rounded-xl md:font-medium hover:!bg-blue-50 w-full"
                   onClick={() => openModal()}
                 >
                   {/* {dictionary.footerSignup} */}
@@ -171,7 +178,7 @@ export default function Footer() {
           </div>
         </div>
       </footer>
-      <div className=" border-t border-white/20 text-[#016CA4] text-sm flex flex-col md:flex-row items-center justify-between gap-3 px-4 md:px-6 lg:px-20 py-6">
+      <div className=" -t -white/20 text-(--Primary) text-sm flex flex-col md:flex-row items-center justify-between gap-3 px-4 md:px-6 lg:px-20 py-6">
         <span>
           &copy; {new Date().getFullYear()} . {dictionary.allRightsReserved}
         </span>

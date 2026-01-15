@@ -4,7 +4,7 @@ import "./globals.css";
 import { Cairo } from "next/font/google";
 import { DictionaryProvider } from "@/hooks/Dickitionary";
 import NavbarWrapper from "@/components/LangSwitcher/Navbar/NavbarWrapper";
-import FooterPlus from "@/components/Footer/FooterPlus";
+import Footer from "@/components/Footer/Footer";
 import { SubscriptionModalProvider } from "@/context/SubscriptionModalContext";
 import SubscriptionModal from "@/components/Modals/SubscriptionModal";
 
@@ -120,7 +120,7 @@ export default async function RootLayout({
             <RefineProvider>
               <NavbarWrapper lang={lang} />
               {children}
-              <FooterPlus />
+              <Footer />
               <SubscriptionModal />
               <Notification />
             </RefineProvider>

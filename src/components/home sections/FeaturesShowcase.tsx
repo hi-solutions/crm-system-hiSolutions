@@ -117,7 +117,7 @@ const FeaturesShowcase: React.FC<FeaturesShowcaseProps> = ({ dict }) => {
   ];
 
   return (
-    <section className="relative flex flex-col items-center justify-center gap-10 bg-gray-50 py-20 px-4 md:px-10 lg:px-16">
+    <section className="relative flex flex-col items-center justify-center gap-10 bg-gray-50 py-10 px-4 md:px-10 lg:px-16">
       <div className="flex w-full flex-col items-stretch gap-5 md:flex-row">
         <div className="flex w-full lg:w-1/2">
           <Card {...primaryCard} />
