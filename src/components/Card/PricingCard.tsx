@@ -31,7 +31,7 @@ const PricingCard: React.FC<PricingCardProps> = ({
   onButtonClick,
 }) => {
   const baseStyles = bestPlan
-    ? "relative bg-white rounded-3xl p-8 shadow-xl border-4 border-blue-600 transform hover:scale-105 transition-all"
+    ? "relative bg-white rounded-3xl p-8 shadow-xl border-4 border-[#00AEEF] transform hover:scale-105 transition-all"
     : "bg-gray-50 rounded-3xl p-8 shadow-sm hover:shadow-lg transition-all";
 
   return (
@@ -42,7 +42,7 @@ const PricingCard: React.FC<PricingCardProps> = ({
         // </div>
         <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-full">
           <div>
-            <span className="bg-blue-600 text-white px-4 py-2 rounded-xl">
+            <span className="bg-[#00AEEF] text-white px-4 py-2 rounded-xl">
               {bestPlanLabel}
             </span>
           </div>
@@ -52,7 +52,7 @@ const PricingCard: React.FC<PricingCardProps> = ({
       <div className="flex items-center justify-between mb-6">
         {tagText && <Tag title={tagText} />} {/* tag component */}
         {icon && (
-          <div className="w-12 h-12 rounded-2xl bg-blue-50 flex items-center justify-center text-blue-600">
+          <div className="w-12 h-12 rounded-2xl bg-blue-50 flex items-center justify-center text-[#00AEEF]">
             {icon}
           </div>
         )}
@@ -80,7 +80,7 @@ const PricingCard: React.FC<PricingCardProps> = ({
         {planAdvantages.map((advantage, index) => (
           <li key={index} className="flex items-center text-gray-700 gap-2">
             <div className="w-6 h-6 rounded-full bg-blue-100 flex items-center justify-center mr-3 shrink-0">
-              <Check className="w-4 h-4 text-blue-600" strokeWidth={3} />{" "}
+              <Check className="w-4 h-4 text-[#00AEEF]" strokeWidth={3} />{" "}
               {/* check icon */}
             </div>
             <span className="text-base">{advantage}</span>

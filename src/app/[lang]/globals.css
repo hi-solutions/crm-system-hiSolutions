@@ -1,8 +1,8 @@
 @import "tailwindcss";
 
 :root {
-  --Primary: #e7c498;
-  --Strok: #654321;
+  --Primary: #00aeef;
+  --Secondary: #005fda;
   --Default-Font: #111827;
   --Grey-60: #999999;
 }

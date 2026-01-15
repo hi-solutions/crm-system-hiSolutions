@@ -56,7 +56,7 @@ export default async function Home({ params }: { params: Params }) {
       </section>
 
       {/* Integrations Section */}
-      <section className=" bg-white">
+      <section className=" bg-white border border-red-500">
         <div className="bg-center bg-no-repeat flex justify-center min-h-[400px] sm:min-h-[500px] md:min-h-[600px] lg:min-h-[700px] relative ">
           <div className="absolute md:top-[30%] top-[10%]">
             <Image
@@ -68,7 +68,7 @@ export default async function Home({ params }: { params: Params }) {
               sizes="(max-width: 1000px) 100vw, (max-width: 1200px) 90vw, 896px"
             />
           </div>
-          <div className="flex justify-center items-end py-40 px-4 md:px-10 lg:px-16">
+          <div className="flex justify-center items-end py-40 px-4 md:px-10 lg:px-16 border">
             <SectionHeader
               tag={{ title: dict.integrations }}
               title={dict.integrations_title}
@@ -107,7 +107,7 @@ export default async function Home({ params }: { params: Params }) {
             <li key={index} className="flex items-center gap-2">
               <div
                 className="w-6 h-6 rounded-full flex items-center justify-center"
-                style={{ backgroundColor: "#005FDA" }}
+                style={{ backgroundColor: "var(--Primary)" }}
               >
                 <FaCheck className="text-white text-xs" />
               </div>

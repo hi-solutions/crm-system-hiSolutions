@@ -125,13 +125,13 @@ export default function Navbar({
                 href={link.href}
                 className={`relative font-medium transition-colors duration-200 whitespace-nowrap ${
                   isActive(link.href)
-                    ? "text-[#005FDA]"
-                    : "text-gray-700 hover:text-blue-600"
+                    ? "text-(--Primary)"
+                    : "text-gray-700 hover:text-(--Primary)"
                 }`}
               >
                 {link.label}
                 {isActive(link.href) && (
-                  <span className="absolute bottom-0 left-0 w-full h-0.5 bg-[#005FDA]"></span>
+                  <span className="absolute bottom-0 left-0 w-full h-0.5 bg-(--Primary)"></span>
                 )}
               </Link>
             ))}
@@ -148,7 +148,7 @@ export default function Navbar({
                 </Link> */}
                 <Button
                   onClick={() => openModal()}
-                  className="shadow-sm hover:shadow-md text-base px-6 py-3 rounded-3xl"
+                  className="shadow-sm hover:shadow-md text-base px-6 py-3 rounded-3xl "
                 >
                   {ctaButton.text}
                 </Button>
@@ -169,7 +169,7 @@ export default function Navbar({
           <div className="lg:hidden flex items-center">
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-blue-600 focus:outline-none"
+              className="inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-(--Primary) focus:outline-none"
             >
               <svg
                 className="h-6 w-6"
@@ -215,14 +215,14 @@ export default function Navbar({
                   href={link.href}
                   className={`block px-3 py-2 rounded-md text-base font-medium ${
                     isActive(link.href)
-                      ? "text-[#005FDA] bg-gray-50"
-                      : "text-gray-700 hover:bg-gray-50 hover:text-blue-600"
+                      ? "text-(--Primary) bg-gray-50"
+                      : "text-gray-700 hover:bg-gray-50 hover:text-(--Primary)"
                   }`}
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {link.label}
                   {isActive(link.href) && (
-                    <span className="block w-full h-0.5 bg-[#005FDA] mt-1"></span>
+                    <span className="block w-full h-0.5 bg-(--Primary) mt-1"></span>
                   )}
                 </Link>
               ))}
@@ -242,7 +242,7 @@ export default function Navbar({
                 <div className="pt-4 pb-2 px-3 space-y-2">
                   <Link
                     href={ctaButton.href}
-                    className="block w-full text-center px-4 py-2 bg-[#005FDA] text-white rounded-md font-medium hover:bg-blue-700 transition-colors duration-200"
+                    className="block w-full text-center px-4 py-2 bg-(--Primary) text-white rounded-md font-medium hover:bg-blue-700 transition-colors duration-200"
                     onClick={() => setIsMenuOpen(false)}
                   >
                     {ctaButton.text}
@@ -323,7 +323,7 @@ const LanguageDropdown = React.forwardRef<
                       </span>
                       <span className="text-sm font-medium">{lang.label}</span>
                       {currentLang === lang.code && (
-                        <span className="ml-auto text-[#005FDA]">✓</span>
+                        <span className="ml-auto text-(--Primary)">✓</span>
                       )}
                     </button>
                   ))}
@@ -382,7 +382,7 @@ const LanguageDropdown = React.forwardRef<
                   </span>
                   <span className="text-sm font-medium">{lang.label}</span>
                   {currentLang === lang.code && (
-                    <span className="ml-auto text-[#005FDA]">✓</span>
+                    <span className="ml-auto text-(--Primary)">✓</span>
                   )}
                 </button>
               ))}

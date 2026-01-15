@@ -59,7 +59,7 @@ const Hero = ({ dict, params }: HeroProps) => {
         <div className="flex flex-col items-start gap-6 max-w-lg relative">
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-medium text-gray-900 leading-tight">
             {dict?.manage_your}{" "}
-            <span className="text-blue-600">{dict?.real_estate_sales}</span>{" "}
+            <span className="text-[#00AEEF]">{dict?.real_estate_sales}</span>{" "}
             {dict?.easier_and_smarter}
           </h1>
           <p className="text-gray-600 text-base sm:text-lg max-w-xl">

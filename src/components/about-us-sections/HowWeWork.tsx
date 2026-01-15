@@ -63,7 +63,7 @@ const HowWeWork: React.FC<HowWeWorkProps> = ({ dict }) => {
             className="flex flex-col items-center justify-center gap-6 lg:max-w-[210px] lg:-mt-10 mb-4 hover:-translate-y-2 transition-all duration-300 ease-out max-w-[210px]"
           >
             <div className=" border-8 border-blue-100 rounded-full flex items-center justify-center ">
-              <div className="p-3 border-4 border-[#005FDA] rounded-full text-[#005FDA] bg-white text-3xl flex items-center justify-center hover:bg-[#005FDA] hover:text-white hover:border-blue-100 transition-all duration-300">
+              <div className="p-3 border-4 border-(--Primary) rounded-full text-(--Primary) bg-white text-3xl flex items-center justify-center hover:bg-(--Primary) hover:text-white hover:border-blue-100 transition-all duration-300">
                 {item.icon}
               </div>
             </div>

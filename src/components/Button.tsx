@@ -29,7 +29,9 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     // - font weight 600 -> font-semibold
     // - flex with gap 8px -> inline-flex items-center gap-2
     const baseStyles =
-      "inline-flex items-center justify-center gap-2 bg-blue-600 px-4 py-2 text-white font-normal transition-colors hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed rounded-4xl hover:cursor-pointer";
+      "inline-flex items-center justify-center gap-2 bg-(--Primary) px-4 py-2 text-white font-normal transition-colors hover:bg-blue-700 focus:outline-none  focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed rounded-4xl hover:cursor-pointer active:scale-[0.98]";
+    // const baseStyles =
+    //   "inline-flex items-center justify-center gap-2 bg-blue-600 px-4 py-2 text-white font-normal transition-colors hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed rounded-4xl hover:cursor-pointer";
 
     return (
       <button
