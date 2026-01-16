@@ -2,6 +2,7 @@ import React from "react";
 import Button from "../Button";
 import { Check } from "lucide-react";
 import Tag from "../Tag/Tag";
+import { Dictionary } from "@/lib/dictionary";
 
 interface PricingCardProps {
   tagText?: string;
@@ -14,6 +15,7 @@ interface PricingCardProps {
   bestPlanLabel?: string;
   priceSuffix?: string;
   className?: string;
+  dict: Dictionary;
   onButtonClick?: () => void;
 }
 
@@ -26,10 +28,11 @@ const PricingCard: React.FC<PricingCardProps> = ({
   planAdvantages,
   bestPlan = false,
   bestPlanLabel = "Best value",
-  priceSuffix = "E£",
+  dict,
   className = "",
   onButtonClick,
 }) => {
+  const displayPriceSuffix = dict?.EGP ?? "";
   const baseStyles = bestPlan
     ? "relative bg-white rounded-3xl p-8 shadow-xl border-4 border-[#00AEEF] transform hover:scale-105 transition-all"
     : "bg-gray-50 rounded-3xl p-8 shadow-sm hover:shadow-lg transition-all";
@@ -64,8 +67,8 @@ const PricingCard: React.FC<PricingCardProps> = ({
         <span className="text-5xl font-bold text-gray-900 ">
           {planPrice?.toLocaleString()}
         </span>
-        {priceSuffix && (
-          <span className="text-gray-600 text-xl ml-2">{priceSuffix}</span>
+        {displayPriceSuffix && (
+          <span className="text-gray-600 text-xl ml-2">{displayPriceSuffix}</span>
         )}
       </div>
 

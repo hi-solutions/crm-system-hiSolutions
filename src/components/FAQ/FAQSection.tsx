@@ -7,42 +7,7 @@ import { useDictionary } from "@/hooks/Dickitionary";
 const FAQSection = () => {
   const { dictionary, language } = useDictionary();
 
-  const generalQuestions = [
-    {
-      question: dictionary.faq1Question,
-      answer: dictionary.faq1Answer,
-    },
-    {
-      question: dictionary.faq2Question,
-      answer: dictionary.faq2Answer,
-    },
-    {
-      question: dictionary.faq3Question,
-      answer: dictionary.faq3Answer,
-    },
-    {
-      question: dictionary.faq4Question,
-      answer: dictionary.faq4Answer,
-    },
-    {
-      question: dictionary.faq5Question,
-      answer: dictionary.faq5Answer,
-    },
-    {
-      question: dictionary.faq6Question,
-      answer: dictionary.faq6Answer,
-    },
-    {
-      question: dictionary.faq7Question,
-      answer: dictionary.faq7Answer,
-    },
-  ].filter(
-    (item) => item.question?.trim().length && item.answer?.trim().length
-  );
-
   const tagTitle = language === "ar" ? "الأسئلة" : "Questions";
-  const generalQuestionsLabel =
-    language === "ar" ? "الأسئلة العامة" : "General Questions";
 
   return (
     <section className="w-full flex flex-col items-center gap-6 sm:gap-8 py-12 sm:py-16 md:py-20 px-4 sm:px-6 md:px-8 lg:px-10 mb-8 sm:mb-12 md:mb-16">
@@ -51,17 +16,24 @@ const FAQSection = () => {
         title={dictionary?.frequently_asked_questions}
         description={dictionary?.faq_description}
       />
-      <p className="text-[#033E8A] text-base sm:text-lg font-semibold">
-        {generalQuestionsLabel}
-      </p>
-      <div className="flex w-full max-w-4xl flex-col gap-4">
-        {generalQuestions.map((question, index) => (
-          <ExpandableCard
-            key={`${question.question}-${index}`}
-            question={question.question}
-            answer={question.answer}
-            defaultOpen={false}
-          />
+
+      <div className="flex w-full max-w-4xl flex-col gap-10">
+        {dictionary?.faqCategories?.map((category, catIndex) => (
+          <div key={`category-${catIndex}`} className="w-full">
+            <h3 className="text-[#033E8A] text-xl font-bold mb-4 px-2">
+              {category.title}
+            </h3>
+            <div className="flex flex-col gap-4">
+              {category.items.map((question, index) => (
+                <ExpandableCard
+                  key={`${question.question}-${index}`}
+                  question={question.question}
+                  answer={question.answer}
+                  defaultOpen={false}
+                />
+              ))}
+            </div>
+          </div>
         ))}
       </div>
     </section>

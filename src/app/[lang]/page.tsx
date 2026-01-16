@@ -73,7 +73,7 @@ export default async function Home({ params }: { params: Params }) {
               tag={{ title: dict.integrations }}
               title={dict.integrations_title}
               description={dict.integrations_description}
-              // linkText={dict.integrations_link_text}
+            // linkText={dict.integrations_link_text}
             />
           </div>
         </div>
@@ -86,7 +86,7 @@ export default async function Home({ params }: { params: Params }) {
             tag={{ title: dict.one_system }}
             title={dict.one_system_title}
             description={dict.one_system_description}
-            // linkText={dict.one_system_link_text}
+          // linkText={dict.one_system_link_text}
           />
         </div>
         <div className="flex justify-center items-center w-full max-w-4xl mx-auto">

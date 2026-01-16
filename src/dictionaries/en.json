@@ -20,20 +20,93 @@
   "socialTwitterUrl": "https://twitter.com/",
   "socialLinkedinUrl": "https://www.linkedin.com/",
   "socialFacebookUrl": "https://www.facebook.com/",
-  "faq1Question": "Why should I buy icons?",
-  "faq1Answer": "Icons enhance your designs by providing a consistent visual language that improves user experience, saves design time, and ensures paid polish across your projects.",
-  "faq2Question": "How are these icons different from other packs?",
-  "faq2Answer": "Our icons are carefully crafted with modern design principles, offering a cohesive style that works seamlessly together. We provide multiple formats and sizes, ensuring compatibility with various design tools and platforms.",
-  "faq3Question": "What are the benefits of using native Figma icons?",
-  "faq3Answer": "Native Figma icons integrate perfectly with the Figma environment, allowing for easy customization, vector editing, and style adjustments. They maintain quality at any scale and work seamlessly with Figma's collaborative features.",
-  "faq4Question": "Where can I use Anron Icons?",
-  "faq4Answer": "You can use Anron Icons in any commercial or personal project including websites, mobile apps, presentations, marketing materials, and social media content. The icons are licensed for unlimited use.",
-  "faq5Question": "Is it a one-time payment?",
-  "faq5Answer": "Yes, it's a one-time payment for lifetime access. You'll receive all current icons plus any future updates and additions at no extra cost.",
-  "faq6Question": "Can I get a refund?",
-  "faq6Answer": "We offer a 30-day money-back guarantee. If you're not satisfied with your purchase, contact us within 30 days for a full refund, no questions asked.",
-  "faq7Question": "What's included in the free version?",
-  "faq7Answer": "The free version includes a curated selection of essential icons to help you get started. You can explore the full collection with the premium version, which includes all icons, formats, and exclusive updates.",
+  "faqCategories": [
+    {
+      "title": "General",
+      "items": [
+        {
+          "question": "What is HiEstate and who is it for?",
+          "answer": "HiEstate is a specialized Real Estate CRM designed for brokerage firms, developers, and sales teams in the MENA region. It replaces scattered spreadsheets and notebooks with a single, powerful system to manage leads, units, and sales teams efficiently."
+        },
+        {
+          "question": "Do I need a technical team to install HiEstate?",
+          "answer": "Not at all. HiEstate is a cloud-based solution (SaaS), meaning you can start using it immediately without installing any software. We handle all the hosting, security, and updates for you."
+        },
+        {
+          "question": "Is HiEstate suitable for small brokerage teams?",
+          "answer": "Absolutely. We built HiEstate to support growth. Whether you are a team of 3 agents or a company with 100+ employees, the system scales with your needs, ensuring you organize your leads and close more deals from day one."
+        },
+        {
+          "question": "Does the system support Arabic language?",
+          "answer": "Yes, HiEstate is fully bilingual (Arabic & English). Your team can use the interface in their preferred language, and you can switch instantly between them."
+        }
+      ]
+    },
+    {
+      "title": "Services & Features",
+      "items": [
+        {
+          "question": "Can I manage both sales and rentals on HiEstate?",
+          "answer": "Yes. The system has dedicated workflows for both Resale/Primary Sales and Rentals, allowing you to track inventory and deals separately with the appropriate details for each."
+        },
+        {
+          "question": "Does HiEstate integrate with social media campaigns?",
+          "answer": "Yes. We directly integrate with Facebook Lead Forms and other digital channels. Leads from your campaigns land directly in your CRM, assigned to agents instantly so they can be contacted within minutes."
+        },
+        {
+          "question": "Can I import my existing data from Excel?",
+          "answer": "Yes, we provide a smart import tool that allows you to upload your existing lists of leads, units, and contacts from Excel or Google Sheets easily, so you don't lose any historical data."
+        }
+      ]
+    },
+    {
+      "title": "Sales & Team Management",
+      "items": [
+        {
+          "question": "How does HiEstate help me monitor my sales team?",
+          "answer": "Our 'Smart Insights' dashboard gives you real-time visibility into every agent's performance—calls made, meetings booked, and deals closed. You can track commissions and ensure everyone is hitting their targets."
+        },
+        {
+          "question": "Can I control what my agents see?",
+          "answer": "Yes. HiEstate has a robust permission system. You can decide who sees which leads, who can export data, and who can edit unit availability, ensuring your sensitive business data stays secure."
+        },
+        {
+          "question": "How does the system handle duplication of leads?",
+          "answer": "We have an intelligent duplicate detection system that alerts you if a lead is entered or imported more than once, preventing conflicts between agents and ensuring professional communication with clients."
+        }
+      ]
+    },
+    {
+      "title": "Pricing & Plans",
+      "items": [
+        {
+          "question": "Do you offer a free trial?",
+          "answer": "Yes, we offer a 14-day free trial with full access to all features. No credit card is required, allowing you to test the system with your team before committing."
+        },
+        {
+          "question": "Are there any setup fees?",
+          "answer": "No. Our monthly or annual subscription covers everything, including standard on-boarding. We believe in transparent pricing with no hidden costs."
+        },
+        {
+          "question": "Can I upgrade or downgrade my plan later?",
+          "answer": "Yes, flexibility is key. You can adjust your plan as your team grows or your needs change."
+        }
+      ]
+    },
+    {
+      "title": "Support & Security",
+      "items": [
+        {
+          "question": "Is my data secure with HiEstate?",
+          "answer": "Data security is our top priority. We use enterprise-grade encryption and host your data on secure servers with regular backups. You own your data completely."
+        },
+        {
+          "question": "What kind of support do you provide?",
+          "answer": "Our support team is based in the region and understands your business. We offer support via chat, email, and phone during business hours, along with a comprehensive knowledge base and training videos."
+        }
+      ]
+    }
+  ],
   "frequently_asked_questions": "Frequently Asked Questions",
   "faq_description": "Everything you need to know about our CRM platform. Can’t find the answer you’re looking for? Feel free to contact us.",
   "manage_your": "Manage your",
@@ -189,6 +262,8 @@
   "manage_sales": "Manage sales units",
   "real_time_notifications": "Real-time notifications",
   "full_social_integration": "Full social media integration",
+  "EGP": "EGP / Year",
+  "moneyBackGuarantee": "14-day money-back guarantee, no questions asked.",
   "pricing_enterprise_tag": "Enterprise",
   "pricing_enterprise_description": "For large teams, an unlimited number of library users.",
   "pricing_enterprise_price": "224",
@@ -308,16 +383,12 @@
   "free_plan": "Free",
   "quick_actions": "Quick Actions",
   "quick_actions_description": "Use quick actions to access and make important decisions faster.",
-
   "social_media_integration": "Multi-Channel Integration",
   "social_media_integration_description": "View all your support conversations in one centralized place.",
-
   "team_commission_tracking": "Team Commission Tracking",
   "team_commission_tracking_description": "Track your team’s commissions accurately with full transparency.",
-
   "smart_filtering": "Smart Filtering",
   "smart_filtering_description": "Smart filtering allows you to quickly access the specific information you need with maximum speed.",
-
   "contact_header_description": "Reach out to us with any questions or inquiries. We are here to help you grow your business.",
   "contact_get_in_touch": "Get in touch",
   "contact_subtitle": "We'd love to hear from you. Please fill out the details below.",
@@ -333,7 +404,6 @@
   "contact_visit_us_title": "Visit Us",
   "contact_address_line1": "Adnan Al Maleki Qism Minya,",
   "contact_address_line2": "First Al Minya, Minya Governorate 2451104",
-
   "modal_title_default": "Get Your Copy",
   "modal_title_plan": "Get {{plan}} Plan",
   "modal_subtitle": "Enter your details to proceed",
@@ -344,7 +414,6 @@
   "modal_phone_error": "Please enter a valid phone number",
   "modal_password_error": "Password must be at least 6 characters",
   "modal_confirm_button": "Confirm & Continue",
-
   "country_egypt": "Egypt",
   "country_saudi_arabia": "Saudi Arabia",
   "country_uae": "UAE",

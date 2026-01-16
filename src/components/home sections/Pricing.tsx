@@ -48,6 +48,7 @@ const Pricing: React.FC<PricingProps> = ({ dict, pricingData }) => {
     dict?.manage_sales_rentals,
     dict?.real_time_notifications,
     dict?.full_social_integration,
+    dict?.moneyBackGuarantee,
   ];
 
   const pricingDummyData = [
@@ -59,7 +60,7 @@ const Pricing: React.FC<PricingProps> = ({ dict, pricingData }) => {
       planPrice: 0,
       buttonText: dict?.pricing_free_button ?? "",
       planAdvantages: freePlanAdvantages,
-      priceSuffix: "E£",
+      priceSuffix: dict?.EGP ?? "",
       className: "w-full max-w-[350px]",
       onButtonClick: () => openModal(dict?.free_plan),
     },
@@ -103,6 +104,7 @@ const Pricing: React.FC<PricingProps> = ({ dict, pricingData }) => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 place-items-center md:place-items-start">
           {pricingDummyData.map((plan, index) => (
             <PricingCard
+              dict={dict}
               key={`${plan.tagText}-${index}`}
               {...plan}
               className="min-w-[350px] w-[350px]"
