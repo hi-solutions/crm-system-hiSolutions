@@ -107,6 +107,9 @@ export async function generateMetadata({ params }: { params: Params }): Promise<
         "max-snippet": -1,
       },
     },
+    icons: {
+      icon: "/favicon.ico",
+    },
     other: {
       "application-name": "Hi Estate",
     }
