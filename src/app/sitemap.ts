@@ -5,7 +5,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     const baseUrl = "https://hiestate.app";
 
     // Base paths for all locales
-    const routes = ["", "/about", "/pricing", "/contact"].flatMap((route) =>
+    const routes = ["", "/about", "/pricing", "/contact", "/our-features"].flatMap((route) =>
         locales.map((locale) => ({
             url: `${baseUrl}/${locale}${route}`,
             lastModified: new Date(),
