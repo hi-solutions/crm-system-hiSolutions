@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 // import { HiCrmLogo } from "../../../../public/icons/icons";
-import { AqariaLogoNav } from "../../../../public/icons/icons";
+// import { AqariaLogoNav } from "../../../../public/icons/icons";
 import { EG, GB } from "country-flag-icons/react/3x2";
 import React, { useEffect, useRef, useState } from "react";
 import Button from "@/components/Button";
@@ -113,7 +113,7 @@ export default function Navbar({
           {/* Logo */}
           <div className="flex-shrink-0 flex items-center ">
             <Link href={`/${currentLang}`} className="text-xl font-bold">
-              <AqariaLogoNav className="h-14 w-auto" />
+              <img src="https://hiestate.app/api/logo-light" alt="Logo" className="h-14 w-auto" />
             </Link>
           </div>
 
@@ -123,11 +123,10 @@ export default function Navbar({
               <Link
                 key={index}
                 href={link.href}
-                className={`relative font-medium transition-colors duration-200 whitespace-nowrap ${
-                  isActive(link.href)
-                    ? "text-(--Primary)"
-                    : "text-gray-700 hover:text-(--Primary)"
-                }`}
+                className={`relative font-medium transition-colors duration-200 whitespace-nowrap ${isActive(link.href)
+                  ? "text-(--Primary)"
+                  : "text-gray-700 hover:text-(--Primary)"
+                  }`}
               >
                 {link.label}
                 {isActive(link.href) && (
@@ -213,11 +212,10 @@ export default function Navbar({
                 <Link
                   key={index}
                   href={link.href}
-                  className={`block px-3 py-2 rounded-md text-base font-medium ${
-                    isActive(link.href)
-                      ? "text-(--Primary) bg-gray-50"
-                      : "text-gray-700 hover:bg-gray-50 hover:text-(--Primary)"
-                  }`}
+                  className={`block px-3 py-2 rounded-md text-base font-medium ${isActive(link.href)
+                    ? "text-(--Primary) bg-gray-50"
+                    : "text-gray-700 hover:bg-gray-50 hover:text-(--Primary)"
+                    }`}
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {link.label}
@@ -312,11 +310,9 @@ const LanguageDropdown = React.forwardRef<
                         onChange(lang.code);
                         setIsOpen(false);
                       }}
-                      className={`w-full flex items-center space-x-2 px-4 py-2 text-left hover:bg-gray-50 transition-colors duration-200 ${
-                        index === 0 ? "rounded-t-md" : ""
-                      } ${
-                        index === languages.length - 1 ? "rounded-b-md" : ""
-                      } ${index > 0 ? "border-t border-gray-100" : ""}`}
+                      className={`w-full flex items-center space-x-2 px-4 py-2 text-left hover:bg-gray-50 transition-colors duration-200 ${index === 0 ? "rounded-t-md" : ""
+                        } ${index === languages.length - 1 ? "rounded-b-md" : ""
+                        } ${index > 0 ? "border-t border-gray-100" : ""}`}
                     >
                       <span className="inline-flex items-center justify-center w-6 h-4">
                         <Flag code={lang.code} />
@@ -360,9 +356,8 @@ const LanguageDropdown = React.forwardRef<
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -10 }}
               transition={{ duration: 0.2 }}
-              className={`absolute mt-2 w-40 bg-white border border-gray-200 rounded-md shadow-lg z-50 ${
-                currentLang === "ar" ? "left-0" : "right-0"
-              }`}
+              className={`absolute mt-2 w-40 bg-white border border-gray-200 rounded-md shadow-lg z-50 ${currentLang === "ar" ? "left-0" : "right-0"
+                }`}
             >
               {languages.map((lang, index) => (
                 <button
@@ -371,9 +366,8 @@ const LanguageDropdown = React.forwardRef<
                     onChange(lang.code);
                     setIsOpen(false);
                   }}
-                  className={`w-full flex items-center space-x-2 px-4 py-2 text-left hover:bg-gray-100 transition-colors duration-300 hover:cursor-pointer  ${
-                    index > 0 ? "border-t border-gray-100" : ""
-                  }`}
+                  className={`w-full flex items-center space-x-2 px-4 py-2 text-left hover:bg-gray-100 transition-colors duration-300 hover:cursor-pointer  ${index > 0 ? "border-t border-gray-100" : ""
+                    }`}
                   role="option"
                   aria-selected={currentLang === lang.code}
                 >

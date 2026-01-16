@@ -11,7 +11,7 @@ const nextConfig: NextConfig = {
     return [
       {
         source: "/api/api/v1/:path*",
-        destination: "https://hi.hi-solutions.co/api/api/:path*",
+        destination: "https://hiestate.app/api/api/:path*",
       },
     ];
   },

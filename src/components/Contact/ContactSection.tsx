@@ -39,12 +39,12 @@ export default function ContactSection({ dict }: ContactSectionProps) {
       phone_number: formData.phone,
       message: formData.message,
     })
-      .then((res) => {
+      .then(() => {
         open?.({
           type: "success",
           message: "Success",
           description:
-            res?.message || "Your message has been sent successfully.",
+            "Your message has been sent successfully.",
         });
         setFormData({ name: "", email: "", phone: "", message: "" });
       })

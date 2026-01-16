@@ -12,7 +12,7 @@ const axiosConfig = {
 
 export const SubmitContactForm = (
   req: SubmitContactFormRequest
-): Promise<any> => {
+): Promise<void> => {
   const reqBodySerialized = JSON.stringify(req);
 
   return new Promise<void>((resolve, reject) => {

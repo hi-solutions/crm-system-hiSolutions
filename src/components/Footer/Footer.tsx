@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useDictionary } from "@/hooks/Dickitionary";
 import { FaGlobe, FaPhoneAlt, FaLinkedinIn, FaFacebookF } from "react-icons/fa";
 // import { HiSolutionsLogo } from "../../../public/icons/icons";
-import { AqariaLogo } from "../../../public/icons/icons";
+// import { AqariaLogo } from "../../../public/icons/icons";
 import Button from "../Button";
 import Image from "next/image";
 import abstract_shape from "../../../public/images/abstract_shape.webp";
@@ -44,7 +44,7 @@ export default function FooterPlus() {
             <div className="space-y-4 md:col-span-1  w-auto ">
               <div className="flex items-center gap-2">
                 <Link href={`/${lang}`} className="text-xl font-bold">
-                  <AqariaLogo className="h-14 w-auto" />
+                  <img src="https://hiestate.app/api/logo-dark" alt="Logo" className="h-14 w-auto" />
                 </Link>
               </div>
               <p className="text-white/80 text-sm leading-6">
