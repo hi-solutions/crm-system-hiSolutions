@@ -172,7 +172,7 @@ export default async function RootLayout({
               "@type": "Organization",
               "name": "Hi Solutions",
               "url": "https://hiestate.app",
-              "logo": "https://hiestate.app/images/logo.png",
+              "logo": "https://hiestate.app/api/logo-light",
               "sameAs": [
                 "https://facebook.com/HiSolutionsEG",
                 "https://www.linkedin.com/company/hi-solutions-eg"
