@@ -5,7 +5,7 @@ const nextConfig: NextConfig = {
   reactStrictMode: true,
   output: "standalone",
   images: {
-    domains: ["images.unsplash.com", "randomuser.me", "hiestate.app"],
+    domains: ["hiestate.app"],
   },
   async rewrites() {
     return [
