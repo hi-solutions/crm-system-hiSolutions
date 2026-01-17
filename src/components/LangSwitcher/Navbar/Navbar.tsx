@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
+import Image from "next/image";
 // import { HiCrmLogo } from "../../../../public/icons/icons";
 // import { AqariaLogoNav } from "../../../../public/icons/icons";
 import { EG, GB } from "country-flag-icons/react/3x2";
@@ -113,7 +114,13 @@ export default function Navbar({
           {/* Logo */}
           <div className="flex-shrink-0 flex items-center ">
             <Link href={`/${currentLang}`} className="text-xl font-bold">
-              <img src="https://hiestate.app/api/logo-light" alt="Logo" className="h-14 w-auto" />
+              <Image
+                src="https://hiestate.app/api/logo-light"
+                alt="Logo"
+                width={200}
+                height={56}
+                className="h-14 w-auto"
+              />
             </Link>
           </div>
 

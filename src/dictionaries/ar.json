@@ -410,5 +410,9 @@
   "country_kuwait": "الكويت",
   "country_qatar": "قطر",
   "country_bahrain": "البحرين",
-  "country_oman": "عمان"
+  "country_oman": "عمان",
+  "unlimited": "غير محدود",
+  "manage_unlimited_leads": "إدارة عدد غير محدود من العملاء",
+  "ContactUs": "اتصل بنا",
+  "website_included": "امكانية انشاء موقع اليكتروني للشركة الخاصة بكم وربصطه البنظام"
 }

@@ -421,5 +421,9 @@
   "country_kuwait": "Kuwait",
   "country_qatar": "Qatar",
   "country_bahrain": "Bahrain",
-  "country_oman": "Oman"
+  "country_oman": "Oman",
+  "unlimited": "Unlimited",
+  "manage_unlimited_leads": "Manage unlimited number leads",
+  "ContactUs": "Contact Us",
+  "website_included": "Ability to create a website for your company and link it to the system"
 }

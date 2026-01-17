@@ -8,7 +8,8 @@ interface PricingCardProps {
   tagText?: string;
   icon?: React.ReactNode;
   planDescription?: string;
-  planPrice?: number;
+  planPrice?: number | string;
+  hasPeriod?: boolean;
   buttonText: string;
   planAdvantages: string[];
   bestPlan?: boolean;
@@ -24,6 +25,7 @@ const PricingCard: React.FC<PricingCardProps> = ({
   icon,
   planDescription,
   planPrice,
+  hasPeriod,
   buttonText,
   planAdvantages,
   bestPlan = false,
@@ -32,7 +34,7 @@ const PricingCard: React.FC<PricingCardProps> = ({
   className = "",
   onButtonClick,
 }) => {
-  const displayPriceSuffix = dict?.EGP ?? "";
+  const displayPriceSuffix = !hasPeriod ? "" : dict?.EGP ?? "";
   const baseStyles = bestPlan
     ? "relative bg-white rounded-3xl p-8 shadow-xl border-4 border-[#00AEEF] transform hover:scale-105 transition-all"
     : "bg-gray-50 rounded-3xl p-8 shadow-sm hover:shadow-lg transition-all";

@@ -239,6 +239,8 @@ export interface Dictionary {
   ideal_for_small_teams: string;
   quick_actions_daily: string;
   unlimited_users: string;
+  manage_unlimited_leads: string;
+  unlimited: string;
   full_user_management: string;
   import_export_excel: string;
   manage_sales_rentals: string;
@@ -247,6 +249,8 @@ export interface Dictionary {
   full_social_integration: string;
   moneyBackGuarantee: string;
   EGP: string;
+  ContactUs: string;
+  website_included: string;
 
   // Contact Page
   contact_header_description: string;

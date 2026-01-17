@@ -44,7 +44,13 @@ export default function FooterPlus() {
             <div className="space-y-4 md:col-span-1  w-auto ">
               <div className="flex items-center gap-2">
                 <Link href={`/${lang}`} className="text-xl font-bold">
-                  <img src="https://hiestate.app/api/logo-dark" alt="Logo" className="h-14 w-auto" />
+                  <Image
+                    src="https://hiestate.app/api/logo-dark"
+                    alt="Logo"
+                    width={200}
+                    height={56}
+                    className="h-14 w-auto"
+                  />
                 </Link>
               </div>
               <p className="text-white/80 text-sm leading-6">

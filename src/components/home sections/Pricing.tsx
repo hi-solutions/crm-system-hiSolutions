@@ -12,8 +12,8 @@ import pricingVector from "../../../public/images/pricing-vetor.webp";
 
 interface PricingData {
   freeLeads: number;
-  paidLeads: number;
-  paidPrice: number;
+  paidLeads: number | string;
+  paidPrice: number | string;
 }
 
 interface PricingProps {
@@ -24,9 +24,9 @@ interface PricingProps {
 const Pricing: React.FC<PricingProps> = ({ dict, pricingData }) => {
   const { openModal } = useSubscriptionModal();
   // Use passed data if available, otherwise fall back to defaults
-  const { freeLeads, paidLeads, paidPrice } = pricingData ?? {
+  const { freeLeads, paidPrice } = pricingData ?? {
     freeLeads: 100,
-    paidLeads: 100000,
+    paidLeads: dict.unlimited_users,
     paidPrice: 17500,
   };
 
@@ -41,7 +41,7 @@ const Pricing: React.FC<PricingProps> = ({ dict, pricingData }) => {
 
   const paidPlanAdvantages = [
     dict?.quick_actions_daily,
-    dict?.manage_leads_per_month.replace("{{count}}", paidLeads.toString()),
+    dict?.manage_unlimited_leads,
     dict?.unlimited_users,
     dict?.full_user_management,
     dict?.import_export_excel,
@@ -50,14 +50,20 @@ const Pricing: React.FC<PricingProps> = ({ dict, pricingData }) => {
     dict?.full_social_integration,
     dict?.moneyBackGuarantee,
   ];
+  const paidPlanAdvantages2 = [
+    ...paidPlanAdvantages,
+    dict?.website_included,
 
+
+  ]
   const pricingDummyData = [
     // free plan
     {
       tagText: dict?.free_plan,
       icon: <MdOutlineMoneyOff className="w-6 h-6" />,
       // planDescription: dict?.pricing_professional_description,
-      planPrice: 0,
+      planPrice: dict.free_plan,
+      hasPeriod: false,
       buttonText: dict?.pricing_free_button ?? "",
       planAdvantages: freePlanAdvantages,
       priceSuffix: dict?.EGP ?? "",
@@ -70,9 +76,25 @@ const Pricing: React.FC<PricingProps> = ({ dict, pricingData }) => {
       icon: <MdOutlineAttachMoney className="w-6 h-6" />,
       // planDescription: dict?.pricing_team_description,
       planPrice: paidPrice,
+      hasPeriod: true,
       buttonText: dict?.pricing_paid_button ?? "",
       planAdvantages: paidPlanAdvantages,
       bestPlan: true,
+      bestPlanLabel: dict?.pricing_best_value_tag,
+      priceSuffix: "E£",
+      className: "w-full max-w-[350px]",
+      onButtonClick: () => openModal(dict?.paid_plan),
+    },
+    // paid plan
+    {
+      tagText: dict?.paid_plan,
+      icon: <MdOutlineAttachMoney className="w-6 h-6" />,
+      // planDescription: dict?.pricing_team_description,
+      planPrice: dict.ContactUs,
+      hasPeriod: false,
+      buttonText: dict?.pricing_paid_button ?? "",
+      planAdvantages: paidPlanAdvantages2,
+      bestPlan: false,
       bestPlanLabel: dict?.pricing_best_value_tag,
       priceSuffix: "E£",
       className: "w-full max-w-[350px]",
@@ -101,7 +123,7 @@ const Pricing: React.FC<PricingProps> = ({ dict, pricingData }) => {
         </div>
         {/* <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 place-items-center"> */}
         {/* //! removed lg:grid-cols-3 because we have only two plans */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 place-items-center md:place-items-start">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 place-items-center md:place-items-start">
           {pricingDummyData.map((plan, index) => (
             <PricingCard
               dict={dict}
