@@ -6,7 +6,7 @@ import Card from "@/components/Card/Card";
 import teamManagementScreen from "../../../public/images/new_screens/team_management_screen.webp";
 import quickActionScreen from "../../../public/images/new_screens/quick_action_screen.webp";
 import socialMediaScreen from "../../../public/images/new_screens/social_media_screen.webp";
-import multiUsersScreen from "../../../public/images/new_screens/multi_users_screen.webp";
+import multiUsersScreen from "../../../public/images/new_screens/multi_users_screen.png";
 import commissionsScreen from "../../../public/images/new_screens/commisions_screen.webp";
 import smartFiltrationScreen from "../../../public/images/new_screens/smart_filtration_screen.webp";
 

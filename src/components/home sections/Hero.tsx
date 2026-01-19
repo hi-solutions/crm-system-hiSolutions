@@ -9,10 +9,10 @@ import { useSubscriptionModal } from "@/context/SubscriptionModalContext";
 // Import all images
 import dots from "../../../public/images/dots.webp";
 import vectorLine from "../../../public/images/vector_line.webp";
-import phoneAr from "../../../public/images/phone_ar_screen.webp";
-import phoneEn from "../../../public/images/phone_en_screen.webp";
-import currencyAr from "../../../public/images/currency_ar.webp";
-import currencyEn from "../../../public/images/currency_en.webp";
+import phoneAr from "../../../public/images/phone_ar_screen.png";
+import phoneEn from "../../../public/images/phone_en_screen.png";
+import currencyAr from "../../../public/images/currencyAr.png";
+import currencyEn from "../../../public/images/currency_en.png";
 import statisticsAr from "../../../public/images/statistics_ar.webp";
 import statisticsEn from "../../../public/images/statistics_en.webp";
 

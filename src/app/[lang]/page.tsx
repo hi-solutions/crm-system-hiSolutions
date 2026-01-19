@@ -9,8 +9,8 @@ import Hero from "@/components/home sections/Hero";
 // import Testimonials from "@/components/home sections/Testimonials";
 import FeaturesShowcase from "@/components/home sections/FeaturesShowcase";
 // import TrustedBy from "@/components/home sections/TrustedBy";
-import oneSystemScreen from "../../../public/images/new_screens/one_system_screen.webp";
-import screenPhoneMockup from "../../../public/images/new_screens/new_screen_phone_mockup.webp";
+import oneSystemScreen from "../../../public/images/new_screens/one_system_screen.png";
+import screenPhoneMockup from "../../../public/images/new_screens/new_screen_phone_mockup.png";
 import socialMediaList from "../../../public/images/social_media_list.webp";
 
 export default async function Home({ params }: { params: Params }) {

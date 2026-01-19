@@ -1,8 +1,13 @@
 import React from "react";
 import Button from "../Button";
-import { Check } from "lucide-react";
+import { Check, X } from "lucide-react";
 import Tag from "../Tag/Tag";
 import { Dictionary } from "@/lib/dictionary";
+
+interface Advantage {
+  text: string;
+  included?: boolean;
+}
 
 interface PricingCardProps {
   tagText?: string;
@@ -11,7 +16,7 @@ interface PricingCardProps {
   planPrice?: number | string;
   hasPeriod?: boolean;
   buttonText: string;
-  planAdvantages: string[];
+  planAdvantages: (string | Advantage)[];
   bestPlan?: boolean;
   bestPlanLabel?: string;
   priceSuffix?: string;
@@ -42,12 +47,9 @@ const PricingCard: React.FC<PricingCardProps> = ({
   return (
     <div className={`${baseStyles} ${className}`}>
       {bestPlan && (
-        // <div className="absolute -top-4 left-1/2 -translate-x-1/2">
-        //   <Tag title="Best value" className="shadow-lg" /> {/* tag component */}
-        // </div>
         <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-full">
           <div>
-            <span className="bg-[#00AEEF] text-white px-4 py-2 rounded-xl">
+            <span className="bg-[#00AEEF] text-white px-4 py-2 rounded-xl text-nowrap">
               {bestPlanLabel}
             </span>
           </div>
@@ -55,7 +57,7 @@ const PricingCard: React.FC<PricingCardProps> = ({
       )}
 
       <div className="flex items-center justify-between mb-6">
-        {tagText && <Tag title={tagText} />} {/* tag component */}
+        {tagText && <Tag title={tagText} />}
         {icon && (
           <div className="w-12 h-12 rounded-2xl bg-blue-50 flex items-center justify-center text-[#00AEEF]">
             {icon}
@@ -82,15 +84,24 @@ const PricingCard: React.FC<PricingCardProps> = ({
       </Button>
 
       <ul className="space-y-4">
-        {planAdvantages.map((advantage, index) => (
-          <li key={index} className="flex items-center text-gray-700 gap-2">
-            <div className="w-6 h-6 rounded-full bg-blue-100 flex items-center justify-center mr-3 shrink-0">
-              <Check className="w-4 h-4 text-[#00AEEF]" strokeWidth={3} />{" "}
-              {/* check icon */}
-            </div>
-            <span className="text-base">{advantage}</span>
-          </li>
-        ))}
+        {planAdvantages.map((advantage, index) => {
+          const isObject = typeof advantage !== "string";
+          const text = isObject ? (advantage as Advantage).text : (advantage as string);
+          const included = isObject ? (advantage as Advantage).included !== false : true;
+
+          return (
+            <li key={index} className={`flex items-center gap-2 ${included ? "text-gray-700" : "text-gray-400"}`}>
+              <div className={`w-6 h-6 rounded-full flex items-center justify-center mr-3 shrink-0 ${included ? "bg-blue-100" : "bg-red-50"}`}>
+                {included ? (
+                  <Check className="w-4 h-4 text-[#00AEEF]" strokeWidth={3} />
+                ) : (
+                  <X className="w-4 h-4 text-red-500" strokeWidth={3} />
+                )}
+              </div>
+              <span className="text-base">{text}</span>
+            </li>
+          );
+        })}
       </ul>
     </div>
   );

@@ -32,11 +32,15 @@ const Pricing: React.FC<PricingProps> = ({ dict, pricingData }) => {
 
   const freePlanAdvantages = [
     dict?.manage_leads_per_month.replace("{{count}}", freeLeads.toString()),
-    dict?.limited_users,
-    dict?.social_media_integration_feature,
-    dict?.free_system_trial,
-    dict?.ideal_for_small_teams,
-    dict?.manage_sales,
+    { text: dict?.limited_users, included: true },
+    { text: dict?.social_media_integration_feature, included: true },
+    { text: dict?.free_system_trial, included: true },
+    { text: dict?.ideal_for_small_teams, included: true },
+    { text: dict?.manage_sales, included: true },
+    { text: dict?.quick_actions_daily, included: false },
+    { text: dict?.full_user_management, included: false },
+    { text: dict?.import_export_excel, included: false },
+    { text: dict?.real_time_notifications, included: false },
   ];
 
   const paidPlanAdvantages = [
