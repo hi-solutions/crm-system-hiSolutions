@@ -39,10 +39,10 @@ const PricingCard: React.FC<PricingCardProps> = ({
   className = "",
   onButtonClick,
 }) => {
-  const displayPriceSuffix = !hasPeriod ? "" : dict?.EGP ?? "";
+  const displayPriceSuffix = !hasPeriod ? "" : (dict?.EGP ?? "");
   const baseStyles = bestPlan
-    ? "relative bg-white rounded-3xl p-8 shadow-xl border-4 border-[#00AEEF] transform hover:scale-105 transition-all"
-    : "bg-gray-50 rounded-3xl p-8 shadow-sm hover:shadow-lg transition-all";
+    ? "relative bg-white rounded-3xl p-4 md:p-5 lg:p-8 shadow-xl border-4 border-[#00AEEF] transform hover:scale-105 transition-all"
+    : "bg-gray-50 rounded-3xl p-4 md:p-5 lg:p-8 shadow-sm hover:shadow-lg transition-all";
 
   return (
     <div className={`${baseStyles} ${className}`}>
@@ -56,6 +56,7 @@ const PricingCard: React.FC<PricingCardProps> = ({
         </div>
       )}
 
+      {/* icon and tagText */}
       <div className="flex items-center justify-between mb-6">
         {tagText && <Tag title={tagText} />}
         {icon && (
@@ -68,11 +69,13 @@ const PricingCard: React.FC<PricingCardProps> = ({
       <p className="text-gray-600 text-base mb-6">{planDescription}</p>
 
       <div className="mb-8">
-        <span className="text-5xl font-bold text-gray-900 ">
+        <span className="text-4xl font-bold text-gray-900 ">
           {planPrice?.toLocaleString()}
         </span>
         {displayPriceSuffix && (
-          <span className="text-gray-600 text-xl ml-2">{displayPriceSuffix}</span>
+          <span className="text-gray-600 text-lg ml-2">
+            {displayPriceSuffix}
+          </span>
         )}
       </div>
 
@@ -86,12 +89,21 @@ const PricingCard: React.FC<PricingCardProps> = ({
       <ul className="space-y-4">
         {planAdvantages.map((advantage, index) => {
           const isObject = typeof advantage !== "string";
-          const text = isObject ? (advantage as Advantage).text : (advantage as string);
-          const included = isObject ? (advantage as Advantage).included !== false : true;
+          const text = isObject
+            ? (advantage as Advantage).text
+            : (advantage as string);
+          const included = isObject
+            ? (advantage as Advantage).included !== false
+            : true;
 
           return (
-            <li key={index} className={`flex items-center gap-2 ${included ? "text-gray-700" : "text-gray-400"}`}>
-              <div className={`w-6 h-6 rounded-full flex items-center justify-center mr-3 shrink-0 ${included ? "bg-blue-100" : "bg-red-50"}`}>
+            <li
+              key={index}
+              className={`flex items-center gap-2 ${included ? "text-gray-700" : "text-gray-400"}`}
+            >
+              <div
+                className={`w-6 h-6 rounded-full flex items-center justify-center mr-3 shrink-0 ${included ? "bg-blue-100" : "bg-red-50"}`}
+              >
                 {included ? (
                   <Check className="w-4 h-4 text-[#00AEEF]" strokeWidth={3} />
                 ) : (

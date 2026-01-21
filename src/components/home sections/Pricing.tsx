@@ -1,7 +1,12 @@
 "use client";
 import React from "react";
 import { Gift } from "lucide-react";
-import { MdOutlineMoneyOff, MdOutlineAttachMoney } from "react-icons/md";
+import {
+  MdOutlineMoneyOff,
+  MdOutlinePerson,
+  MdOutlineGroups,
+  MdSettings,
+} from "react-icons/md";
 import PricingCard from "../Card/PricingCard";
 import SectionHeader from "../SectionHeader/SectionHeader";
 import Button from "../Button";
@@ -54,12 +59,7 @@ const Pricing: React.FC<PricingProps> = ({ dict, pricingData }) => {
     dict?.full_social_integration,
     dict?.moneyBackGuarantee,
   ];
-  const paidPlanAdvantages2 = [
-    ...paidPlanAdvantages,
-    dict?.website_included,
-
-
-  ]
+  const paidPlanAdvantages2 = [...paidPlanAdvantages, dict?.website_included];
   const pricingDummyData = [
     // free plan
     {
@@ -74,10 +74,26 @@ const Pricing: React.FC<PricingProps> = ({ dict, pricingData }) => {
       className: "w-full max-w-[350px]",
       onButtonClick: () => openModal(dict?.free_plan),
     },
-    // paid plan
+
+    // individual plan
     {
-      tagText: dict?.paid_plan,
-      icon: <MdOutlineAttachMoney className="w-6 h-6" />,
+      tagText: dict?.individual_plan,
+      icon: <MdOutlinePerson className="w-6 h-6" />,
+      // planDescription: dict?.pricing_team_description,
+      planPrice: dict.ContactUs,
+      hasPeriod: false,
+      buttonText: dict?.pricing_paid_button ?? "",
+      planAdvantages: paidPlanAdvantages2,
+      bestPlan: false,
+      bestPlanLabel: dict?.pricing_best_value_tag,
+      priceSuffix: "E£",
+      className: "w-full max-w-[350px]",
+      onButtonClick: () => openModal(dict?.paid_plan),
+    },
+    // enterprise plan
+    {
+      tagText: dict?.enterprise_plan,
+      icon: <MdOutlineGroups className="w-6 h-6" />,
       // planDescription: dict?.pricing_team_description,
       planPrice: paidPrice,
       hasPeriod: true,
@@ -89,11 +105,10 @@ const Pricing: React.FC<PricingProps> = ({ dict, pricingData }) => {
       className: "w-full max-w-[350px]",
       onButtonClick: () => openModal(dict?.paid_plan),
     },
-    // paid plan
+    //custom paln
     {
-      tagText: dict?.paid_plan,
-      icon: <MdOutlineAttachMoney className="w-6 h-6" />,
-      // planDescription: dict?.pricing_team_description,
+      tagText: dict?.custom_plan,
+      icon: <MdSettings className="w-6 h-6" />,
       planPrice: dict.ContactUs,
       hasPeriod: false,
       buttonText: dict?.pricing_paid_button ?? "",
@@ -117,7 +132,7 @@ const Pricing: React.FC<PricingProps> = ({ dict, pricingData }) => {
   ];
   return (
     <section className="relative overflow-hidden py-20 bg-gradient-to-b from-gray-50 to-white">
-      <div className="relative z-10 max-w-7xl mx-auto px-4 md:px-10 lg:px-16 flex flex-col">
+      <div className="relative z-10 mx-auto px-4 md:px-10 flex flex-col">
         <div className="flex justify-center items-center mb-10">
           <SectionHeader
             tag={{ title: dict?.pricing }}
@@ -127,13 +142,13 @@ const Pricing: React.FC<PricingProps> = ({ dict, pricingData }) => {
         </div>
         {/* <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 place-items-center"> */}
         {/* //! removed lg:grid-cols-3 because we have only two plans */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 place-items-center md:place-items-start">
+        <div className="grid grid-cols-1 sm:grid-cols-2  lg:grid-cols-4 gap-8 place-items-stretch">
           {pricingDummyData.map((plan, index) => (
             <PricingCard
               dict={dict}
               key={`${plan.tagText}-${index}`}
               {...plan}
-              className="min-w-[350px] w-[350px]"
+              className="w-full"
             />
           ))}
         </div>

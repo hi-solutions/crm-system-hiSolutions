@@ -6,7 +6,7 @@ import Card from "@/components/Card/Card";
 import teamManagementScreen from "../../../public/images/new_screens/team_management_screen.webp";
 import quickActionScreen from "../../../public/images/new_screens/quick_action_screen.webp";
 import socialMediaScreen from "../../../public/images/new_screens/social_media_screen.webp";
-import multiUsersScreen from "../../../public/images/new_screens/multi_users_screen.png";
+import multiUsersScreen from "../../../public/images/new_screens/multi_users_screen.webp";
 import commissionsScreen from "../../../public/images/new_screens/commisions_screen.webp";
 import smartFiltrationScreen from "../../../public/images/new_screens/smart_filtration_screen.webp";
 
@@ -144,7 +144,7 @@ const FeaturesShowcase: React.FC<FeaturesShowcaseProps> = ({ dict }) => {
             description={card.description}
             image={card.image}
             flexDirection="col"
-            className="additional-classes md:w-[413px] md:h-[469px] md:aspect-8/9 hover:shadow-md hover:scale-105 transition-all duration-300 flex-1"
+            className="additional-classes hover:shadow-md hover:scale-105 transition-all duration-300 flex-1 w-full"
           />
         ))}
       </div>

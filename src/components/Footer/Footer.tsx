@@ -27,7 +27,7 @@ export default function FooterPlus() {
           alt="Abstract background"
           width={200}
           height={100}
-          className="absolute bottom-0 end-0 w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/3 "
+          className="absolute bottom-0 end-0 w-1/3 sm:w-1/4 md:w-1/5 lg:w-1/4 opacity-50 sm:opacity-100"
           dir="rtl"
         />
         <Image
@@ -35,7 +35,7 @@ export default function FooterPlus() {
           alt="Abstract background"
           width={200}
           height={100}
-          className="absolute bottom-0 start-0 w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/3 "
+          className="absolute bottom-0 start-0 w-1/3 sm:w-1/4 md:w-1/5 lg:w-1/4 opacity-50 sm:opacity-100"
           dir="rtl"
         />
         <div className="relative">
@@ -61,7 +61,7 @@ export default function FooterPlus() {
             </div>
 
             {/* Product + Learn + Company  container */}
-            <div className="flex sm:flex-row  gap-10 w-full  md:col-span-3 h-full">
+            <div className="flex flex-col sm:flex-row gap-8 w-full md:col-span-3 h-full">
               {/* Product */}
               <div className="flex-1  ">
                 <h3 className="font-semibold mb-3">
@@ -162,7 +162,7 @@ export default function FooterPlus() {
 
               <div className="flex items-center gap-3">
                 <FaPhoneAlt className="w-5 h-5" />
-                <p>+20 100 332 8484</p>
+                <p dir="ltr">+20 100 332 8484</p>
               </div>
               {/* input and button*/}
               <form className="flex items-stretch max-w-sm gap-2 ">

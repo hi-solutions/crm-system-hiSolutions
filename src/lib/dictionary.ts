@@ -5,8 +5,10 @@ export type PricingPlanId = "free" | "paid";
 
 export type PricingComparisonValue = string | boolean | null;
 
-export interface PricingComparisonRow
-  extends Record<PricingPlanId, PricingComparisonValue> {
+export interface PricingComparisonRow extends Record<
+  PricingPlanId,
+  PricingComparisonValue
+> {
   label: string;
 }
 
@@ -186,6 +188,9 @@ export interface Dictionary {
     rows: PricingComparisonRow[];
   };
   paid_plan: string;
+  enterprise_plan: string;
+  custom_plan: string;
+  individual_plan: string;
   free_plan: string;
   everything_you_need: string;
   powerful_easy_tools: string;
@@ -298,7 +303,7 @@ const dictionaries = {
 };
 
 export const getDictionary = async (
-  locale: keyof typeof dictionaries
+  locale: keyof typeof dictionaries,
 ): Promise<Dictionary> => {
   return dictionaries[locale]();
 };

@@ -9,10 +9,10 @@ import { useSubscriptionModal } from "@/context/SubscriptionModalContext";
 // Import all images
 import dots from "../../../public/images/dots.webp";
 import vectorLine from "../../../public/images/vector_line.webp";
-import phoneAr from "../../../public/images/phone_ar_screen.png";
-import phoneEn from "../../../public/images/phone_en_screen.png";
-import currencyAr from "../../../public/images/currencyAr.png";
-import currencyEn from "../../../public/images/currency_en.png";
+import phoneAr from "../../../public/images/phone_ar_screen.webp";
+import phoneEn from "../../../public/images/phone_en_screen.webp";
+import currencyAr from "../../../public/images/currencyAr.webp";
+import currencyEn from "../../../public/images/currency_en.webp";
 import statisticsAr from "../../../public/images/statistics_ar.webp";
 import statisticsEn from "../../../public/images/statistics_en.webp";
 
@@ -92,13 +92,13 @@ const Hero = ({ dict, params }: HeroProps) => {
           />
 
           {/* currency card overlay */}
-          <div className="absolute right-0 top-16 sm:top-12 md:top-14 lg:top-16 translate-x-2 sm:translate-x-6">
+          <div className="absolute right-0 top-16 sm:top-12 md:top-14 lg:top-16 translate-x-2 sm:translate-x-6 md:translate-x-10">
             <Image
               src={currentCurrencyScreen}
               alt="Currency widget"
               width={260}
               height={160}
-              className="w-48 sm:w-56 md:w-60 h-auto"
+              className="w-32 sm:w-48 md:w-56 lg:w-60 h-auto"
             />
           </div>
 
@@ -109,7 +109,7 @@ const Hero = ({ dict, params }: HeroProps) => {
               alt="Statistics widget"
               width={260}
               height={160}
-              className="w-44 sm:w-52 md:w-45 h-auto"
+              className="w-32 sm:w-44 md:w-52 lg:w-56 h-auto"
             />
           </div>
         </div>

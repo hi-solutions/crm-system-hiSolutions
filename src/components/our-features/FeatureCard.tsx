@@ -17,7 +17,8 @@ const FeatureCard: React.FC<FeatureCardProps> = ({
     <div
       className={`bg-white border border-[#E5E7EB] rounded-2xl p-6 shadow-sm hover:shadow-md ${className}`}
     >
-      <div className="w-14 h-14 rounded-2xl bg-blue-50 text-blue-600 flex items-center justify-center mb-4">
+      {/* <div className="w-14 h-14 rounded-2xl bg-blue-50 text-blue-600 flex items-center justify-center mb-4"> */}
+      <div className="w-14 h-14 rounded-2xl bg-gradient-to-b from-[#EFFBFE] to-[#CAF0F8] text-blue-600 flex items-center justify-center mb-4 border border-[#D3D5D8]">
         {icon}
       </div>
       <h3 className="text-[#0F172A] font-semibold text-lg mb-2">{title}</h3>
