@@ -262,7 +262,7 @@
   "manage_sales": "Manage sales units",
   "real_time_notifications": "Real-time notifications",
   "full_social_integration": "Full social media integration",
-  "EGP": "EGP / Year",
+  "EGP": "EGP / Month",
   "moneyBackGuarantee": "14-day money-back guarantee, no questions asked.",
   "pricing_enterprise_tag": "Enterprise",
   "pricing_enterprise_description": "For large teams, an unlimited number of library users.",
@@ -286,10 +286,21 @@
         "id": "free",
         "name": "Free"
       },
+
       {
-        "id": "paid",
-        "name": "Paid",
+        "id": "enterprise",
+        "name": "Enterprise",
         "badge": "Best value",
+        "featured": true
+      },
+      {
+        "id": "individual",
+        "name": "Individual",
+        "featured": true
+      },
+      {
+        "id": "custom",
+        "name": "Custom",
         "featured": true
       }
     ],
@@ -297,52 +308,66 @@
       {
         "label": "Quick actions",
         "free": false,
-        "paid": true
+        "enterprise": true,
+        "individual": true,
+        "custom": true
       },
       {
         "label": "Number of users",
         "free": "Limited",
-        "paid": "Unlimited"
+        "enterprise": "Unlimited"
       },
       {
         "label": "Number of leads",
         "free": "100",
-        "paid": "100,000"
+        "enterprise": "100,000"
       },
       {
         "label": "Social media integration",
         "free": true,
-        "paid": true
+        "enterprise": true
       },
       {
         "label": "Notifications",
         "free": false,
-        "paid": true
+        "enterprise": true,
+        "individual": true,
+        "custom": true
       },
       {
         "label": "Essential reports",
         "free": true,
-        "paid": true
+        "enterprise": true,
+        "individual": true,
+        "custom": true
       },
       {
         "label": "Comprehensive reports",
         "free": false,
-        "paid": true
+        "enterprise": true,
+        "individual": true,
+        "custom": true
       },
       {
         "label": "Import & export leads data via Excel",
         "free": false,
-        "paid": true
+        "enterprise": true,
+        "individual": true,
+        "custom": true
       },
       {
         "label": "Manage sales units",
         "free": true,
-        "paid": true
+        "enterprise": true,
+        "individual": true,
+        "custom": true
       },
       {
         "label": "Manage rental units",
         "free": false,
-        "paid": true
+        "enterprise": true,
+        "individual": true,
+        "custom": true
       }
     ]
   },
@@ -381,8 +406,11 @@
   "get_your_copy_now": "Get your copy now",
   "paid_plan": "Paid",
   "enterprise_plan": "Enterprise",
+  "enterprise_price": "17,500",
   "custom_plan": "Custom",
+  "custom_price_text": "Contact Us",
   "individual_plan": "Individual",
+  "individual_price": "750",
   "free_plan": "Free",
   "quick_actions": "Quick Actions",
   "quick_actions_description": "Use quick actions to access and make important decisions faster.",

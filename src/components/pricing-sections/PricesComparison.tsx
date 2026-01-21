@@ -23,13 +23,18 @@ const PricesComparison: React.FC<PricesComparisonProps> = ({ dict }) => {
   //   return null;
   // };
   const resolvePlanId = (id: string): PricingPlanId | null => {
-    if (id === "free" || id === "paid") {
+    if (
+      id === "free" ||
+      id === "enterprise" ||
+      id === "individual" ||
+      id === "custom"
+    ) {
       return id;
     }
     return null;
   };
 
-  const renderValue = (value: PricingComparisonValue) => {
+  const renderValue = (value: PricingComparisonValue | undefined) => {
     if (value === true) {
       return (
         <div className="mr-3 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-blue-100">

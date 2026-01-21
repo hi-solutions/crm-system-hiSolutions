@@ -10,7 +10,7 @@ import Image from "next/image";
 import abstract_shape from "../../../public/images/abstract_shape.webp";
 import abstract_shape_foo from "../../../public/images/abstract_shape_foo.webp";
 import { useSubscriptionModal } from "@/context/SubscriptionModalContext";
-
+import { QrCodeWhite } from "../../../public/icons/icons";
 export default function FooterPlus() {
   const ctx = useDictionary();
   const dictionary = ctx.dictionary;
@@ -41,7 +41,7 @@ export default function FooterPlus() {
         <div className="relative">
           <div className="grid grid-cols-1  md:grid-cols-5 gap-8 place-items-start    ">
             {/* Brand  */}
-            <div className="space-y-4 md:col-span-1  w-auto ">
+            <div className="space-y-4 md:col-span-1 flex flex-col items-center  w-full">
               <div className="flex items-center gap-2">
                 <Link href={`/${lang}`} className="text-xl font-bold">
                   <Image
@@ -56,14 +56,16 @@ export default function FooterPlus() {
               <p className="text-white/80 text-sm leading-6">
                 {dictionary.footerTagline}
               </p>
-              <p>{dictionary.contact_address_line1}</p>
-              <p>{dictionary.contact_address_line2}</p>
+              <div className="flex flex-col items-center text-center">
+                <p>{dictionary.contact_address_line1}</p>
+                <p>{dictionary.contact_address_line2}</p>
+              </div>
             </div>
 
             {/* Product + Learn + Company  container */}
             <div className="flex flex-col sm:flex-row gap-8 w-full md:col-span-3 h-full">
               {/* Product */}
-              <div className="flex-1  ">
+              <div className="flex-1  flex flex-col items-center">
                 <h3 className="font-semibold mb-3">
                   {dictionary.footerProduct}
                 </h3>
@@ -88,7 +90,7 @@ export default function FooterPlus() {
               </div>
 
               {/* Learn */}
-              <div className="flex-1 ">
+              <div className="flex-1 flex flex-col items-center">
                 <h3 className="font-semibold mb-3">{dictionary.footerLearn}</h3>
                 <ul className="space-y-2 text-white/85">
                   <li>
@@ -111,7 +113,7 @@ export default function FooterPlus() {
               </div>
 
               {/* Company */}
-              <div className="flex-1 ">
+              <div className="flex-1 flex flex-col items-center">
                 <h3 className="font-semibold mb-3">
                   {dictionary.footerCompany}
                 </h3>
@@ -129,7 +131,7 @@ export default function FooterPlus() {
             </div>
 
             {/* social and try button  */}
-            <div className="space-y-4 md:col-span-1  w-full">
+            <div className="space-y-4 md:col-span-1 flex flex-col items-center  w-full">
               <div className="flex items-center gap-3">
                 <a
                   aria-label="LinkedIn"
@@ -180,6 +182,9 @@ export default function FooterPlus() {
                   {dictionary.get_your_copy_now}
                 </Button>
               </form>
+              <div className="w-20 h-20">
+                <QrCodeWhite />
+              </div>
             </div>
           </div>
         </div>

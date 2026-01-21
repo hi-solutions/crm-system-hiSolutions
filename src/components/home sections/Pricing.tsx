@@ -18,7 +18,9 @@ import pricingVector from "../../../public/images/pricing-vetor.webp";
 interface PricingData {
   freeLeads: number;
   paidLeads: number | string;
-  paidPrice: number | string;
+  enterprisePrice: number | string;
+  individualPrice: number | string;
+  customPriceText: string;
 }
 
 interface PricingProps {
@@ -29,11 +31,14 @@ interface PricingProps {
 const Pricing: React.FC<PricingProps> = ({ dict, pricingData }) => {
   const { openModal } = useSubscriptionModal();
   // Use passed data if available, otherwise fall back to defaults
-  const { freeLeads, paidPrice } = pricingData ?? {
-    freeLeads: 100,
-    paidLeads: dict.unlimited_users,
-    paidPrice: 17500,
-  };
+  const { freeLeads, enterprisePrice, individualPrice, customPriceText } =
+    pricingData ?? {
+      freeLeads: 100,
+      paidLeads: dict.unlimited_users,
+      enterprisePrice: dict.enterprise_price,
+      individualPrice: dict.individual_price,
+      customPriceText: dict.custom_price_text,
+    };
 
   const freePlanAdvantages = [
     dict?.manage_leads_per_month.replace("{{count}}", freeLeads.toString()),
@@ -80,8 +85,8 @@ const Pricing: React.FC<PricingProps> = ({ dict, pricingData }) => {
       tagText: dict?.individual_plan,
       icon: <MdOutlinePerson className="w-6 h-6" />,
       // planDescription: dict?.pricing_team_description,
-      planPrice: dict.ContactUs,
-      hasPeriod: false,
+      planPrice: individualPrice,
+      hasPeriod: true,
       buttonText: dict?.pricing_paid_button ?? "",
       planAdvantages: paidPlanAdvantages2,
       bestPlan: false,
@@ -95,7 +100,7 @@ const Pricing: React.FC<PricingProps> = ({ dict, pricingData }) => {
       tagText: dict?.enterprise_plan,
       icon: <MdOutlineGroups className="w-6 h-6" />,
       // planDescription: dict?.pricing_team_description,
-      planPrice: paidPrice,
+      planPrice: enterprisePrice,
       hasPeriod: true,
       buttonText: dict?.pricing_paid_button ?? "",
       planAdvantages: paidPlanAdvantages,
@@ -105,11 +110,11 @@ const Pricing: React.FC<PricingProps> = ({ dict, pricingData }) => {
       className: "w-full max-w-[350px]",
       onButtonClick: () => openModal(dict?.paid_plan),
     },
-    //custom paln
+    //custom plan
     {
       tagText: dict?.custom_plan,
       icon: <MdSettings className="w-6 h-6" />,
-      planPrice: dict.ContactUs,
+      planPrice: customPriceText,
       hasPeriod: false,
       buttonText: dict?.pricing_paid_button ?? "",
       planAdvantages: paidPlanAdvantages2,

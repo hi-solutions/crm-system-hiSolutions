@@ -1,13 +1,12 @@
 import "server-only";
 
 // export type PricingPlanId = "basic" | "professional" | "enterprise";
-export type PricingPlanId = "free" | "paid";
+export type PricingPlanId = "free" | "enterprise" | "individual" | "custom";
 
 export type PricingComparisonValue = string | boolean | null;
 
-export interface PricingComparisonRow extends Record<
-  PricingPlanId,
-  PricingComparisonValue
+export interface PricingComparisonRow extends Partial<
+  Record<PricingPlanId, PricingComparisonValue>
 > {
   label: string;
 }
@@ -192,6 +191,9 @@ export interface Dictionary {
   custom_plan: string;
   individual_plan: string;
   free_plan: string;
+  enterprise_price: string;
+  individual_price: string;
+  custom_price_text: string;
   everything_you_need: string;
   powerful_easy_tools: string;
   integrations: string;

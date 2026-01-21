@@ -246,7 +246,7 @@
   "manage_sales": "إدارة وحدات البيع",
   "real_time_notifications": "إشعارات لمتابعة كل خطوة",
   "full_social_integration": "تكامل كامل مع منصات التواصل الاجتماعي",
-  "EGP": "جنيها / سنة",
+  "EGP": "جنيها / شهريا",
   "moneyBackGuarantee": "ضمان استرداد الأموال لمدة 14 يومًا، بدون طرح أي أسئلة",
   "pricing_enterprise_tag": "شركات كبرى",
   "pricing_enterprise_description": "للشركات الكبيرة، عدد غير محدود من مستخدمي المكتبة.",
@@ -276,8 +276,20 @@
         "name": "مجاني"
       },
       {
-        "id": "paid",
-        "name": "مدفوع",
+        "id": "enterprise",
+        "name": "مؤسسة",
+        "badge": "أفضل قيمة",
+        "featured": true
+      },
+      {
+        "id": "individual",
+        "name": "فرد",
+        "badge": "أفضل قيمة",
+        "featured": true
+      },
+      {
+        "id": "custom",
+        "name": "مخصص",
         "badge": "أفضل قيمة",
         "featured": true
       }
@@ -286,52 +298,72 @@
       {
         "label": "إجراءات سريعة",
         "free": false,
-        "paid": true
+        "enterprise": true,
+        "individual": true,
+        "custom": true
       },
       {
         "label": "عدد المستخدمين",
         "free": "محدود",
-        "paid": "غير محدود"
+        "enterprise": "غير محدود",
+        "individual": "غير محدود",
+        "custom": "غير محدود"
       },
       {
         "label": "عدد العملاء المحتملين",
         "free": "100",
-        "paid": "100,000"
+        "enterprise": "100,000",
+        "individual": "100,000",
+        "custom": "100,000"
       },
       {
         "label": "التكاملات مع مواقع التواصل الإجتماعي",
         "free": true,
-        "paid": true
+        "enterprise": true,
+        "individual": true,
+        "custom": true
       },
       {
         "label": "الإشعارات",
         "free": false,
-        "paid": true
+        "enterprise": true,
+        "individual": true,
+        "custom": true
       },
       {
         "label": "تقارير عامة",
         "free": true,
-        "paid": true
+        "enterprise": true,
+        "individual": true,
+        "custom": true
       },
       {
         "label": "تقارير مخصصة",
         "free": false,
-        "paid": true
+        "enterprise": true,
+        "individual": true,
+        "custom": true
       },
       {
         "label": "استيراد وتصدير البيانات لملف Excel",
         "free": false,
-        "paid": true
+        "enterprise": true,
+        "individual": true,
+        "custom": true
       },
       {
         "label": "ادارة بيع الوحدات",
         "free": true,
-        "paid": true
+        "enterprise": true,
+        "individual": true,
+        "custom": true
       },
       {
         "label": "ادارة ايجار الوحدات",
         "free": false,
-        "paid": true
+        "enterprise": true,
+        "individual": true,
+        "custom": true
       }
     ]
   },
@@ -370,8 +402,11 @@
   "get_your_copy_now": "احصل على نسختك الآن",
   "paid_plan": "مدفوعة",
   "enterprise_plan": "مؤسسة",
+  "enterprise_price": "17,500",
   "custom_plan": "مخصص",
+  "custom_price_text": "اتصل بنا",
   "individual_plan": "فردي",
+  "individual_price": "750",
   "free_plan": "مجانية",
   "quick_actions": "الإجراءات السريعة",
   "quick_actions_description": "قم باستخدام الإجراءات السريعة للوصول السريع واتخاذ القرارات الهامة.",
