@@ -39,7 +39,6 @@ const CustomInput = React.forwardRef<HTMLInputElement, CustomInputProps>(
     // Default (undefined) behavior relies on CSS/Tailwind defaults (usually LTR or inherited).
 
     const isRtl = dir === 'rtl';
-    const isLtr = dir === 'ltr';
 
     return (
       <div className="w-full flex flex-col gap-1">
