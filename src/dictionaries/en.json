@@ -425,5 +425,74 @@
   "unlimited": "Unlimited",
   "manage_unlimited_leads": "Manage unlimited number leads",
   "ContactUs": "Contact Us",
-  "website_included": "Ability to create a website for your company and link it to the system"
+  "website_included": "Ability to create a website for your company and link it to the system",
+  "terms_page": {
+    "title": "Terms and Conditions",
+    "last_updated": "Last Updated: January 26, 2026",
+    "sections": [
+      {
+        "heading": "Introduction",
+        "content": "Welcome to HiEstate (https://hiestate.app), a service provided by Hi-Solutions. By accessing or using our website and services, you agree to be bound by these Terms and Conditions."
+      },
+      {
+        "heading": "Use of Service",
+        "content": "You agree to use our services only for lawful purposes and in accordance with these Terms. You are responsible for maintaining the confidentiality of your account credentials."
+      },
+      {
+        "heading": "Intellectual Property",
+        "content": "All content, features, and functionality of HiEstate are the exclusive property of Hi-Solutions and are protected by international copyright, trademark, and other intellectual property laws."
+      },
+      {
+        "heading": "Termination",
+        "content": "We reserve the right to terminate or suspend your account and access to the Service immediately, without prior notice or liability, for any reason whatsoever."
+      },
+      {
+        "heading": "Limitation of Liability",
+        "content": "In no event shall Hi-Solutions, nor its directors, employees, partners, agents, suppliers, or affiliates, be liable for any indirect, incidental, special, consequential or punitive damages."
+      }
+    ]
+  },
+  "privacy_page": {
+    "title": "Privacy Policy",
+    "last_updated": "Last Updated: January 26, 2026",
+    "sections": [
+      {
+        "heading": "Information Collection",
+        "content": "We collect information you provide directly to us, such as when you create an account, subscribe to our newsletter, or contact customer support."
+      },
+      {
+        "heading": "Use of Information",
+        "content": "We use the information we collect to provide, maintain, and improve our services, to communicate with you, and to monitor and analyze trends and usage."
+      },
+      {
+        "heading": "Data Security",
+        "content": "We take reasonable measures to help protect information about you from loss, theft, misuse and unauthorized access, disclosure, alteration and destruction."
+      },
+      {
+        "heading": "Cookies",
+        "content": "We use cookies and similar technologies to collect information about your activity on our services and store certain information."
+      },
+      {
+        "heading": "Contact Us",
+        "content": "If you have any questions about this Privacy Policy, please contact us at support@hi-solutions.co or visit our website at https://hiestate.app."
+      }
+    ]
+  },
+  "refund_page": {
+    "title": "Refund Policy",
+    "last_updated": "Last Updated: January 26, 2026",
+    "intro": "At Hi-Solutions, we want you to be completely satisfied with our services.",
+    "guarantee_title": "14-Day Money-Back Guarantee",
+    "guarantee_content": "We offer a 14-day money-back guarantee on all our subscription plans. If you are not satisfied with our service for any reason, you can request a full refund within 14 days of your initial purchase, no questions asked.",
+    "sections": [
+      {
+        "heading": "How to Request a Refund",
+        "content": "To initiate a refund, please contact our support team at support@hi-solutions.co with your order details. We will process your request within 5-7 business days."
+      },
+      {
+        "heading": "Exclusions",
+        "content": "Refunds are not available after the 14-day period has expired. This guarantee applies only to your first subscription purchase."
+      }
+    ]
+  }
 }

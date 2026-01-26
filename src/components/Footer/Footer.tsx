@@ -124,6 +124,30 @@ export default function FooterPlus() {
                       {dictionary.navHome}
                     </Link>
                   </li>
+                  <li>
+                    <Link
+                      href={`${base}/terms`}
+                      className="hover:underline text-white/80 hover:text-white transition-colors"
+                    >
+                      {dictionary.terms_page?.title}
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      href={`${base}/privacy`}
+                      className="hover:underline text-white/80 hover:text-white transition-colors"
+                    >
+                      {dictionary.privacy_page?.title}
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      href={`${base}/refund`}
+                      className="hover:underline text-white/80 hover:text-white transition-colors"
+                    >
+                      {dictionary.refund_page?.title}
+                    </Link>
+                  </li>
                 </ul>
               </div>
             </div>

@@ -1,3 +1,4 @@
+import { LegalSection } from "@/components/LegalPageLayout";
 import "server-only";
 
 // export type PricingPlanId = "basic" | "professional" | "enterprise";
@@ -251,6 +252,24 @@ export interface Dictionary {
   EGP: string;
   ContactUs: string;
   website_included: string;
+  privacy_page: {
+    title: string;
+    last_updated: string;
+    sections: LegalSection[];
+  };
+  terms_page: {
+    title: string;
+    last_updated: string;
+    sections: LegalSection[];
+  };
+  refund_page: {
+    title: string;
+    last_updated: string;
+    intro: string;
+    guarantee_title: string;
+    guarantee_content: string;
+    sections: LegalSection[];
+  };
 
   // Contact Page
   contact_header_description: string;
