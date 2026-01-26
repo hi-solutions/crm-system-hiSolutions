@@ -186,7 +186,13 @@ export default function FooterPlus() {
 
               <div className="flex items-center gap-3">
                 <FaPhoneAlt className="w-5 h-5" />
-                <p>+20 100 332 8484</p>
+                <a
+                  href="tel:+201003328484"
+                  className="text-white/80 hover:text-white transition-colors"
+                  dir="ltr"
+                >
+                  +201003328484
+                </a>
               </div>
               {/* input and button*/}
               <form className="flex items-stretch max-w-sm gap-2 ">
