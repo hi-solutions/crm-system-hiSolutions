@@ -10,8 +10,8 @@ const nextConfig: NextConfig = {
   async rewrites() {
     return [
       {
-        source: "/api/api/v1/:path*",
-        destination: "https://hiestate.app/api/api/:path*",
+        source: "/api/:path*",
+        destination: "https://hiestate.app/api/:path*",
       },
     ];
   },

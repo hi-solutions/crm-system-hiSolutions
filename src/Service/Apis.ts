@@ -1,7 +1,8 @@
 import axios from "axios";
 
-const baseUrl = "/api/api/v1/";
+const baseUrl = "/api/";
 import { SubmitContactFormRequest } from "./models/ContactUs";
+import { SubscriptionFormData } from "@/components/Modals/SubscriptionModal";
 
 const axiosConfig = {
   headers: {
@@ -29,3 +30,23 @@ export const SubmitContactForm = (
     }
   });
 };
+export const SubmitSubscriptionForm = (
+  req: SubscriptionFormData
+): Promise<void> => {
+  const reqBodySerialized = JSON.stringify(req);
+
+  return new Promise<void>((resolve, reject) => {
+    try {
+      axios
+        .post(`${baseUrl}companies/registerCompany`, reqBodySerialized, axiosConfig)
+        .then(function (response) {
+          const DesData = JSON.parse(JSON.stringify(response.data));
+          resolve(DesData);
+        })
+        .catch((err) => reject(err));
+    } catch (err) {
+      reject(err);
+    }
+  });
+};
+

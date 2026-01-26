@@ -31,19 +31,29 @@ const CustomInput = React.forwardRef<HTMLInputElement, CustomInputProps>(
       setShowPassword(!showPassword);
     };
 
+    const { dir } = props;
+
+    // Adjust padding and icon position based on formatting direction
+    // If direction is explicitly LTR, icons go to Right, text starts Left.
+    // If direction is explicitly RTL, icons go to Left, text starts Right.
+    // Default (undefined) behavior relies on CSS/Tailwind defaults (usually LTR or inherited).
+
+    const isRtl = dir === 'rtl';
+    const isLtr = dir === 'ltr';
+
     return (
       <div className="w-full flex flex-col gap-1">
         <div className="relative">
           <input
             ref={ref}
             type={isPassword ? (showPassword ? "text" : "password") : type}
-            className={`w-full px-4 py-3 rounded-xl border ${borderColorClass} outline-none transition-all duration-200 text-gray-800 placeholder-gray-400 ${className} ${
-              isPassword ? "pr-12" : ""
-            }`}
+            className={`w-full py-3 rounded-xl border ${borderColorClass} outline-none transition-all duration-200 text-gray-800 placeholder-gray-400 ${className} ${isRtl ? 'pl-12 pr-4' : 'pr-12 pl-4'
+              }`}
             {...props}
           />
 
-          <div className="absolute right-3 top-1/2 -translate-y-1/2 flex items-center gap-2">
+          <div className={`absolute top-1/2 -translate-y-1/2 flex items-center gap-2 ${isRtl ? 'left-3' : 'right-3'
+            }`}>
             {/* Validation Icons */}
             {isValid && !errorText && (
               <div className="text-green-500">

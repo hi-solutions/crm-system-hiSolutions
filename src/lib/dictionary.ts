@@ -298,6 +298,14 @@ export interface Dictionary {
   modal_email_error: string;
   modal_phone_error: string;
   modal_password_error: string;
+  modal_full_name_placeholder: string;
+  modal_company_name_ar_placeholder: string;
+  modal_company_name_en_placeholder: string;
+  modal_address_placeholder: string;
+  modal_city_placeholder: string;
+  modal_country_placeholder: string;
+  modal_full_name_error: string;
+  modal_company_name_ar_error: string;
   modal_confirm_button: string;
 
   // Countries
